@@ -5,19 +5,26 @@ using UnityEngine;
 
 public class Takedamage : MonoBehaviour
 {
-    public SpriteRenderer sp;
     void Start()
     {
-        sp = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        
+ 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        sp.color = new Color(Random.value, Random.value, Random.value);
+        //sp.color = new Color(Random.value, Random.value, Random.value); this was a test for hit detection
+        Hitdetection();
+    }
+
+    public void Hitdetection()
+    {
+        if (CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }  
     }
 }
