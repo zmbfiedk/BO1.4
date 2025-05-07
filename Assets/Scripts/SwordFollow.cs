@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SwordFollow : MonoBehaviour
 {
+   
     public Transform tf;
     public float minDistance = 1.5f;
     public float speed = 6f;

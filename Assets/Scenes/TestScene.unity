@@ -328,6 +328,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b371febb0e58a45898cba3a3fb0a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &753346615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753346604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1450bab380fb92841ae595d3f7535572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sword: {fileID: 9139327936770636864, guid: 58ed0e857472ce445b3d3b83265f261f, type: 3}
+  Spell1: {fileID: 0}
 --- !u!1 &1876500550
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +755,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2144665028283655497, guid: 11f6ad9361abcb84eaafc21153bfa3e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 753346614}
+    - targetCorrespondingSourceObject: {fileID: 2144665028283655497, guid: 11f6ad9361abcb84eaafc21153bfa3e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 753346615}
   m_SourcePrefab: {fileID: 100100000, guid: 11f6ad9361abcb84eaafc21153bfa3e5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
