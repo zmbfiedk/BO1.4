@@ -3,16 +3,19 @@ using UnityEditor;
 using UnityEngine;
 public class Move : MonoBehaviour
 {
-    public GameObject Attackzone;
+    private BoxCollider2D BC;
+    [SerializeField] private GameObject Attackzone;
     private SpriteRenderer sp;
-    public float moveSpeed = 10f;
+    [SerializeField] private float moveSpeed = 10f;
     private float currentSpeed;
     private Vector2 moveDirection;
     private Rigidbody2D rb;
-    public float stamina = 100f;
-    public float sprintSpeed = 15f;
-    public float staminaDrain = 1f;
-    public float lifeTime = 0.05f;
+    [SerializeField] private float stamina = 100f;
+    [SerializeField] private float sprintSpeed = 15f;
+    [SerializeField] private float staminaDrain = 1f;
+    [SerializeField] private float lifeTime = 0.05f;
+    [SerializeField] private float dashspeed = 50f;
+    [SerializeField] private float ADStaminadrain = 20f;
 
     void Start()
     {
@@ -74,10 +77,11 @@ public class Move : MonoBehaviour
             Debug.Log("Right mouse clicked");
             sp.color = Color.yellow;
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && stamina < 0)
             {
                 sp.color = Color.red;
                 Debug.Log("Attack");
+                stamina -= ADStaminadrain;
 
                 GameObject attackInstance = Instantiate(Attackzone, transform.position, Quaternion.identity);
                 Destroy(attackInstance, lifeTime); 
@@ -87,6 +91,17 @@ public class Move : MonoBehaviour
 
     void dodge()
     {
+        if (Input.GetKey(KeyCode.LeftControl) && stamina < 0)
+        {
+            BC.enabled = false;
+            moveSpeed = dashspeed;
+            stamina -= ADStaminadrain;
 
+        }
+        else
+        {
+            BC.enabled=true;
+            moveSpeed = moveSpeed;
+        }
     }
 }
