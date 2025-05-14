@@ -1,8 +1,10 @@
 
+using UnityEditor;
 using UnityEngine;
-
 public class Move : MonoBehaviour
 {
+    public GameObject Attackzone;
+    private SpriteRenderer sp;
     public float moveSpeed = 10f;
     private float currentSpeed;
     private Vector2 moveDirection;
@@ -10,17 +12,21 @@ public class Move : MonoBehaviour
     public float stamina = 100f;
     public float sprintSpeed = 15f;
     public float staminaDrain = 1f;
+    public float lifeTime = 0.05f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentSpeed = moveSpeed;
+        sp = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         HandleMovement();
         RotatePlayerToMouse();
+        Attack();
+        dodge();
     }
 
     void HandleMovement()
@@ -28,9 +34,8 @@ public class Move : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(horizontal, vertical).normalized;
-
-        // Sprinting
-        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
+        //sprint
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0) 
         {
             currentSpeed = sprintSpeed;
             stamina -= staminaDrain * Time.deltaTime;
@@ -40,7 +45,6 @@ public class Move : MonoBehaviour
             currentSpeed = moveSpeed;
         }
 
-        // Optional: Prevent stamina from going negative
         stamina = Mathf.Clamp(stamina, 0f, 100f);
 
         rb.velocity = moveDirection * currentSpeed;
@@ -61,5 +65,28 @@ public class Move : MonoBehaviour
         Vector2 directionToMouse = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
         float angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+
+    public void Attack()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            Debug.Log("Right mouse clicked");
+            sp.color = Color.yellow;
+
+            if (Input.GetMouseButton(0))
+            {
+                sp.color = Color.red;
+                Debug.Log("Attack");
+
+                GameObject attackInstance = Instantiate(Attackzone, transform.position, Quaternion.identity);
+                Destroy(attackInstance, lifeTime); 
+            }
+        }
+    }
+
+    void dodge()
+    {
+
     }
 }
