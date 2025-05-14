@@ -122,6 +122,22 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &324440321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7945396366231424575, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+  m_PrefabInstance: {fileID: 1753122303}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a02939c614b1f4c8a91b01f64238fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &324440325 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 897919515449437798, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+  m_PrefabInstance: {fileID: 1753122303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &605647889
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +261,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1753122303
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090622418493148711, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957324324838663692, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: EF
+      value: 
+      objectReference: {fileID: 324440321}
+    - target: {fileID: 7957324324838663692, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      propertyPath: sp
+      value: 
+      objectReference: {fileID: 324440325}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
 --- !u!1 &1768013162
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,11 +431,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attackzone: {fileID: 8542144810834413137, guid: 2f40689ac439774408604e5851be8785, type: 3}
-  attackarea: {fileID: 605647889}
   moveSpeed: 10
   stamina: 100
   sprintSpeed: 15
   staminaDrain: 1
+  lifeTime: 0.05
+  dashspeed: 50
+  ADStaminadrain: 20
 --- !u!212 &1768013166
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -429,3 +512,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1752847180}
   - {fileID: 1768013167}
+  - {fileID: 1753122303}

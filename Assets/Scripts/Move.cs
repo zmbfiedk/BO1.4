@@ -29,7 +29,7 @@ public class Move : MonoBehaviour
         HandleMovement();
         RotatePlayerToMouse();
         Attack();
-        dodge();
+        Dodge();
     }
 
     void HandleMovement()
@@ -89,7 +89,7 @@ public class Move : MonoBehaviour
         }
     }
 
-    void dodge()
+    void Dodge()
     {
         if (Input.GetKey(KeyCode.LeftControl) && stamina < 0)
         {
