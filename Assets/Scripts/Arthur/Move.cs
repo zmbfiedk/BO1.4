@@ -12,12 +12,22 @@ public class Move : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float sprintSpeed = 15f;
     [SerializeField] private float dashSpeed = 50f;
-    [SerializeField] private float stamina = 100f;
+    [SerializeField] private float stamina = 100;
     [SerializeField] private float staminaDrain = 1f;
     [SerializeField] private float dodgeStaminaCost = 20f;
     [SerializeField] private float staminaRegenRate = 5f;
 
-    public float Stamina => stamina;
+    public float Stamina
+    {
+        get { return stamina; }
+        set {
+            if (value > 0)
+            {
+                stamina = value;
+            }        
+        }
+    }
+
 
     void Start()
     {
@@ -82,7 +92,7 @@ public class Move : MonoBehaviour
         BC2D.enabled = false;
         currentSpeed = dashSpeed;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.05f);
 
         currentSpeed = moveSpeed;
         BC2D.enabled = true;

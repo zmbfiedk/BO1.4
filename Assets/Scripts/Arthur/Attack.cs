@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerAttack : MonoBehaviour
+public class Attack : MonoBehaviour
 {
     [SerializeField] private GameObject attackZone;
     [SerializeField] private float attackStaminaCost = 20f;
@@ -11,6 +11,15 @@ public class PlayerAttack : MonoBehaviour
     private Move playerMovement;
     private SpriteRenderer sp;
     private bool canAttack = true;
+
+    public float ACD
+    {
+        get { return attackCooldown; }
+        set
+        {
+            attackCooldown = value;
+        }
+    }
 
     void Start()
     {
