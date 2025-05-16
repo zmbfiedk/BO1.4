@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-    private Color damagecolor = new Color(1f, 0.3f, 0.3f, 1f);
+    private Color damagecolor = new Color(1f, 0.42f, 0.42f, 1f);
     private Color normalcolor = new Color(1f, 1f, 1f, 1f);
     public bool isCoroutineOn = false;
     SpriteRenderer sprite;
