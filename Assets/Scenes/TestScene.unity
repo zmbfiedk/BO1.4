@@ -389,7 +389,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690719032}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -407,12 +407,30 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
+--- !u!1 &709873701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2144665028283655497, guid: 11f6ad9361abcb84eaafc21153bfa3e5, type: 3}
+  m_PrefabInstance: {fileID: 3205443179695860412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &753346613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4147849115172585167, guid: 11f6ad9361abcb84eaafc21153bfa3e5, type: 3}
   m_PrefabInstance: {fileID: 3205443179695860412}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &753346619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709873701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d0dd2bac7f82244b89e7b376f541da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &938895405
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +570,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938895405}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -570,7 +588,38 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
+--- !u!1 &1012333136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012333137}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1012333137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012333136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2975718, y: 3.6994839, z: -0.028547242}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1810986625
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +759,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810986625}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -728,7 +777,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!114 &1833167896 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7945396366231424575, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
@@ -945,7 +994,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013312099}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -963,7 +1012,7 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!1001 &2214594500162216741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1100,7 +1149,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2144665028283655497, guid: 11f6ad9361abcb84eaafc21153bfa3e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 753346619}
   m_SourcePrefab: {fileID: 100100000, guid: 11f6ad9361abcb84eaafc21153bfa3e5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1115,3 +1167,4 @@ SceneRoots:
   - {fileID: 2013312102}
   - {fileID: 690719035}
   - {fileID: 938895408}
+  - {fileID: 1012333137}
