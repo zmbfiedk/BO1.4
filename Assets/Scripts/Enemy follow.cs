@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Enemyfollow : MonoBehaviour
 {
     public Transform player; 
     public float moveSpeed = 3f;    
-    public float followDistance = 0.1f; 
+    public float followDistance = 0.1f;
+    public bool Isfollowing;
     void Start()
     {
         
@@ -14,8 +14,14 @@ public class Enemyfollow : MonoBehaviour
 
     void Update()
     {
+        Followplayer();
+    }
+
+    public void Followplayer()
+    {
         if (player != null)
         {
+            Isfollowing = true;
             Vector2 direction = (player.position - transform.position).normalized;
             float distance = Vector2.Distance(transform.position, player.position);
 
@@ -27,6 +33,7 @@ public class Enemyfollow : MonoBehaviour
                     moveSpeed * Time.deltaTime
                 );
             }
+            
         }
     }
 }

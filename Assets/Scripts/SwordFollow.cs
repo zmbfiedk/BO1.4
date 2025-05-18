@@ -8,8 +8,9 @@ public class SwordFollow : MonoBehaviour
 {
    
     public Transform tf;
-    public float minDistance = 1.5f;
-    public float speed = 6f;
+    public float minDistance = 2f;
+    public float speed = 20f;
+    private bool swordpoint;
 
     private void FollowPlayer()
     { 
@@ -27,8 +28,7 @@ public class SwordFollow : MonoBehaviour
 
     public void Attack()
     {
-        if (Input.GetMouseButton(0))
-        {
+        
             Debug.Log("Mouse button is being held down!");
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0f;
@@ -36,7 +36,7 @@ public class SwordFollow : MonoBehaviour
             Vector2 direction = mousePos - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
-        }
+        
     }
 
 
@@ -47,8 +47,24 @@ public class SwordFollow : MonoBehaviour
 
     void Update()
     {
-        Attack();
-        FollowPlayer();
+        if (Input.GetMouseButton(0)) 
+        {
+            swordpoint = false;
+        }
+        else
+        {
+            swordpoint = true;
+        }
+
+        Debug.Log(swordpoint);
+        if (swordpoint == false)
+        {
+            Attack();
+        }
+        if (swordpoint == true)
+        {
+            FollowPlayer();
+        }
     }
     
 }
