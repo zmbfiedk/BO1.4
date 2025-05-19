@@ -226,9 +226,10 @@ MonoBehaviour:
   sprintSpeed: 15
   dashSpeed: 50
   stamina: 100
-  staminaDrain: 1
+  staminaDrain: 20
   dodgeStaminaCost: 20
   staminaRegenRate: 5
+  health_points: 100
 --- !u!114 &5554308515304095672
 MonoBehaviour:
   m_ObjectHideFlags: 0

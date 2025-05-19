@@ -3,11 +3,13 @@ using System.Collections;
 
 public class Attack : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField] private GameObject attackZone;
+    [Header("Attack Stats")]
     [SerializeField] private float attackStaminaCost = 20f;
     [SerializeField] private float attackCooldown = 0.3f;
     [SerializeField] private float lifeTime = 0.05f;
-    [SerializeField] private float chargeResetDelay = 0.5f; // Delay to reset charging/release states
+    [SerializeField] private float chargeResetDelay = 0.5f; 
 
     private Move playerMovement;
     private SpriteRenderer sp;
@@ -53,14 +55,14 @@ public class Attack : MonoBehaviour
         {
             sp.color = Color.yellow;
             animator.SetBool($"{currentWeapon}_charging", true);
-            animator.SetBool($"{currentWeapon}_ready", true); // Start "ready" anim if needed
+            animator.SetBool($"{currentWeapon}_ready", true); 
 
             if (Input.GetMouseButtonDown(0) && canAttack)
             {
                 if (playerMovement.ConsumeStamina(attackStaminaCost))
                 {
-                    animator.SetBool($"{currentWeapon}_release", true); // Start "release"
-                    animator.SetBool($"{currentWeapon}_ready", false);  // Stop "ready"
+                    animator.SetBool($"{currentWeapon}_release", true); 
+                    animator.SetBool($"{currentWeapon}_ready", false); 
                     sp.color = Color.red;
                     SpawnAttack();
                     StartCoroutine(ResetChargeAfter(chargeResetDelay));

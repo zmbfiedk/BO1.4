@@ -8,15 +8,25 @@ public class Move : MonoBehaviour
     private float currentSpeed;
     private Vector2 moveDirection;
     private bool isDodging = false;
-
+    [Header("Base move")]
     [SerializeField] private float moveSpeed = 10f;
+    [Header("advanced")]
     [SerializeField] private float sprintSpeed = 15f;
     [SerializeField] private float dashSpeed = 50f;
+    [Header("Stamina")]
     [SerializeField] private float stamina = 100;
     [SerializeField] private float staminaDrain = 1f;
     [SerializeField] private float dodgeStaminaCost = 20f;
     [SerializeField] private float staminaRegenRate = 5f;
+    [Header("HP")]
+    [SerializeField] private float health_points = 100;
 
+
+    public float hp
+    {
+        get { return health_points; }
+        set { health_points = value; }
+    }
     public float Stamina
     {
         get { return stamina; }
