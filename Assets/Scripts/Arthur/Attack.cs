@@ -4,18 +4,23 @@ using System.Collections;
 public class Attack : MonoBehaviour
 {
     [Header("Prefabs")]
-    [SerializeField] private GameObject attackZone;
+    [SerializeField] private GameObject attackZoneS;
+    [SerializeField] private GameObject attackZoneT;
+    [SerializeField] private GameObject attackZoneB;
+
     [Header("Attack Stats")]
     [SerializeField] private float attackStaminaCost = 20f;
     [SerializeField] private float attackCooldown = 0.3f;
     [SerializeField] private float lifeTime = 0.05f;
-    [SerializeField] private float chargeResetDelay = 0.5f; 
+    [SerializeField] private float chargeResetDelay = 0.5f;
 
-    private Move playerMovement;
+    [Header("Needed scripts")]
+    [SerializeField] private SwitchWeapon SW;
+    [SerializeField] private Move playerMovement;
+
     private SpriteRenderer sp;
     private Animator animator;
     private bool canAttack = true;
-
     private string currentWeapon = "sword";
 
     public float ACD
@@ -55,14 +60,14 @@ public class Attack : MonoBehaviour
         {
             sp.color = Color.yellow;
             animator.SetBool($"{currentWeapon}_charging", true);
-            animator.SetBool($"{currentWeapon}_ready", true); 
+            animator.SetBool($"{currentWeapon}_ready", true);
 
             if (Input.GetMouseButtonDown(0) && canAttack)
             {
                 if (playerMovement.ConsumeStamina(attackStaminaCost))
                 {
-                    animator.SetBool($"{currentWeapon}_release", true); 
-                    animator.SetBool($"{currentWeapon}_ready", false); 
+                    animator.SetBool($"{currentWeapon}_release", true);
+                    animator.SetBool($"{currentWeapon}_ready", false);
                     sp.color = Color.red;
                     SpawnAttack();
                     StartCoroutine(ResetChargeAfter(chargeResetDelay));
@@ -80,9 +85,37 @@ public class Attack : MonoBehaviour
 
     void SpawnAttack()
     {
-        GameObject attackInstance = Instantiate(attackZone, transform.position, Quaternion.identity);
-        Destroy(attackInstance, lifeTime);
-        StartCoroutine(AttackCooldown());
+        GameObject attackPrefab = null;
+
+        switch (currentWeapon)
+        {
+            case "sword":
+                attackPrefab = attackZoneS;
+                break;
+            case "trident":
+                attackPrefab = attackZoneT;
+                break;
+            case "bow":
+                attackPrefab = attackZoneB;
+                break;
+        }
+
+        if (attackPrefab != null)
+        {
+            float attackZ = transform.eulerAngles.z - 90; 
+            Quaternion attackRotation = Quaternion.Euler(0, 0, attackZ);
+
+            Vector3 forwardOffset = transform.up * 1f;
+
+            GameObject attackInstance = Instantiate(
+                attackPrefab,
+                transform.position + forwardOffset,
+                attackRotation
+            );
+
+            Destroy(attackInstance, lifeTime);
+            StartCoroutine(AttackCooldown());
+        }
     }
 
     IEnumerator AttackCooldown()
