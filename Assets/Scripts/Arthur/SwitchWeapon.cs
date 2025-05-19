@@ -1,57 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour
 {
-    [SerializeField] private Attack atackScript;
-    [SerializeField] private GameObject Tridentprefab;
-    [SerializeField] private GameObject bowprefab;
-    [SerializeField] private GameObject swordprefab;
+    [SerializeField] private Attack attackScript;
+    [SerializeField] private WeaponVisibilityManager weaponVisibilityManager;
+
+    [Header("Weapon Prefabs")]
+    [SerializeField] private GameObject tridentPrefab;
+    [SerializeField] private GameObject bowPrefab;
+    [SerializeField] private GameObject swordPrefab;
+
+    [Header("Weapon Hold Point")]
+    [SerializeField] private Transform weaponHolder;
+
+    private GameObject currentWeapon;
+
     void Start()
     {
-        GetComponent<Attack>();
+        if (attackScript == null)
+            attackScript = GetComponent<Attack>();
+
+        SwitchToWeapon(swordPrefab, 0.22f, "sword");
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            SwitchToWeapon(tridentPrefab, 0.3f, "trident");
 
-        if (Input.GetKeyUp(KeyCode.Alpha1)) 
-        {
-            trident(true);
-            bow(false);
-            sword(false);
-        }
-        if (Input.GetKeyUp(KeyCode.Alpha2))
-        {
-            trident(false);
-            bow(true);
-            sword(false);
-        }
-        if (Input.GetKey(KeyCode.Alpha3)) 
-        {
-            trident(false);
-            bow(false);
-            sword(true);
-        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            SwitchToWeapon(bowPrefab, 0.1f, "bow");
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SwitchToWeapon(swordPrefab, 0.22f, "sword");
     }
 
-    private void trident(bool activate)
+    private void SwitchToWeapon(GameObject weaponPrefab, float cooldown, string weaponName)
     {
-           Tridentprefab.gameObject.SetActive(activate);
-           atackScript.ACD = 0.3f;
+        if (currentWeapon != null)
+            Destroy(currentWeapon);
 
-    }
+        currentWeapon = Instantiate(weaponPrefab, weaponHolder);
+        currentWeapon.transform.localPosition = Vector3.zero;
+        currentWeapon.transform.localRotation = Quaternion.identity;
 
-    private void bow(bool activate)
-    {
-            bowprefab.gameObject.SetActive(activate);
-            atackScript.ACD = 0.1f;
-    }
-
-    private void sword(bool activate)
-    {
-            swordprefab.gameObject.SetActive(activate);
-            atackScript.ACD = 0.22f;
+        attackScript.ACD = cooldown;
+        attackScript.SetCurrentWeapon(weaponName);
+        weaponVisibilityManager.ShowOnly(weaponName);
     }
 }
