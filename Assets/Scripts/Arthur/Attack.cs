@@ -7,7 +7,7 @@ public class Attack : MonoBehaviour
     [SerializeField] private float attackStaminaCost = 20f;
     [SerializeField] private float attackCooldown = 0.3f;
     [SerializeField] private float lifeTime = 0.05f;
-    [SerializeField] private float chargeResetDelay = 0.5f;
+    [SerializeField] private float chargeResetDelay = 0.5f; // Delay to reset charging/release states
 
     private Move playerMovement;
     private SpriteRenderer sp;
@@ -53,14 +53,14 @@ public class Attack : MonoBehaviour
         {
             sp.color = Color.yellow;
             animator.SetBool($"{currentWeapon}_charging", true);
-            animator.SetBool($"{currentWeapon}_ready", true); 
+            animator.SetBool($"{currentWeapon}_ready", true); // Start "ready" anim if needed
 
-            if (Input.GetMouseButtonDown(0) && canAttack && IsReadyAnimationPlaying())
+            if (Input.GetMouseButtonDown(0) && canAttack)
             {
                 if (playerMovement.ConsumeStamina(attackStaminaCost))
                 {
-                    animator.SetBool($"{currentWeapon}_release", true);
-                    animator.SetBool($"{currentWeapon}_ready", false);
+                    animator.SetBool($"{currentWeapon}_release", true); // Start "release"
+                    animator.SetBool($"{currentWeapon}_ready", false);  // Stop "ready"
                     sp.color = Color.red;
                     SpawnAttack();
                     StartCoroutine(ResetChargeAfter(chargeResetDelay));
@@ -101,11 +101,5 @@ public class Attack : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         animator.SetBool($"{currentWeapon}_release", false);
-    }
-
-    bool IsReadyAnimationPlaying()
-    {
-        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
-        return state.IsName($"{currentWeapon}_ready");
     }
 }
