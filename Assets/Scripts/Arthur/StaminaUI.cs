@@ -16,6 +16,6 @@ public class StaminaUI : MonoBehaviour
 
     void Update()
     {
-        textfield.text = moveScript.Stamina.ToString("F0");
+        textfield.text = "Stamina = " + moveScript.Stamina.ToString("F0");
     }
 }
