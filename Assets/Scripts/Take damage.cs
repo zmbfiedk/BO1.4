@@ -14,18 +14,17 @@ public class Takedamage : MonoBehaviour
 
     void Update()
     {
+        EnemySee();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //sp.color = new Color(Random.value, Random.value, Random.value); this was a test for hit detection
         Hitdetection();
-        EnemySee();
     }
 
     public void Hitdetection()
     {
-        if (CompareTag("Enemy"))
+        if (CompareTag("enemy"))
         {
             Destroy(gameObject);
         }  
