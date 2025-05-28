@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Diagnostics.Tracing;
 
 public class Attack : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class Attack : MonoBehaviour
     private SpriteRenderer sp;
     private Animator animator;
     private bool canAttack = true;
-    private string currentWeapon = "sword";
+    private string currentWeapon = "trident";
+    public string CurrentWeapon => currentWeapon;
+
 
     public float ACD
     {
@@ -40,6 +43,7 @@ public class Attack : MonoBehaviour
     {
         RotatePlayerToMouse();
         HandleAttack();
+        animator.SetBool($"{currentWeapon}_idle", true);
     }
 
     public void SetCurrentWeapon(string weaponName)
@@ -59,8 +63,10 @@ public class Attack : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             sp.color = Color.yellow;
+
             animator.SetBool($"{currentWeapon}_charging", true);
             animator.SetBool($"{currentWeapon}_ready", true);
+            animator.SetBool($"{currentWeapon}_idle", false);
 
             if (Input.GetMouseButtonDown(0) && canAttack)
             {
@@ -68,6 +74,8 @@ public class Attack : MonoBehaviour
                 {
                     animator.SetBool($"{currentWeapon}_release", true);
                     animator.SetBool($"{currentWeapon}_ready", false);
+                    
+
                     sp.color = Color.red;
                     SpawnAttack();
                     StartCoroutine(ResetChargeAfter(chargeResetDelay));
@@ -79,6 +87,7 @@ public class Attack : MonoBehaviour
         {
             animator.SetBool($"{currentWeapon}_charging", false);
             animator.SetBool($"{currentWeapon}_ready", false);
+            animator.SetBool($"{currentWeapon}_idle", true);
             sp.color = Color.white;
         }
     }
@@ -102,7 +111,7 @@ public class Attack : MonoBehaviour
 
         if (attackPrefab != null)
         {
-            float attackZ = transform.eulerAngles.z - 90; 
+            float attackZ = transform.eulerAngles.z - 90;
             Quaternion attackRotation = Quaternion.Euler(0, 0, attackZ);
 
             Vector3 forwardOffset = transform.up * 1f;
@@ -136,5 +145,6 @@ public class Attack : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         animator.SetBool($"{currentWeapon}_release", false);
+        animator.SetBool($"{currentWeapon}_idle", true);
     }
 }

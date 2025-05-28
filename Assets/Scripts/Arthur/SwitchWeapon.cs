@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour
@@ -21,7 +20,7 @@ public class SwitchWeapon : MonoBehaviour
         if (attackScript == null)
             attackScript = GetComponent<Attack>();
 
-        SwitchToWeapon(swordPrefab, 0.22f, "sword");
+        SwitchToWeapon(tridentPrefab, 0.22f, "trident");
     }
 
     void Update()
@@ -38,6 +37,8 @@ public class SwitchWeapon : MonoBehaviour
 
     private void SwitchToWeapon(GameObject weaponPrefab, float cooldown, string weaponName)
     {
+        ResetCurrentWeaponAnimations();
+
         if (currentWeapon != null)
             Destroy(currentWeapon);
 
@@ -48,5 +49,16 @@ public class SwitchWeapon : MonoBehaviour
         attackScript.ACD = cooldown;
         attackScript.SetCurrentWeapon(weaponName);
         weaponVisibilityManager.ShowOnly(weaponName);
+    }
+
+    private void ResetCurrentWeaponAnimations()
+    {
+        string[] states = { "_charging", "_ready", "_release", "_idle" };
+        Animator animator = attackScript.GetComponent<Animator>();
+
+        foreach (string state in states)
+        {
+            animator.SetBool(attackScript.CurrentWeapon + state, false);
+        }
     }
 }
