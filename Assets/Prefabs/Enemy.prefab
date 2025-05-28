@@ -189,4 +189,4 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 3
   followDistance: 0.1
-  Isfollowing: 0
+  Isfollowing: 1
