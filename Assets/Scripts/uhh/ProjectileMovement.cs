@@ -24,4 +24,5 @@ public class ProjectileMovement : MonoBehaviour
         movedirection = player.transform.position - gameObject.transform.position;
         movedirection = movedirection.normalized;
     }
+    
 }
