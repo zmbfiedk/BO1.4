@@ -51,8 +51,17 @@ public class Move : MonoBehaviour
         HandleMovement();
         RegenerateStamina();
         Dodge();
+        playerkill();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("cpol");
+        if (CompareTag("enemy"))
+        {
+            playerhit();
+        }
+    }
     void HandleMovement()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -73,7 +82,7 @@ public class Move : MonoBehaviour
         }
 
         stamina = Mathf.Clamp(stamina, 0f, 100f);
-        rb.velocity = moveDirection * currentSpeed;
+       rb.velocity = moveDirection * currentSpeed;
     }
 
     void RegenerateStamina()
@@ -117,5 +126,18 @@ public class Move : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    private void playerhit()
+    {
+        health_points -= 20;
+    }
+
+    void playerkill()
+    {
+        if(health_points == 0)
+        {
+            Object.Destroy(gameObject);
+        }
     }
 }
