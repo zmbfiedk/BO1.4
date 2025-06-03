@@ -1,21 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveChecker : MonoBehaviour
 {
-    [SerializeField] private int wavenmr = 0;
-    private Dictionary<string, GameObject> enemyList = new Dictionary<string, GameObject>();
-    
+    [SerializeField] private int waveNumber = 0;
+    [SerializeField] private int enemiesKilledThisWave = 0;
+    [SerializeField] private int enemiesToKillPerWave = 15;
 
-    void Start()
-    { 
-    }
+    private bool waveActive = true;
 
-    // Update is called once per frame
-    void Update()
+    public int GetWaveNumber()
     {
-       
+        return waveNumber;
     }
 
+    public bool IsWaveActive()
+    {
+        return waveActive;
+    }
+
+    public void EnemyKilled()
+    {
+        enemiesKilledThisWave++;
+
+        if (enemiesKilledThisWave >= enemiesToKillPerWave)
+        {
+            EndWave();
+        }
+    }
+
+    private void EndWave()
+    {
+        waveActive = false;
+        Debug.Log("Wave " + waveNumber + " ended!");
+
+        StartNextWave();
+    }
+
+    private void StartNextWave()
+    {
+        waveNumber++;
+        enemiesKilledThisWave = 0;
+        waveActive = true;
+        Debug.Log("Wave " + waveNumber + " started!");
+    }
 }
