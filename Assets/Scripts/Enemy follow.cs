@@ -9,15 +9,7 @@ public class Enemyfollow : MonoBehaviour
 
     void Start()
     {
-        GameObject targetObject = GameObject.FindWithTag("Player");
-        if (targetObject != null)
-        {
-            player = targetObject.transform;
-        }
-        else
-        {
-            Debug.LogWarning("No GameObject found with tag 'Player'");
-        }
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     public bool follow

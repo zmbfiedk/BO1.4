@@ -20,22 +20,22 @@ public class SwitchWeapon : MonoBehaviour
         if (attackScript == null)
             attackScript = GetComponent<Attack>();
 
-        SwitchToWeapon(tridentPrefab, 0.22f, "trident");
+        SwitchToWeapon(tridentPrefab, 0.8f, "trident",70);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SwitchToWeapon(tridentPrefab, 0.3f, "trident");
+            SwitchToWeapon(tridentPrefab, 0.8f, "trident",70);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwitchToWeapon(bowPrefab, 0.1f, "bow");
+            SwitchToWeapon(bowPrefab, 1f, "bow",30);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SwitchToWeapon(swordPrefab, 0.22f, "sword");
+            SwitchToWeapon(swordPrefab, 0.5f, "sword",40);
     }
 
-    private void SwitchToWeapon(GameObject weaponPrefab, float cooldown, string weaponName)
+    private void SwitchToWeapon(GameObject weaponPrefab, float cooldown, string weaponName, float staminadrain)
     {
         ResetCurrentWeaponAnimations();
 
@@ -49,6 +49,8 @@ public class SwitchWeapon : MonoBehaviour
         attackScript.ACD = cooldown;
         attackScript.SetCurrentWeapon(weaponName);
         weaponVisibilityManager.ShowOnly(weaponName);
+
+        attackScript.staminaCost = staminadrain;
     }
 
     private void ResetCurrentWeaponAnimations()
