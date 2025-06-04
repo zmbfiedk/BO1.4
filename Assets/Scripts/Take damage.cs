@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class Takedamage : MonoBehaviour
 {
-    public SpriteRenderer sp;
-    public Enemyfollow EF;
+    public static event Action onDeath;
+
+    private SpriteRenderer sp;
+    private Enemyfollow EF;
+
     void Start()
     {
         sp = GetComponent<SpriteRenderer>();
+        EF = GetComponent<Enemyfollow>();
     }
 
     void Update()
@@ -19,26 +21,22 @@ public class Takedamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Hitdetection();
+        if (other.CompareTag("PlayerAttack"))
+        {
+            Hitdetection();
+        }
     }
 
     public void Hitdetection()
     {
-        if (CompareTag("enemy"))
-        {
-            Destroy(gameObject);
-        }  
+           onDeath?.Invoke();
+        Destroy(gameObject);
     }
 
     private void EnemySee()
     {
-        if (EF.Isfollowing == true)
-        {
-            sp.color = Color.red;
-        }
-        else 
-        {
-            sp .color = Color.green;
-        }
+        if (EF == null) return;
+
+        sp.color = EF.follow ? Color.red : Color.green;
     }
 }

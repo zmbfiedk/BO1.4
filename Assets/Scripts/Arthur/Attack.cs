@@ -32,6 +32,12 @@ public class Attack : MonoBehaviour
         set { attackCooldown = value; }
     }
 
+    public float staminaCost 
+    { 
+        get { return attackStaminaCost; } 
+        set { attackStaminaCost = value; } 
+    }   
+
     void Start()
     {
         playerMovement = GetComponent<Move>();

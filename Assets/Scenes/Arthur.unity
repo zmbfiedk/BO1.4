@@ -190,7 +190,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -839,9 +839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbebc5f6731579544b8e9f5b0f6a5993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAmmount: 0
   waveNumber: 0
   enemiesKilledThisWave: 0
-  enemiesToKillPerWave: 15
 --- !u!4 &1176680518
 Transform:
   m_ObjectHideFlags: 0
