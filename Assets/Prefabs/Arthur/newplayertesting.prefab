@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5509670779199108729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6648584641591588854}
+  m_Layer: 0
+  m_Name: Player track
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6648584641591588854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509670779199108729}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 817668679245966110}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2051151448502096576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,7 +193,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6648584641591588854}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       insertIndex: -1
@@ -192,6 +226,11 @@ PrefabInstance:
 --- !u!1 &374649170730669606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7402754296112675610, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
+  m_PrefabInstance: {fileID: 2051151448502096576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &817668679245966110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
   m_PrefabInstance: {fileID: 2051151448502096576}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &823091027597990497 stripped
@@ -304,7 +343,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.15
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
