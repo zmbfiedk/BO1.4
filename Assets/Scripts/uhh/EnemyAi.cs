@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using Unity.VisualScripting.ReorderableList;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
@@ -20,6 +21,14 @@ public class EnemyAi : MonoBehaviour
     private EnemyProjectileAttack attack;
     private bool isSpotted = false;
     private int movementFailsafe = 0;
+
+    public enum behaviourpattern
+    {
+        passive,
+        neutral,
+        aggressive
+    }
+    public behaviourpattern currentbehaviour;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +68,14 @@ public class EnemyAi : MonoBehaviour
         {
             isMoving = true;
             isAllowed = false;
-            yield return new WaitForSeconds(UnityEngine.Random.Range(3, 7));
+            if (currentbehaviour == behaviourpattern.passive || currentbehaviour == behaviourpattern.neutral)
+            {
+                yield return new WaitForSeconds(UnityEngine.Random.Range(3, 7));
+            }
+            if (currentbehaviour == behaviourpattern.aggressive)
+            {
+                yield return new WaitForSeconds(UnityEngine.Random.Range(1, 2));
+            }
             PositionRandomizer();
         }
         else if (!isAllowed)
@@ -74,15 +90,38 @@ public class EnemyAi : MonoBehaviour
             {
                 isMoving = true;
                 movementFailsafe = 0;
+                PositionRandomizer();
                 yield return new WaitForSeconds(UnityEngine.Random.Range(3, 7));
+                yield break;
             }
             PositionRandomizer();
         }
     }
     private void PositionRandomizer()
     {
-        moveposition = new Vector2(gameObject.transform.position.x + UnityEngine.Random.Range(-1, 2), (gameObject.transform.position.y + UnityEngine.Random.Range(-1, 2)));
-        
+        if (currentbehaviour == behaviourpattern.neutral)
+        {
+            moveposition = new Vector2(gameObject.transform.position.x + UnityEngine.Random.Range(-1, 2), (gameObject.transform.position.y + UnityEngine.Random.Range(-1, 2)));
+        }
+
+        else if (currentbehaviour == behaviourpattern.aggressive)
+        {
+            moveposition = new Vector2(gameObject.transform.position.x + UnityEngine.Random.Range(-2, 3), (gameObject.transform.position.y + UnityEngine.Random.Range(-2, 3)));
+            Vector2 currentdistance = new Vector2(gameObject.transform.position.x - player.transform.position.x, gameObject.transform.position.y - player.transform.position.y);
+            Vector2 predictedDistance = new Vector2(moveposition.x - player.transform.position.x, moveposition.y - player.transform.position.y);
+            
+            while (currentdistance.x < predictedDistance.x && currentdistance.y < predictedDistance.y)
+            {
+                moveposition = new Vector2(gameObject.transform.position.x + UnityEngine.Random.Range(-2, 3), (gameObject.transform.position.y + UnityEngine.Random.Range(-2, 3)));
+                currentdistance = new Vector2(gameObject.transform.position.x - player.transform.position.x, gameObject.transform.position.y - player.transform.position.y);
+                predictedDistance = new Vector2(moveposition.x - player.transform.position.x, moveposition.y - player.transform.position.y);
+            }
+        }
+
+        else if (currentbehaviour == behaviourpattern.passive)
+        {
+            //placeholder
+        }
         RaycastCheck();
     }
     private void RaycastCheck()
