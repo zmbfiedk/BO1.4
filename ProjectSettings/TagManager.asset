@@ -7,8 +7,7 @@ TagManager:
   - Walls
   - enemy
   - Enemy
-  - Enviriomental Object
-  - PlayerAttack
+  - PlayerAT
   layers:
   - Default
   - TransparentFX
