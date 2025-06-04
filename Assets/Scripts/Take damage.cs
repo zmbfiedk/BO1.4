@@ -32,7 +32,7 @@ public class Takedamage : MonoBehaviour
 
     private void EnemySee()
     {
-        if (EF.Isfollowing == true)
+        if (EF.follow == true)
         {
             sp.color = Color.red;
         }
