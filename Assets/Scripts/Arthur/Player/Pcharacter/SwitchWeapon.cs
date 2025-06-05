@@ -29,7 +29,7 @@ public class SwitchWeapon : MonoBehaviour
             SwitchToWeapon(tridentPrefab, 0.8f, "trident",70);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwitchToWeapon(bowPrefab, 1f, "bow",30);
+            SwitchToWeapon(bowPrefab, 1f, "bow",20);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
             SwitchToWeapon(swordPrefab, 0.5f, "sword",40);

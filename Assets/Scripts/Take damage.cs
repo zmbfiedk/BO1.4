@@ -21,7 +21,7 @@ public class Takedamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PlayerAttack"))
+        if (other.CompareTag("enemy"))
         {
             Hitdetection();
         }
