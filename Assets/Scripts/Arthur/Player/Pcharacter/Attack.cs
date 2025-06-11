@@ -1,18 +1,16 @@
 using UnityEngine;
+using System;
 using System.Collections;
-using System.Diagnostics.Tracing;
 
 public class Attack : MonoBehaviour
 {
-    [Header("Prefabs")]
-    [SerializeField] private GameObject attackZoneS;
-    [SerializeField] private GameObject attackZoneT;
-    [SerializeField] private GameObject attackZoneB;
+    public static event Action OnAtckTri;
+    public static event Action OnAttackSw;
+    public static event Action OnBowRelease;
 
     [Header("Attack Stats")]
     [SerializeField] private float attackStaminaCost = 20f;
     [SerializeField] private float attackCooldown = 0.3f;
-    [SerializeField] private float lifeTime = 0.05f;
     [SerializeField] private float chargeResetDelay = 0.5f;
 
     [Header("Needed scripts")]
@@ -24,7 +22,7 @@ public class Attack : MonoBehaviour
     private bool canAttack = true;
     private string currentWeapon = "trident";
     public string CurrentWeapon => currentWeapon;
-
+    private bool isAttacking = false;
 
     public float ACD
     {
@@ -32,11 +30,17 @@ public class Attack : MonoBehaviour
         set { attackCooldown = value; }
     }
 
-    public float staminaCost 
-    { 
-        get { return attackStaminaCost; } 
-        set { attackStaminaCost = value; } 
-    }   
+    public float staminaCost
+    {
+        get { return attackStaminaCost; }
+        set { attackStaminaCost = value; }
+    }
+
+    public bool isAtacking
+    {
+        get { return isAttacking; }
+        set {  isAttacking = value; }
+    }
 
     void Start()
     {
@@ -50,6 +54,9 @@ public class Attack : MonoBehaviour
         RotatePlayerToMouse();
         HandleAttack();
         animator.SetBool($"{currentWeapon}_idle", true);
+        TridentAttack();
+        SwordAttack();
+        BowRelease();
     }
 
     public void SetCurrentWeapon(string weaponName)
@@ -80,56 +87,20 @@ public class Attack : MonoBehaviour
                 {
                     animator.SetBool($"{currentWeapon}_release", true);
                     animator.SetBool($"{currentWeapon}_ready", false);
-                    
-
+                    isAttacking = true;
                     sp.color = Color.red;
-                    SpawnAttack();
+                    StartCoroutine(AttackCooldown());
                     StartCoroutine(ResetChargeAfter(chargeResetDelay));
                     StartCoroutine(ResetReleaseAfter(chargeResetDelay));
                 }
             }
-        }
+        } 
         else
         {
             animator.SetBool($"{currentWeapon}_charging", false);
             animator.SetBool($"{currentWeapon}_ready", false);
             animator.SetBool($"{currentWeapon}_idle", true);
             sp.color = Color.white;
-        }
-    }
-
-    void SpawnAttack()
-    {
-        GameObject attackPrefab = null;
-
-        switch (currentWeapon)
-        {
-            case "sword":
-                attackPrefab = attackZoneS;
-                break;
-            case "trident":
-                attackPrefab = attackZoneT;
-                break;
-            case "bow":
-                attackPrefab = attackZoneB;
-                break;
-        }
-
-        if (attackPrefab != null)
-        {
-            float attackZ = transform.eulerAngles.z - 90;
-            Quaternion attackRotation = Quaternion.Euler(0, 0, attackZ);
-
-            Vector3 forwardOffset = transform.up * 1f;
-
-            GameObject attackInstance = Instantiate(
-                attackPrefab,
-                transform.position + forwardOffset,
-                attackRotation
-            );
-
-            Destroy(attackInstance, lifeTime);
-            StartCoroutine(AttackCooldown());
         }
     }
 
@@ -152,5 +123,30 @@ public class Attack : MonoBehaviour
         yield return new WaitForSeconds(delay);
         animator.SetBool($"{currentWeapon}_release", false);
         animator.SetBool($"{currentWeapon}_idle", true);
+    }
+
+    private void TridentAttack()
+    {
+        if (currentWeapon == "trident" && playerMovement.Stamina <= staminaCost && isAttacking)
+        {
+            OnAtckTri?.Invoke();
+        }
+    }
+
+    private void SwordAttack()
+    {
+        if (currentWeapon == "sword" && playerMovement.Stamina <= staminaCost && isAttacking)
+        {
+            OnAttackSw?.Invoke();
+        }
+    }
+
+    private void BowRelease()
+    {
+        if (currentWeapon == "bow" && playerMovement.Stamina >= staminaCost && isAttacking)
+        {
+            OnBowRelease?.Invoke();
+            Debug.Log("invoked");
+        }
     }
 }
