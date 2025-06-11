@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7945396366231424575}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,8 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b371febb0e58a45898cba3a3fb0a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sp: {fileID: 897919515449437798}
-  EF: {fileID: 7945396366231424575}
 --- !u!61 &7797753271983480503
 BoxCollider2D:
   m_ObjectHideFlags: 0

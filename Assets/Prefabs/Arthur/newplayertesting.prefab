@@ -61,11 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 23.2
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 18.9
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -77,15 +77,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -111,9 +111,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -455103649459473142, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 61
+      objectReference: {fileID: 0}
     - target: {fileID: -140309045151571971, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551111557825850831, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3415332152245941077, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -283,12 +291,12 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16871011, y: 0.6792051}
+  m_Offset: {x: -1.23, y: 1.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.09, y: 1.16}
-    newSize: {x: 1.09, y: 1.16}
+    oldSize: {x: 1.28, y: 2}
+    newSize: {x: 1.28, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -352,7 +360,7 @@ MonoBehaviour:
   stamina: 100
   staminaDrain: 20
   dodgeStaminaCost: 20
-  staminaRegenRate: 5
+  staminaRegenRate: 7.5
   health_points: 100
 --- !u!114 &5554308515304095672
 MonoBehaviour:
@@ -498,7 +506,7 @@ SpriteRenderer:
   m_Size: {x: 0.8, y: 0.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &4978979697584720178
@@ -623,8 +631,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.22, y: 0.59}
-    newSize: {x: 2.22, y: 0.59}
+    oldSize: {x: 2.7, y: 0.78}
+    newSize: {x: 2.7, y: 0.78}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

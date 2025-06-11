@@ -26,8 +26,8 @@ public class EnemySpawner : MonoBehaviour
     private float timeTillSpawn;
     private WaveChecker waveChecker;
     [SerializeField] private bool canSpawm = true;
-    [SerializeField] private int level;
     [SerializeField] private BossSpawner BossSpawner;
+
     void Awake()
     {
         maximumspawntime = UnityEngine.Random.Range(0, 10);
@@ -51,6 +51,13 @@ public class EnemySpawner : MonoBehaviour
 
         if (timeTillSpawn <= 0 && canSpawm)
         {
+            if (waveChecker.GetEnemiesSpawnedThisWave() >= waveChecker.GetEnemiesToKillThisWave())
+            {
+                canSpawm = false;
+                Debug.Log("Spawner at " + transform.name + " reached spawn limit.");
+                return;
+            }
+
             SpawnEnemy();
             SetTimeUntilSpawn();
         }
@@ -63,30 +70,31 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        int currentWave = waveChecker.GetWaveNumber();
-        int level = 1 + (currentWave / 10);
-        level = Mathf.Clamp(level, 1, 3);
-        GameObject enemyToSpawn = null;
-
+        int level = waveChecker.GetLevel(); // NEW: get level from WaveChecker
         int enemyType = UnityEngine.Random.Range(0, 3);
-        OnEnemySpawn?.Invoke();
+        GameObject enemyToSpawn = null;
 
         switch (level)
         {
             case 1:
-                enemyToSpawn = enemyType == 0 ? Lmeleeenemyprefab1 : enemyType == 1 ? Hmeleeenemyprefab1 : Rangeenemyprefab1;
+                enemyToSpawn = enemyType == 0 ? Lmeleeenemyprefab1 :
+                               enemyType == 1 ? Hmeleeenemyprefab1 : Rangeenemyprefab1;
                 break;
             case 2:
-                enemyToSpawn = enemyType == 0 ? Lmeleeenemyprefab2 : enemyType == 1 ? Hmeleeenemyprefab2 : Rangeenemyprefab2;
+                enemyToSpawn = enemyType == 0 ? Lmeleeenemyprefab2 :
+                               enemyType == 1 ? Hmeleeenemyprefab2 : Rangeenemyprefab2;
                 break;
             case 3:
-                enemyToSpawn = enemyType == 0 ? Lmeleeenemyprefab3 : enemyType == 1 ? Hmeleeenemyprefab3 : Rangeenemyprefab3;
+                enemyToSpawn = enemyType == 0 ? Lmeleeenemyprefab3 :
+                               enemyType == 1 ? Hmeleeenemyprefab3 : Rangeenemyprefab3;
                 break;
         }
 
         if (enemyToSpawn != null)
         {
             Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+            Debug.Log("Spawned enemy at level " + level + " from " + transform.name); // DEBUG level
+            OnEnemySpawn?.Invoke();
         }
     }
 

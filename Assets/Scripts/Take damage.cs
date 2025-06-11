@@ -29,14 +29,13 @@ public class Takedamage : MonoBehaviour
 
     public void Hitdetection()
     {
-           onDeath?.Invoke();
+        onDeath?.Invoke(); //This is all you need
         Destroy(gameObject);
     }
 
     private void EnemySee()
     {
         if (EF == null) return;
-
         sp.color = EF.follow ? Color.red : Color.green;
     }
 }
