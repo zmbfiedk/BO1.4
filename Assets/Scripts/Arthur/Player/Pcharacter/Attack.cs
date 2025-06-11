@@ -127,7 +127,7 @@ public class Attack : MonoBehaviour
 
     private void TridentAttack()
     {
-        if (currentWeapon == "trident" && playerMovement.Stamina >= staminaCost && isAttacking)
+        if (currentWeapon == "trident" && playerMovement.Stamina <= staminaCost && isAttacking)
         {
             OnAtckTri?.Invoke();
         }
@@ -135,7 +135,7 @@ public class Attack : MonoBehaviour
 
     private void SwordAttack()
     {
-        if (currentWeapon == "sword" && playerMovement.Stamina >= staminaCost && isAttacking)
+        if (currentWeapon == "sword" && playerMovement.Stamina <= staminaCost && isAttacking)
         {
             OnAttackSw?.Invoke();
         }

@@ -20,6 +20,13 @@ public class WaveChecker : MonoBehaviour
         set { enemiesKilledThisWave = value; }
     }
 
+
+    public int WAVE
+    {
+        get { return waveNumber; }
+        set { waveNumber = value; }
+    }
+
     private bool waveActive = true;
 
     void Start()

@@ -27,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
     private WaveChecker waveChecker;
     [SerializeField] private bool canSpawm = true;
     [SerializeField] private int level;
+    [SerializeField] private BossSpawner BossSpawner;
     void Awake()
     {
         maximumspawntime = UnityEngine.Random.Range(0, 10);
@@ -39,7 +40,8 @@ public class EnemySpawner : MonoBehaviour
     {
         WaveChecker.OnMaxEnemySpawn += StopSpawn;
         WaveChecker.OnWaveOver += StopSpawn;
-        WaveChecker.OnWaveOver += () => Invoke(nameof(AllowSpawning), 9f); 
+        WaveChecker.OnWaveOver += () => Invoke(nameof(AllowSpawning), 9f);
+        BossSpawner.bossSpawned += StopSpawn;
     }
 
     void Update()
