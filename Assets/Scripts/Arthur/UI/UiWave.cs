@@ -20,7 +20,7 @@ public class UiWave : MonoBehaviour
     {
         if (waveChecker.WAVE != wavenmr)
         {
-            waveCouritine();
+            StartCoroutine(waveCouritine());
             wavenmr = waveChecker.WAVE;
         }
     }
