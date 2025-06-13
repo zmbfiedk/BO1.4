@@ -8,6 +8,7 @@ public class UiWave : MonoBehaviour
     [SerializeField] WaveChecker waveChecker;
     TMPro.TextMeshPro textMeshPro;
     [SerializeField] private int wavenmr;
+    private bool MichealIsBeaten;
 
     void Start()
     {
@@ -22,6 +23,11 @@ public class UiWave : MonoBehaviour
         {
             StartCoroutine(waveCouritine());
             wavenmr = waveChecker.WAVE;
+        }
+
+        if(MichealIsBeaten)
+        {
+            textMeshPro.text = "link";
         }
     }
 
