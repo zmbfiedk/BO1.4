@@ -3,11 +3,11 @@ using UnityEngine;
 public class WeaponVisibilityManager : MonoBehaviour
 {
     [Header("Player Weapon Parts in Hierarchy")]
-    public GameObject sword;
-    public GameObject trident;
-    public GameObject bow;
-    public GameObject arrow;
-    public GameObject stringPart;
+    [SerializeField] private GameObject sword;
+    [SerializeField] private GameObject trident;
+    [SerializeField] private GameObject bow;
+    [SerializeField] private GameObject arrow;
+    [SerializeField] private GameObject stringPart;
 
     public void ShowOnly(string weaponName)
     {

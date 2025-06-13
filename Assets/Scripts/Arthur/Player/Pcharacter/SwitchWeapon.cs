@@ -20,22 +20,25 @@ public class SwitchWeapon : MonoBehaviour
         if (attackScript == null)
             attackScript = GetComponent<Attack>();
 
-        SwitchToWeapon(tridentPrefab, 0.8f, "trident",70);
+        if (weaponVisibilityManager == null)
+            Debug.LogWarning("WeaponVisibilityManager reference is missing!");
+
+        SwitchToWeapon(tridentPrefab, 0.8f, "trident", 70f);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SwitchToWeapon(tridentPrefab, 0.8f, "trident",70);
+            SwitchToWeapon(tridentPrefab, 0.8f, "trident", 70f);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwitchToWeapon(bowPrefab, 1f, "bow",20);
+            SwitchToWeapon(bowPrefab, 1f, "bow", 20f);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SwitchToWeapon(swordPrefab, 0.5f, "sword",40);
+            SwitchToWeapon(swordPrefab, 0.5f, "sword", 40f);
     }
 
-    private void SwitchToWeapon(GameObject weaponPrefab, float cooldown, string weaponName, float staminadrain)
+    private void SwitchToWeapon(GameObject weaponPrefab, float cooldown, string weaponName, float staminaDrain)
     {
         ResetCurrentWeaponAnimations();
 
@@ -46,21 +49,34 @@ public class SwitchWeapon : MonoBehaviour
         currentWeapon.transform.localPosition = Vector3.zero;
         currentWeapon.transform.localRotation = Quaternion.identity;
 
-        attackScript.ACD = cooldown;
-        attackScript.SetCurrentWeapon(weaponName);
-        weaponVisibilityManager.ShowOnly(weaponName);
+        if (attackScript != null)
+        {
+            attackScript.ACD = cooldown;
+            attackScript.SetCurrentWeapon(weaponName);
+            attackScript.staminaCost = staminaDrain;
+        }
+        else
+        {
+            Debug.LogWarning("Attack script reference missing.");
+        }
 
-        attackScript.staminaCost = staminadrain;
+        if (weaponVisibilityManager != null)
+        {
+            weaponVisibilityManager.ShowOnly(weaponName);
+        }
     }
 
     private void ResetCurrentWeaponAnimations()
     {
+        Animator animator = attackScript?.GetComponent<Animator>();
+        if (animator == null) return;
+
         string[] states = { "_charging", "_ready", "_release", "_idle" };
-        Animator animator = attackScript.GetComponent<Animator>();
 
         foreach (string state in states)
         {
-            animator.SetBool(attackScript.CurrentWeapon + state, false);
+            // Fixed concatenation: e.g. "trident_idle"
+            animator.SetBool($"{attackScript.CurrentWeapon}{state}", false);
         }
     }
 }

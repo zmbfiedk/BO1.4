@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwHitSc : MonoBehaviour
 {
     private BoxCollider2D boxC2D;
-    [SerializeField] Attack Attack;
+    [SerializeField] private Attack Attack;
 
     void Start()
     {
@@ -14,25 +13,30 @@ public class SwHitSc : MonoBehaviour
         Attack.OnAttackSw += TurnHitBox;
     }
 
-
-
-    void Update()
-    {
-    }
-
     private void TurnHitBox()
     {
         StartCoroutine(hitboxon());
-        Debug.Log("attack");
-        Attack.isAtacking = false;
+        Debug.Log("SwHitBox: attack triggered");
     }
 
     IEnumerator hitboxon()
     {
         boxC2D.enabled = true;
-        Debug.Log("on");
+        Debug.Log("SwHitBox: on");
         yield return new WaitForSeconds(1);
         boxC2D.enabled = false;
-        Debug.Log("off");
+        Debug.Log("SwHitBox: off");
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("enemy"))
+        {
+            Takedamage enemy = other.GetComponent<Takedamage>();
+            if (enemy != null)
+            {
+                enemy.TakeHit(1); // You can change this value as needed
+            }
+        }
     }
 }

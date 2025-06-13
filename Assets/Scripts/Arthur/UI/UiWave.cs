@@ -5,35 +5,28 @@ using TMPro;
 using UnityEditor.Search;
 public class UiWave : MonoBehaviour
 {
-    [SerializeField] WaveChecker waveChecker;
-    TMPro.TextMeshPro textMeshPro;
-    [SerializeField] private int wavenmr;
-    private bool MichealIsBeaten;
+    [SerializeField] private WaveChecker waveChecker;
+    [SerializeField] private TextMeshProUGUI textMeshPro;
+    [SerializeField] private int waveNumber;
+    private bool michealIsBeaten;
 
     void Start()
     {
-        textMeshPro = GetComponent<TextMeshPro>();
-        wavenmr = waveChecker.WAVE;
+        waveNumber = waveChecker.WAVE;
     }
-
 
     void Update()
     {
-        if (waveChecker.WAVE != wavenmr)
+        if (waveChecker.WAVE != waveNumber)
         {
-            StartCoroutine(waveCouritine());
-            wavenmr = waveChecker.WAVE;
-        }
-
-        if(MichealIsBeaten)
-        {
-            textMeshPro.text = "link";
+            StartCoroutine(WaveCoroutine());
+            waveNumber = waveChecker.WAVE;
         }
     }
 
-    IEnumerator waveCouritine()
+    IEnumerator WaveCoroutine()
     {
-        textMeshPro.text = "WAVE = " + waveChecker.WAVE.ToString("F1");
+        textMeshPro.text = "WAVE = " + waveChecker.WAVE.ToString("F0");
         yield return new WaitForSeconds(9f);
         textMeshPro.text = "";
     }

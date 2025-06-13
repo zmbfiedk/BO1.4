@@ -5,11 +5,16 @@ public class Takedamage : MonoBehaviour
 {
     public static event Action onDeath;
 
+    [Header("Health Settings")]
+    [SerializeField] private int maxHealth = 1;
+    private int currentHealth;
+
     private SpriteRenderer sp;
     private Enemyfollow EF;
 
     void Start()
     {
+        currentHealth = maxHealth;
         sp = GetComponent<SpriteRenderer>();
         EF = GetComponent<Enemyfollow>();
     }
@@ -21,15 +26,36 @@ public class Takedamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("enemy"))
+        // Only react if the player hits this with a weapon
+        if (other.CompareTag("weapon"))
         {
-            Hitdetection();
+            TakeHit(1);
+        }
+
+        // Optional: if the object this script is on is the player and it touches an enemy
+        if (other.CompareTag("enemy") && gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player touched enemy and died.");
+            Die();
         }
     }
 
-    public void Hitdetection()
+    public void TakeHit(int damage)
     {
-        onDeath?.Invoke(); //This is all you need
+        currentHealth -= damage;
+        Debug.Log($"{gameObject.name} took {damage} damage. Health now: {currentHealth}");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log($"{gameObject.name} died.");
+        onDeath?.Invoke();
+
         Destroy(gameObject);
     }
 
