@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SwHitSc : MonoBehaviour
 {
-    private BoxCollider2D boxC2D;
+    [SerializeField] private BoxCollider2D boxC2D;
     [SerializeField] private Attack Attack;
 
     void Start()
@@ -30,12 +30,12 @@ public class SwHitSc : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("enemy"))
+        if (other.CompareTag("Enemy"))
         {
             Takedamage enemy = other.GetComponent<Takedamage>();
             if (enemy != null)
             {
-                enemy.TakeHit(1); // You can change this value as needed
+                enemy.TakeHit(1); // Damage amount can be changed as needed
             }
         }
     }

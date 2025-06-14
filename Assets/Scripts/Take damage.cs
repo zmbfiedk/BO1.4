@@ -11,6 +11,7 @@ public class Takedamage : MonoBehaviour
 
     private SpriteRenderer sp;
     private Enemyfollow EF;
+    private bool isDead = false;  
 
     void Start()
     {
@@ -26,13 +27,11 @@ public class Takedamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Only react if the player hits this with a weapon
-        if (other.CompareTag("weapon"))
+        if (other.CompareTag("Weapon"))
         {
             TakeHit(1);
         }
 
-        // Optional: if the object this script is on is the player and it touches an enemy
         if (other.CompareTag("enemy") && gameObject.CompareTag("Player"))
         {
             Debug.Log("Player touched enemy and died.");
@@ -42,6 +41,8 @@ public class Takedamage : MonoBehaviour
 
     public void TakeHit(int damage)
     {
+        if (isDead) return;  
+
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health now: {currentHealth}");
 
@@ -53,6 +54,9 @@ public class Takedamage : MonoBehaviour
 
     private void Die()
     {
+        if (isDead) return; 
+
+        isDead = true;
         Debug.Log($"{gameObject.name} died.");
         onDeath?.Invoke();
 

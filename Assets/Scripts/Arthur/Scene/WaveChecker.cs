@@ -47,12 +47,16 @@ public class WaveChecker : MonoBehaviour
     {
         enemyAmmount++;
         enemiesSpawnedThisWave++;
+        Debug.Log($"Enemy Spawned. Current enemy count: {enemyAmmount}");
     }
 
     private void OnEnemyDeath()
     {
-        enemyAmmount--;
+        if (!waveActive) return;
+
+        enemyAmmount = Mathf.Max(0, enemyAmmount - 1);
         enemiesKilledThisWave++;
+        Debug.Log($"Enemy Died. Current enemy count: {enemyAmmount}");
 
         if (enemiesKilledThisWave >= enemiesToKillThisWave)
         {
@@ -74,6 +78,7 @@ public class WaveChecker : MonoBehaviour
         waveNumber++;
         enemiesKilledThisWave = 0;
         enemiesSpawnedThisWave = 0;
+        enemyAmmount = 0;
         enemiesToKillThisWave += 5;
         waveActive = true;
         Debug.Log("Wave " + waveNumber + " started! (Level " + GetLevel() + ")");

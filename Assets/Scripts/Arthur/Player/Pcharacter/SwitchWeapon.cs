@@ -5,16 +5,6 @@ public class SwitchWeapon : MonoBehaviour
     [SerializeField] private Attack attackScript;
     [SerializeField] private WeaponVisibilityManager weaponVisibilityManager;
 
-    [Header("Weapon Prefabs")]
-    [SerializeField] private GameObject tridentPrefab;
-    [SerializeField] private GameObject bowPrefab;
-    [SerializeField] private GameObject swordPrefab;
-
-    [Header("Weapon Hold Point")]
-    [SerializeField] private Transform weaponHolder;
-
-    private GameObject currentWeapon;
-
     void Start()
     {
         if (attackScript == null)
@@ -23,31 +13,24 @@ public class SwitchWeapon : MonoBehaviour
         if (weaponVisibilityManager == null)
             Debug.LogWarning("WeaponVisibilityManager reference is missing!");
 
-        SwitchToWeapon(tridentPrefab, 0.8f, "trident", 70f);
+        SwitchToWeapon("trident", 0.8f, 45f);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SwitchToWeapon(tridentPrefab, 0.8f, "trident", 70f);
+            SwitchToWeapon("trident", 0.8f, 45f);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwitchToWeapon(bowPrefab, 1f, "bow", 20f);
+            SwitchToWeapon("bow", 1f, 20f);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SwitchToWeapon(swordPrefab, 0.5f, "sword", 40f);
+            SwitchToWeapon("sword", 0.5f, 40f);
     }
 
-    private void SwitchToWeapon(GameObject weaponPrefab, float cooldown, string weaponName, float staminaDrain)
+    private void SwitchToWeapon(string weaponName, float cooldown, float staminaDrain)
     {
         ResetCurrentWeaponAnimations();
-
-        if (currentWeapon != null)
-            Destroy(currentWeapon);
-
-        currentWeapon = Instantiate(weaponPrefab, weaponHolder);
-        currentWeapon.transform.localPosition = Vector3.zero;
-        currentWeapon.transform.localRotation = Quaternion.identity;
 
         if (attackScript != null)
         {
@@ -75,7 +58,6 @@ public class SwitchWeapon : MonoBehaviour
 
         foreach (string state in states)
         {
-            // Fixed concatenation: e.g. "trident_idle"
             animator.SetBool($"{attackScript.CurrentWeapon}{state}", false);
         }
     }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8447279643002891076}
   m_Layer: 0
   m_Name: arrow (1)
-  m_TagString: enemy
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

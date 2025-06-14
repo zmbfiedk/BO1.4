@@ -3,24 +3,14 @@ using UnityEngine;
 
 public class TriHitSc : MonoBehaviour
 {
-    private BoxCollider2D boxC2D;
+    [SerializeField]private BoxCollider2D boxC2D;
     [SerializeField] private Attack Attack;
 
     void Start()
     {
         boxC2D = GetComponent<BoxCollider2D>();
         boxC2D.enabled = false;
-
-        if (Attack != null)
-            Attack.OnAtckTri += TurnHitBox;
-        else
-            Debug.LogWarning("TriHitSc: Attack reference missing!");
-    }
-
-    void OnDestroy()
-    {
-        if (Attack != null)
-            Attack.OnAtckTri -= TurnHitBox;
+        Attack.OnAtckTri += TurnHitBox;
     }
 
     private void TurnHitBox()
@@ -40,12 +30,12 @@ public class TriHitSc : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("enemy"))
+        if (other.CompareTag("Enemy"))
         {
             Takedamage enemy = other.GetComponent<Takedamage>();
             if (enemy != null)
             {
-                enemy.TakeHit(1); // You can change this value as needed
+                enemy.TakeHit(1); // Damage amount can be changed as needed
             }
         }
     }

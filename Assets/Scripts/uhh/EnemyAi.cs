@@ -1,13 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using Unity.VisualScripting.ReorderableList;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
+
 
 public class EnemyAi : MonoBehaviour
 {

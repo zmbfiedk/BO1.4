@@ -1,22 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.Search;
+
 public class UiWave : MonoBehaviour
 {
-    [SerializeField] private WaveChecker waveChecker;
-    [SerializeField] private TextMeshProUGUI textMeshPro;
-    [SerializeField] private int waveNumber;
-    private bool michealIsBeaten;
+    [SerializeField] private WaveChecker waveChecker;          // Assign in Inspector!
+    [SerializeField] private TextMeshProUGUI textMeshPro;      // Assign in Inspector!
+
+    private int waveNumber;
 
     void Start()
     {
-        waveNumber = waveChecker.WAVE;
+        if (waveChecker == null)
+        {
+            Debug.LogError("WaveChecker is NOT assigned in Inspector!");
+        }
+
+        if (textMeshPro == null)
+        {
+            Debug.LogError("TextMeshProUGUI is NOT assigned in Inspector!");
+        }
+
+        waveNumber = waveChecker != null ? waveChecker.WAVE : 0;
     }
 
     void Update()
     {
+        if (waveChecker == null || textMeshPro == null)
+            return;
+
         if (waveChecker.WAVE != waveNumber)
         {
             StartCoroutine(WaveCoroutine());
@@ -27,7 +39,7 @@ public class UiWave : MonoBehaviour
     IEnumerator WaveCoroutine()
     {
         textMeshPro.text = "WAVE = " + waveChecker.WAVE.ToString("F0");
-        yield return new WaitForSeconds(9f);
+        yield return new WaitForSeconds(2f);
         textMeshPro.text = "";
     }
 }

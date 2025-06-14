@@ -882,8 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveChecker: {fileID: 299216574}
-  textMeshPro: {fileID: 0}
-  waveNumber: -1
+  textMeshPro: {fileID: 1823587409}
 --- !u!1 &1833459208
 GameObject:
   m_ObjectHideFlags: 0
