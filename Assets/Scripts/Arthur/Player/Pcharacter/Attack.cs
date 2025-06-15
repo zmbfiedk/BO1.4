@@ -9,8 +9,8 @@ public class Attack : MonoBehaviour
     public static event Action OnBowRelease;
 
     [Header("Attack Stats")]
-    [SerializeField] private float attackStaminaCost = 20f;
-    [SerializeField] private float attackCooldown = 0.3f;
+    [SerializeField] private float attackStaminaCost = 45f;
+    [SerializeField] private float attackCooldown = 0.2f;
     [SerializeField] private float chargeResetDelay = 0.5f;
 
     [Header("Dependencies")]
