@@ -34,9 +34,9 @@ public class SwitchWeapon : MonoBehaviour
 
         if (attackScript != null)
         {
-            attackScript.ACD = cooldown;
+            attackScript.Cooldown = cooldown;
             attackScript.SetCurrentWeapon(weaponName);
-            attackScript.staminaCost = staminaDrain;
+            attackScript.StaminaCost = staminaDrain;
         }
         else
         {

@@ -3,36 +3,49 @@ using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private Attack attackScript;
+
+    [Header("Arrow Settings")]
     [SerializeField] private float arrowSpeed = 30f;
 
-    void Start()
+    private void OnEnable()
     {
         Attack.OnBowRelease += ShootArrow;
     }
 
-    void Update()
+    private void OnDisable()
     {
+        Attack.OnBowRelease -= ShootArrow;
     }
 
     private void ShootArrow()
     {
-        FireArrow();
-        Debug.Log("Bow fired!");
-        attackScript.isAtacking = false;
-    }
+        if (arrowPrefab == null || firePoint == null)
+        {
+            Debug.LogWarning("Missing arrowPrefab or firePoint!");
+            return;
+        }
 
-    private void FireArrow()
-    {
         GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
-
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
+
         if (rb != null)
         {
             rb.velocity = firePoint.up * arrowSpeed;
         }
-        Debug.Log("arrowShot");
+        else
+        {
+            Debug.LogWarning("Arrow prefab has no Rigidbody2D component.");
+        }
+
+        if (attackScript != null)
+            attackScript.IsAttacking = false;
+
+
+        Debug.Log("Arrow shot!");
     }
 }
+

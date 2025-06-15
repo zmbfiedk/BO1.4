@@ -4,8 +4,8 @@ using System.Collections;
 
 public class Attack : MonoBehaviour
 {
-    public static event Action OnAtckTri;
-    public static event Action OnAttackSw;
+    public static event Action OnTridentAttack;
+    public static event Action OnSwordAttack;
     public static event Action OnBowRelease;
 
     [Header("Attack Stats")]
@@ -13,57 +13,54 @@ public class Attack : MonoBehaviour
     [SerializeField] private float attackCooldown = 0.3f;
     [SerializeField] private float chargeResetDelay = 0.5f;
 
-    [Header("Needed scripts")]
-    [SerializeField] private SwitchWeapon SW;
+    [Header("Dependencies")]
+    [SerializeField] private SwitchWeapon switchWeapon;
     [SerializeField] private Move playerMovement;
 
-    private SpriteRenderer sp;
+    private SpriteRenderer spriteRenderer;
     private Animator animator;
 
     private bool canAttack = true;
     private string currentWeapon = "trident";
     private bool isAttacking = false;
 
-    public float ACD
+    public float Cooldown
     {
-        get { return attackCooldown; }
-        set { attackCooldown = value; }
+        get => attackCooldown;
+        set => attackCooldown = value;
     }
 
-    public float staminaCost
+    public float StaminaCost
     {
-        get { return attackStaminaCost; }
-        set { attackStaminaCost = value; }
+        get => attackStaminaCost;
+        set => attackStaminaCost = value;
     }
 
-    public bool isAtacking
+    public bool IsAttacking
     {
-        get { return isAttacking; }
+        get => isAttacking;
         set
         {
             isAttacking = value;
-            Debug.Log("isAttacking set to: " + value);
+            Debug.Log($"IsAttacking set to: {value}");
         }
     }
 
     public string CurrentWeapon => currentWeapon;
 
-    void Start()
+    private void Start()
     {
         playerMovement = GetComponent<Move>();
-        sp = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         RotatePlayerToMouse();
         HandleAttack();
-
-        animator.SetBool($"{currentWeapon}_idle", true);
-        TridentAttack();
-        SwordAttack();
-        BowRelease();
+        SetIdleAnimation();
+        TryAttackEvent();
     }
 
     public void SetCurrentWeapon(string weaponName)
@@ -71,92 +68,111 @@ public class Attack : MonoBehaviour
         currentWeapon = weaponName.ToLower();
     }
 
-    void RotatePlayerToMouse()
+    private void RotatePlayerToMouse()
     {
-        Vector2 directionToMouse = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-        float angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        if (Camera.main == null) return;
+
+        Vector2 mouseDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle - 90f);
     }
 
-    void HandleAttack()
+    private void HandleAttack()
     {
         if (Input.GetMouseButton(1)) // Charging
         {
-            sp.color = Color.yellow;
-            animator.SetBool($"{currentWeapon}_charging", true);
-            animator.SetBool($"{currentWeapon}_ready", true);
-            animator.SetBool($"{currentWeapon}_idle", false);
+            StartCharging();
 
-            if (Input.GetMouseButtonDown(0) && canAttack)
+            if (Input.GetMouseButtonDown(0) && canAttack && playerMovement.ConsumeStamina(attackStaminaCost))
             {
-                if (playerMovement.ConsumeStamina(attackStaminaCost))
-                {
-                    animator.SetBool($"{currentWeapon}_release", true);
-                    animator.SetBool($"{currentWeapon}_ready", false);
-                    isAtacking = true;
-                    sp.color = Color.red;
-
-                    StartCoroutine(AttackCooldown());
-                    StartCoroutine(ResetChargeAfter(chargeResetDelay));
-                    StartCoroutine(ResetReleaseAfter(chargeResetDelay));
-                }
+                ReleaseAttack();
             }
         }
         else
         {
-            animator.SetBool($"{currentWeapon}_charging", false);
-            animator.SetBool($"{currentWeapon}_ready", false);
-            animator.SetBool($"{currentWeapon}_idle", true);
-            sp.color = Color.white;
+            ResetCharging();
         }
     }
 
-    IEnumerator AttackCooldown()
+    private void StartCharging()
+    {
+        spriteRenderer.color = Color.yellow;
+        SetAnimState("charging", true);
+        SetAnimState("ready", true);
+        SetAnimState("idle", false);
+    }
+
+    private void ReleaseAttack()
+    {
+        SetAnimState("release", true);
+        SetAnimState("ready", false);
+        IsAttacking = true;
+        spriteRenderer.color = Color.red;
+
+        StartCoroutine(AttackCooldownRoutine());
+        StartCoroutine(ResetChargeAfter(chargeResetDelay));
+        StartCoroutine(ResetReleaseAfter(chargeResetDelay));
+    }
+
+    private void ResetCharging()
+    {
+        SetAnimState("charging", false);
+        SetAnimState("ready", false);
+        SetAnimState("idle", true);
+        spriteRenderer.color = Color.white;
+    }
+
+    private IEnumerator AttackCooldownRoutine()
     {
         canAttack = false;
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
 
-    IEnumerator ResetChargeAfter(float delay)
+    private IEnumerator ResetChargeAfter(float delay)
     {
         yield return new WaitForSeconds(delay);
-        animator.SetBool($"{currentWeapon}_charging", false);
-        sp.color = Color.white;
+        SetAnimState("charging", false);
+        spriteRenderer.color = Color.white;
     }
 
-    IEnumerator ResetReleaseAfter(float delay)
+    private IEnumerator ResetReleaseAfter(float delay)
     {
         yield return new WaitForSeconds(delay);
-        animator.SetBool($"{currentWeapon}_release", false);
-        animator.SetBool($"{currentWeapon}_idle", true);
-        isAtacking = false; // Reset here only
+        SetAnimState("release", false);
+        SetAnimState("idle", true);
+        IsAttacking = false;
     }
 
-    private void TridentAttack()
+    private void SetIdleAnimation()
     {
-        if (currentWeapon == "trident" && playerMovement.Stamina >= staminaCost && isAttacking == true)
-        {
-            OnAtckTri?.Invoke();
-            Debug.Log("TRIAttack");
-        }
+        SetAnimState("idle", true);
     }
 
-    private void SwordAttack()
+    private void SetAnimState(string action, bool value)
     {
-        if (currentWeapon == "sword" && playerMovement.Stamina >= staminaCost && isAttacking == true)
-        {
-            OnAttackSw?.Invoke();
-            Debug.Log("swordAttack");
-        }
+        animator.SetBool($"{currentWeapon}_{action}", value);
     }
 
-    private void BowRelease()
+    private void TryAttackEvent()
     {
-        if (currentWeapon == "bow" && playerMovement.Stamina >= staminaCost && isAttacking == true)
+        if (!IsAttacking || playerMovement.Stamina >= attackStaminaCost)
+            return;
+
+        switch (currentWeapon)
         {
-            OnBowRelease?.Invoke();
-            Debug.Log("bowRelease");
+            case "trident":
+                OnTridentAttack?.Invoke();
+                Debug.Log("Trident Attack");
+                break;
+            case "sword":
+                OnSwordAttack?.Invoke();
+                Debug.Log("Sword Attack");
+                break;
+            case "bow":
+                OnBowRelease?.Invoke();
+                Debug.Log("Bow Release");
+                break;
         }
     }
 }

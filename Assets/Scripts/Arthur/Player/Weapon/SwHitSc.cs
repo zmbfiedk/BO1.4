@@ -10,7 +10,7 @@ public class SwHitSc : MonoBehaviour
     {
         boxC2D = GetComponent<BoxCollider2D>();
         boxC2D.enabled = false;
-        Attack.OnAttackSw += TurnHitBox;
+        Attack.OnSwordAttack += TurnHitBox;
     }
 
     private void TurnHitBox()
@@ -21,9 +21,10 @@ public class SwHitSc : MonoBehaviour
 
     IEnumerator hitboxon()
     {
+        yield return new WaitForFixedUpdate();
         boxC2D.enabled = true;
         Debug.Log("SwHitBox: on");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f); // Adjust this value as needed
         boxC2D.enabled = false;
         Debug.Log("SwHitBox: off");
     }
@@ -32,11 +33,33 @@ public class SwHitSc : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Takedamage enemy = other.GetComponent<Takedamage>();
-            if (enemy != null)
-            {
-                enemy.TakeHit(1); // Damage amount can be changed as needed
-            }
+            TryDamage(other);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (boxC2D.enabled && other.CompareTag("Enemy"))
+        {
+            TryDamage(other);
+        }
+    }
+
+    private void TryDamage(Collider2D other)
+    {
+        Takedamage enemy = other.GetComponent<Takedamage>();
+        if (enemy != null)
+        {
+            enemy.TakeHit(1);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (boxC2D != null && boxC2D.enabled)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(boxC2D.bounds.center, boxC2D.bounds.size);
         }
     }
 }
