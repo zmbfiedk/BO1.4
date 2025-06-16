@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9425795192edf34ca1efcac172b1ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeX: 1.5
-  rangeY: 1.5
+  rangeX: 2
+  rangeY: 2
   player: {fileID: 0}
   WeaponHitboxes:
   - {fileID: 7797753271983480503}
