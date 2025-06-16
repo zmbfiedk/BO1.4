@@ -30,8 +30,8 @@ public class EnemySpawner : MonoBehaviour
 
     void Awake()
     {
-        maximumspawntime = UnityEngine.Random.Range(0, 10);
-        minimumspawntime = UnityEngine.Random.Range(10, 15);
+        maximumspawntime = UnityEngine.Random.Range(0,20);
+        minimumspawntime = UnityEngine.Random.Range(20,40);
         waveChecker = FindObjectOfType<WaveChecker>();
         SetTimeUntilSpawn();
     }

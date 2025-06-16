@@ -59,9 +59,9 @@ public class EnemyMeleeAttack : MonoBehaviour
     private IEnumerator ActivateHitboxesRoutine(Collider2D[] colliders, float duration)
     {
         SetCollidersEnabled(colliders, true);
-        anim.SetBool("", true);
+        anim.SetBool("Attack", true);
         yield return new WaitForSeconds(duration);
-        anim.SetBool("", false);
+        anim.SetBool("Attack", false);
         SetCollidersEnabled(colliders, false);
     }
 
