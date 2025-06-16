@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2431786967351543703}
   m_Layer: 0
   m_Name: projectileplaceholder
-  m_TagString: lightEnemy
+  m_TagString: projEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
