@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7993146368342755420
 Transform:
   m_ObjectHideFlags: 0
@@ -125,15 +125,15 @@ PrefabInstance:
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab1
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: 636f703e607894e48813bcfa0fb6cd66, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab2
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: bf66ad1efba0478489c71a3f420b1c93, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab3
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: 8e52d4260cc30084a8c5dfbc9231e400, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Hmeleeenemyprefab1
       value: 
@@ -235,15 +235,15 @@ PrefabInstance:
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab1
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: 636f703e607894e48813bcfa0fb6cd66, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab2
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: bf66ad1efba0478489c71a3f420b1c93, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab3
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: 8e52d4260cc30084a8c5dfbc9231e400, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Hmeleeenemyprefab1
       value: 
@@ -345,15 +345,15 @@ PrefabInstance:
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab1
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: 636f703e607894e48813bcfa0fb6cd66, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab2
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: bf66ad1efba0478489c71a3f420b1c93, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab3
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: 8e52d4260cc30084a8c5dfbc9231e400, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Hmeleeenemyprefab1
       value: 
@@ -455,15 +455,15 @@ PrefabInstance:
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab1
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: 636f703e607894e48813bcfa0fb6cd66, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab2
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: bf66ad1efba0478489c71a3f420b1c93, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Rangeenemyprefab3
       value: 
-      objectReference: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
+      objectReference: {fileID: 3215694097892936337, guid: 8e52d4260cc30084a8c5dfbc9231e400, type: 3}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: Hmeleeenemyprefab1
       value: 
