@@ -8,6 +8,12 @@ TagManager:
   - enemy
   - Enemy
   - Environmental Object
+  - lightEnemy
+  - heavyEnemy
+  - projEnemy
+  - Trident
+  - Sword
+  - Arrow
   layers:
   - Default
   - TransparentFX
@@ -15,8 +21,8 @@ TagManager:
   - environmental objects
   - Water
   - UI
-  - Sword1
-  - Sword2
+  - 
+  - 
   - 
   - 
   - 
