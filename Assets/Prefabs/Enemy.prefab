@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7797753271983480503}
   - component: {fileID: 4613130406187469475}
   - component: {fileID: 7945396366231424575}
+  - component: {fileID: 5265500821026894152}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Enemy
+  m_TagString: heavyEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b371febb0e58a45898cba3a3fb0a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
 --- !u!61 &7797753271983480503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,7 +131,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -144,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &4613130406187469475
 Rigidbody2D:
@@ -189,3 +190,21 @@ MonoBehaviour:
   moveSpeed: 3
   followDistance: 0.1
   Isfollowing: 1
+--- !u!114 &5265500821026894152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2283673277670007360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9425795192edf34ca1efcac172b1ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeX: 1.5
+  rangeY: 1.5
+  player: {fileID: 0}
+  WeaponHitboxes:
+  - {fileID: 7797753271983480503}
+  AttackActiveDuration: 1
