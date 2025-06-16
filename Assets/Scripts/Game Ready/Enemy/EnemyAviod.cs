@@ -27,35 +27,37 @@ public class EnemyAvoid : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90); // Keep looking at the player
     }
-        public void AvoidPlayer()
+    public void AvoidPlayer()
+    {
+        if (player != null)
         {
-            if (player != null)
+            float distance = Vector2.Distance(transform.position, player.position);
+
+            if (distance < avoidDistance)
             {
-                float distance = Vector2.Distance(transform.position, player.position);
+                isAvoiding = true;
 
-                if (distance < avoidDistance)
-                {
-                    isAvoiding = true;
+                // Flip visually
+                Vector3 scale = transform.localScale;
+                scale.x = (player.position.x < transform.position.x) ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+                transform.localScale = scale;
 
-                    // Face the correct direction visually
-                    Vector3 scale = transform.localScale;
-                    scale.x = (player.position.x < transform.position.x) ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
-                    transform.localScale = scale;
+                // Move away from player without offsetting the origin
+                Vector2 direction = (transform.position - player.position).normalized;
+                Vector2 targetPosition = (Vector2)transform.position + direction * avoidDistance;
 
-                    // Move away from the player
-                    Vector2 direction = (transform.position - player.position).normalized;
-                    transform.position = Vector2.MoveTowards(
-                        transform.position,
-                        transform.position + (Vector3)direction,
-                        moveSpeed * Time.deltaTime
-                    );
-                }
-                else
-                {
-                    isAvoiding = false;
-                }
+                transform.position = Vector2.MoveTowards(
+                    transform.position,
+                    targetPosition,
+                    moveSpeed * Time.deltaTime
+                );
+            }
+            else
+            {
+                isAvoiding = false;
             }
         }
+    }
 
 }
 

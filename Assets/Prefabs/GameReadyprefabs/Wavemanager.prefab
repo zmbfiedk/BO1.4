@@ -101,10 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAmmount: 0
-  maxEnemyAmount: 15
+  maxEnemyAmount: 1
   waveNumber: 0
   enemiesKilledThisWave: 0
-  enemiesToKillThisWave: 15
+  enemiesToKillThisWave: 1
   enemiesSpawnedThisWave: 0
 --- !u!1001 &3676006485260625126
 PrefabInstance:

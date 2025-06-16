@@ -34,6 +34,11 @@ public class UiWave : MonoBehaviour
             StartCoroutine(WaveCoroutine());
             waveNumber = waveChecker.WAVE;
         }
+
+        if(waveChecker.WAVE == 0)
+        {
+            textMeshPro.text = "kill an enemy to progress to the next wave";
+        }
     }
 
     IEnumerator WaveCoroutine()

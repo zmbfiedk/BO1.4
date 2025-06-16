@@ -7,11 +7,11 @@ public class WaveChecker : MonoBehaviour
     public static event Action OnWaveOver;
 
     [SerializeField] private int enemyAmmount = 0;
-    [SerializeField] private int maxEnemyAmount = 15;
+    [SerializeField] private int maxEnemyAmount = 1;
 
-    [SerializeField] private int waveNumber = 1;
+    [SerializeField] private int waveNumber = 0;
     [SerializeField] private int enemiesKilledThisWave = 0;
-    [SerializeField] private int enemiesToKillThisWave = 15;
+    [SerializeField] private int enemiesToKillThisWave = 1;
     [SerializeField] private int enemiesSpawnedThisWave = 0;
 
     private bool waveActive = true;
