@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3458645323541362460, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 3680167813154611605, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.24117354
@@ -78,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8196986089442789883, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_TagString
-      value: Weapon
+      value: Trident
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5875876555829704091, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
@@ -90,6 +94,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1986343073044525949, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1434014055945166202}
+    - targetCorrespondingSourceObject: {fileID: 1986343073044525949, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5740220976202484092}
     - targetCorrespondingSourceObject: {fileID: 8196986089442789883, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3387483428446209110}
@@ -193,6 +200,17 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 7585909649694566686, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
   m_PrefabInstance: {fileID: 8808819933866099205}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4484923486189074081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4900638950070367396, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+  m_PrefabInstance: {fileID: 8808819933866099205}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039090548926869880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fb515da7194564381986a3cbd222a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6179119660718863641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3458645323541362460, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
@@ -248,3 +266,16 @@ MonoBehaviour:
   swordHitboxes:
   - {fileID: 1403337122390780699}
   swordActiveDuration: 1
+--- !u!114 &5740220976202484092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039090548926869880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d4945eec23b684ea313ebc465cba6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Move: {fileID: 4484923486189074081}
