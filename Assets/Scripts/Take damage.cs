@@ -27,16 +27,19 @@ public class Takedamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Weapon"))
+        if (other.CompareTag("Arrow"))
         {
-            TakeHit(1);
+            TakeHit(4);
+        }
+        if (other.CompareTag("Trident"))
+        {
+            TakeHit(9);
+        }
+        if (other.CompareTag("Sword"))
+        {
+            TakeHit(6);
         }
 
-        if (other.CompareTag("enemy") && gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Player touched enemy and died.");
-            Die();
-        }
     }
 
     public void TakeHit(int damage)

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3342862159727835357}
   - component: {fileID: 6106972899908729594}
   - component: {fileID: 22481929707152694}
+  - component: {fileID: 3723300471620749525}
   m_Layer: 0
-  m_Name: enemyplaceholder
+  m_Name: Ranged2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,9 +76,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 14
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -156,5 +157,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4aeaf6c7971ca4f9ebbbd1bbc03049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 2
+  attackSpeed: 4
   projectilePrefab: {fileID: 41729045300652849, guid: dcb820140500ef64a8b2aacd9c5726c4, type: 3}
+--- !u!114 &3723300471620749525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215694097892936337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b371febb0e58a45898cba3a3fb0a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 6

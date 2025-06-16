@@ -64,16 +64,6 @@ public class Move : MonoBehaviour
         playerkill();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("cpol");
-        // Check if this GameObject has the "enemy" tag and react accordingly
-        if (CompareTag("Enemy"))
-        {
-            playerhit();
-        }
-    }
-
     // Handle player movement input and stamina consumption
     void HandleMovement()
     {
@@ -148,16 +138,10 @@ public class Move : MonoBehaviour
         return false;
     }
 
-    // Reduce health points when player is hit
-    private void playerhit()
-    {
-        health_points -= 20;
-    }
-
     // Destroy the player GameObject if health reaches zero
     void playerkill()
     {
-        if (health_points == 0)
+        if (health_points <= 0)
         {
             Object.Destroy(gameObject);
         }

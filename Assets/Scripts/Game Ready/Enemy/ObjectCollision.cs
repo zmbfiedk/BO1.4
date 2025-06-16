@@ -14,7 +14,7 @@ public class ObjectCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string tag = collision.tag;
-        if (tag == "Environmental Object" || tag == "Player")
+        if (tag == "Environmental Object" || tag == "Player" || tag == "Weapon")
         {
             Destroy(gameObject);
         }
