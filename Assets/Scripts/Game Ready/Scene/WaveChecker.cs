@@ -13,8 +13,10 @@ public class WaveChecker : MonoBehaviour
     [SerializeField] private int enemiesKilledThisWave = 0;
     [SerializeField] private int enemiesToKillThisWave = 1;
     [SerializeField] private int enemiesSpawnedThisWave = 0;
+    [SerializeField] private Move Move;
 
     private bool waveActive = true;
+
 
     public int ETPW
     {
@@ -69,7 +71,7 @@ public class WaveChecker : MonoBehaviour
         waveActive = false;
         Debug.Log("Wave " + waveNumber + " ended!");
         OnWaveOver?.Invoke();
-
+        Move.hp += 50;
         Invoke(nameof(StartNextWave), 5f);
     }
 

@@ -377,6 +377,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2095709944300510238, guid: 6a746c43a112a5a4e8b36b9a7e8033ae, type: 3}
+      propertyPath: Move
+      value: 
+      objectReference: {fileID: 769284060}
     - target: {fileID: 5062954152340419886, guid: 6a746c43a112a5a4e8b36b9a7e8033ae, type: 3}
       propertyPath: m_Name
       value: Wavemanager
@@ -513,30 +517,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 322976216034657499, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
+    - target: {fileID: 417173784716212838, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
       propertyPath: waveChecker
       value: 
       objectReference: {fileID: 1354225283}
-    - target: {fileID: 1593191257088124480, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.42682526
-      objectReference: {fileID: 0}
-    - target: {fileID: 1593191257088124480, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1593191257088124480, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 28.709974
-      objectReference: {fileID: 0}
-    - target: {fileID: 1593191257088124480, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -471.13776
-      objectReference: {fileID: 0}
-    - target: {fileID: 1593191257088124480, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5.1000037
-      objectReference: {fileID: 0}
     - target: {fileID: 1727966228776383665, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
       propertyPath: attack
       value: 
@@ -632,10 +616,6 @@ PrefabInstance:
     - target: {fileID: 5785336712113347117, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7613393106079716130, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
-      propertyPath: m_margin.w
-      value: -53.447353
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

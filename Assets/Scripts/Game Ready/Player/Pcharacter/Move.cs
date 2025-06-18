@@ -146,4 +146,12 @@ public class Move : MonoBehaviour
             Object.Destroy(gameObject);
         }
     }
+
+    void setHP()
+    {
+        if(hp > 100)
+        {
+            hp = 100;
+        }
+    }
 }
