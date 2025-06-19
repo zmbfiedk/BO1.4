@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo/Arthur-2 1.unity
     guid: c04762c6ab7681548b686d16723e265b
+  - enabled: 1
+    path: Assets/Scenes/Demo/Arthur-2 2.unity
+    guid: 801a609faf4a5694db8b8778aaadfb5d
+  - enabled: 1
+    path: Assets/Scenes/Demo/GO.unity
+    guid: 190d78214e7d0844b92e71b02365a9f6
   m_configObjects: {}

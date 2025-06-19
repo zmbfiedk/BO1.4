@@ -43,7 +43,7 @@ public class UiWave : MonoBehaviour
 
     IEnumerator WaveCoroutine()
     {
-        textMeshPro.text = "WAVE = " + waveChecker.WAVE.ToString("F0");
+        textMeshPro.text = "Wave " + waveChecker.WAVE + " started! (Level " + waveChecker.GetLevel() + ")";
         yield return new WaitForSeconds(2f);
         textMeshPro.text = "";
     }

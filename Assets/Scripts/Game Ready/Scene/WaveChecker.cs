@@ -77,11 +77,11 @@ public class WaveChecker : MonoBehaviour
 
     private void StartNextWave()
     {
-        waveNumber++;
+        waveNumber+= 10;
         enemiesKilledThisWave = 0;
         enemiesSpawnedThisWave = 0;
         enemyAmmount = 0;
-        enemiesToKillThisWave += 5;
+        enemiesToKillThisWave += 10;
         waveActive = true;
         Debug.Log("Wave " + waveNumber + " started! (Level " + GetLevel() + ")");
     }
