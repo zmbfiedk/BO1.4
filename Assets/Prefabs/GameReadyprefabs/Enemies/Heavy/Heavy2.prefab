@@ -261,7 +261,8 @@ MonoBehaviour:
   player: {fileID: 0}
   WeaponHitboxes:
   - {fileID: 1360598510284143232}
-  AttackActiveDuration: 1.5
+  AttackActiveDuration: 1
+  attackCooldown: 3
 --- !u!58 &8899825593156317079
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -311,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 3
-  followDistance: 2
+  followDistance: 1
   Isfollowing: 0
   rotationSpeed: 10
 --- !u!114 &6680826913995547448
@@ -353,7 +354,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!212 &1524461312086459331
 SpriteRenderer:
   m_ObjectHideFlags: 0

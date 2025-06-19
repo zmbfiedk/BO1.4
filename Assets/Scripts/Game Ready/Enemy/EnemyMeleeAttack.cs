@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyMeleeAttack : MonoBehaviour
 {
     public float rangeX = 1f;
     public float rangeY = 1f;
     public Transform player;
-    // Start is called before the first frame update
+
     [SerializeField] private Collider2D[] WeaponHitboxes;
     [SerializeField] private float AttackActiveDuration = 1f;
+    [SerializeField] private float attackCooldown = 1f;
+
     private Animator anim;
+    private bool isOnCooldown = false;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -20,30 +22,36 @@ public class EnemyMeleeAttack : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        IsplayerInRange();
-        if (IsplayerInRange())
+        if (!isOnCooldown && IsplayerInRange())
         {
-            StartAttack();
+            StartCoroutine(AttackRoutine());
         }
     }
+
     bool IsplayerInRange()
     {
         Vector3 delta = player.position - transform.position;
 
-        if(Mathf.Abs(delta.x) <= rangeX && Mathf.Abs(delta.y) <= rangeY)
-        {
-            return true;
-        }
-        return false;
-        
+        return Mathf.Abs(delta.x) <= rangeX && Mathf.Abs(delta.y) <= rangeY;
     }
-    private void StartAttack()
-    {
-        ActivateEnemyHitboxes();
 
+    private IEnumerator AttackRoutine()
+    {
+        isOnCooldown = true;
+
+        ActivateEnemyHitboxes();
+        anim.SetBool("Attack", true);
+
+        yield return new WaitForSeconds(AttackActiveDuration);
+
+        anim.SetBool("Attack", false);
+        DisableAllHitboxes();
+
+        yield return new WaitForSeconds(attackCooldown);
+
+        isOnCooldown = false;
     }
 
     private void DisableAllHitboxes()
@@ -53,16 +61,7 @@ public class EnemyMeleeAttack : MonoBehaviour
 
     private void ActivateEnemyHitboxes()
     {
-        StartCoroutine(ActivateHitboxesRoutine(WeaponHitboxes, AttackActiveDuration));
-    }
-
-    private IEnumerator ActivateHitboxesRoutine(Collider2D[] colliders, float duration)
-    {
-        SetCollidersEnabled(colliders, true);
-        anim.SetBool("Attack", true);
-        yield return new WaitForSeconds(duration);
-        anim.SetBool("Attack", false);
-        SetCollidersEnabled(colliders, false);
+        SetCollidersEnabled(WeaponHitboxes, true);
     }
 
     private void SetCollidersEnabled(Collider2D[] colliders, bool enabled)

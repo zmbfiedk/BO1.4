@@ -199,12 +199,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9425795192edf34ca1efcac172b1ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeX: 2
-  rangeY: 2
+  rangeX: 1
+  rangeY: 1
   player: {fileID: 0}
   WeaponHitboxes:
   - {fileID: 1387420882999610387}
-  AttackActiveDuration: 1.5
+  AttackActiveDuration: 1
+  attackCooldown: 3
 --- !u!58 &766292519104559255
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -254,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 3
-  followDistance: 2
+  followDistance: 1
   Isfollowing: 0
   rotationSpeed: 10
 --- !u!114 &1538437774591108029

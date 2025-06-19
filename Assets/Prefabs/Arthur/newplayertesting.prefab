@@ -334,7 +334,7 @@ MonoBehaviour:
   stamina: 100
   staminaDrain: 20
   dodgeStaminaCost: 20
-  staminaRegenRate: 7.5
+  staminaRegenRate: 10
   health_points: 100
 --- !u!114 &5554308515304095672
 MonoBehaviour:
@@ -351,7 +351,7 @@ MonoBehaviour:
   attackStaminaCost: 20
   attackCooldown: 0.3
   chargeResetDelay: 0.5
-  SW: {fileID: 8897978429369693667}
+  switchWeapon: {fileID: 8897978429369693667}
   playerMovement: {fileID: 4900638950070367396}
 --- !u!114 &8897978429369693667
 MonoBehaviour:
@@ -367,10 +367,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackScript: {fileID: 5554308515304095672}
   weaponVisibilityManager: {fileID: 442834845712151025}
-  tridentPrefab: {fileID: 6432201769026550305}
-  bowPrefab: {fileID: 1913415381741736883}
-  swordPrefab: {fileID: 374649170730669606}
-  weaponHolder: {fileID: 5800782042143103588}
 --- !u!114 &442834845712151025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,15 +612,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fcadd8802966349b349ea5dd61a7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxC2D: {fileID: 0}
   Attack: {fileID: 5554308515304095672}
 --- !u!4 &5740996890556958958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6042486129318156846, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
-  m_PrefabInstance: {fileID: 2051151448502096576}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5800782042143103588 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3677290425081050972, guid: 6d989c070c079f942a429dbf65499b7b, type: 3}
   m_PrefabInstance: {fileID: 2051151448502096576}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6432201769026550305 stripped
@@ -689,4 +681,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0bdc38585bdac6458c2174a73c50103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: {fileID: 5554308515304095672}
+  hitboxColliders: []
+  activeDuration: 1

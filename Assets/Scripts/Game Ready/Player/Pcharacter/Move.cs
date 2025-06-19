@@ -62,6 +62,7 @@ public class Move : MonoBehaviour
         RegenerateStamina();
         Dodge();
         playerkill();
+        setHP();
     }
 
     // Handle player movement input and stamina consumption

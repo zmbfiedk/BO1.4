@@ -677,7 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 5
-  followDistance: 1.5
+  followDistance: 2
   Isfollowing: 0
   rotationSpeed: 5
 --- !u!114 &6833152237262548295
@@ -698,6 +698,7 @@ MonoBehaviour:
   WeaponHitboxes:
   - {fileID: 4687161350882190609}
   AttackActiveDuration: 0.15
+  attackCooldown: 1
 --- !u!114 &3130136268762742498
 MonoBehaviour:
   m_ObjectHideFlags: 0
