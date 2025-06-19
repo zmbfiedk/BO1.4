@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawnerF : MonoBehaviour
 {
     public static event Action OnEnemySpawn;
 
@@ -24,24 +24,24 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float maximumspawntime;
 
     private float timeTillSpawn;
-    private WaveChecker waveChecker;
+    private WaveCheckerF waveChecker;
     [SerializeField] private bool canSpawm = true;
-    [SerializeField] private BossSpawner BossSpawner;
+    [SerializeField] private BossSpawnerF BossSpawner;
 
     void Awake()
     {
         maximumspawntime = UnityEngine.Random.Range(0,20);
         minimumspawntime = UnityEngine.Random.Range(20,40);
-        waveChecker = FindObjectOfType<WaveChecker>();
+        waveChecker = FindObjectOfType<WaveCheckerF>();
         SetTimeUntilSpawn();
     }
 
     private void Start()
     {
-        WaveChecker.OnMaxEnemySpawn += StopSpawn;
-        WaveChecker.OnWaveOver += StopSpawn;
-        WaveChecker.OnWaveOver += () => Invoke(nameof(AllowSpawning), 9f);
-        BossSpawner.bossSpawned += StopSpawn;
+        WaveCheckerF.OnMaxEnemySpawn += StopSpawn;
+        WaveCheckerF.OnWaveOver += StopSpawn;
+        WaveCheckerF.OnWaveOver += () => Invoke(nameof(AllowSpawning), 9f);
+        BossSpawnerF.bossSpawned += StopSpawn;
     }
 
     void Update()
@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        int level = waveChecker.GetLevel(); // NEW: get level from WaveChecker
+        float level = waveChecker.GetLevel(); // NEW: get level from WaveChecker
         int enemyType = UnityEngine.Random.Range(0, 3);
         GameObject enemyToSpawn = null;
 

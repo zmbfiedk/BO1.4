@@ -280,6 +280,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1434014055945166202, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+      propertyPath: swordActiveDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434014055945166202, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+      propertyPath: tridentActiveDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7039090548926869880, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -602,6 +610,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1873283810353811437, guid: 6a746c43a112a5a4e8b36b9a7e8033ae, type: 3}
+      propertyPath: Move
+      value: 
+      objectReference: {fileID: 769284060}
     - target: {fileID: 5062954152340419886, guid: 6a746c43a112a5a4e8b36b9a7e8033ae, type: 3}
       propertyPath: m_Name
       value: WavemanagerNormal

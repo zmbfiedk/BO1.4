@@ -32,7 +32,7 @@ public class WaveCheckerF : MonoBehaviour
 
     void Start()
     {
-        EnemySpawner.OnEnemySpawn += CountEnemy;
+        EnemySpawnerF.OnEnemySpawn += CountEnemy;
         Takedamage.onDeath += OnEnemyDeath;
     }
 
@@ -91,5 +91,5 @@ public class WaveCheckerF : MonoBehaviour
     public int GetEnemiesToKillThisWave() => enemiesToKillThisWave;
     public int GetEnemiesSpawnedThisWave() => enemiesSpawnedThisWave;
 
-    public int GetLevel() => Mathf.Clamp(1 + ((waveNumber - 1) / 10), 1, 3); // New: Level based on wave
+    public float GetLevel() => Mathf.Clamp(1 + ((waveNumber - 1) / 10), 1, 3); // New: Level based on wave
 }

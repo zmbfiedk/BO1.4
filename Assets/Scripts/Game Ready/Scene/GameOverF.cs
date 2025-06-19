@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 
-public class GameOver : MonoBehaviour
+public class GameOverN : MonoBehaviour
 {
     private Transform Player;
     void Start()

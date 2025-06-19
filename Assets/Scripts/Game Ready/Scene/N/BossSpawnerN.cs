@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BossSpawner : MonoBehaviour
 {
-    [SerializeField] private WaveChecker waveChecker;
+    [SerializeField] private WaveCheckerN waveChecker;
     [SerializeField] private GameObject bossPrefab;
     [SerializeField] private Transform spawnPoint; // Optional: where to spawn the boss
     public static event Action bossSpawned;
@@ -19,7 +19,7 @@ public class BossSpawner : MonoBehaviour
 
     private void SpawnBoss()
     {
-        if (waveChecker.WAVE == 40 && !BossSpawned)
+        if (waveChecker.WAVE >= 40 && !BossSpawned)
         {
             Instantiate(bossPrefab, spawnPoint != null ? spawnPoint.position : transform.position, Quaternion.identity);
             BossSpawned = true;

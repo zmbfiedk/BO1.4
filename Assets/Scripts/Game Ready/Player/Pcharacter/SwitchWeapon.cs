@@ -13,19 +13,19 @@ public class SwitchWeapon : MonoBehaviour
         if (weaponVisibilityManager == null)
             Debug.LogWarning("WeaponVisibilityManager reference is missing!");
 
-        SwitchToWeapon("trident", 0.2f, 45f);
+        SwitchToWeapon("trident", 0.1f, 45f);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SwitchToWeapon("trident", 0.2f, 45f);
+            SwitchToWeapon("trident", 0.1f, 45f);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwitchToWeapon("bow", .2f, 10f);
+            SwitchToWeapon("bow", .1f, 10f);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SwitchToWeapon("sword", 0.2f, 20f);
+            SwitchToWeapon("sword", 0.1f, 20f);
     }
 
     private void SwitchToWeapon(string weaponName, float cooldown, float staminaDrain)

@@ -4,7 +4,7 @@ using TMPro;
 
 public class UiWave : MonoBehaviour
 {
-    [SerializeField] private WaveChecker waveChecker;          // Assign in Inspector!
+    [SerializeField] private WaveCheckerN waveChecker;          // Assign in Inspector!
     [SerializeField] private TextMeshProUGUI textMeshPro;      // Assign in Inspector!
 
     private int waveNumber;

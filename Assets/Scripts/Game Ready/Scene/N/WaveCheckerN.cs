@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class WaveChecker : MonoBehaviour
+public class WaveCheckerN : MonoBehaviour
 {
     public static event Action OnMaxEnemySpawn;
     public static event Action OnWaveOver;
@@ -32,7 +32,7 @@ public class WaveChecker : MonoBehaviour
 
     void Start()
     {
-        EnemySpawner.OnEnemySpawn += CountEnemy;
+        EnemySpawnerN.OnEnemySpawn += CountEnemy;
         Takedamage.onDeath += OnEnemyDeath;
     }
 
@@ -91,5 +91,5 @@ public class WaveChecker : MonoBehaviour
     public int GetEnemiesToKillThisWave() => enemiesToKillThisWave;
     public int GetEnemiesSpawnedThisWave() => enemiesSpawnedThisWave;
 
-    public int GetLevel() => Mathf.Clamp(1 + ((waveNumber - 1) / 10), 1, 3); // New: Level based on wave
+    public float GetLevel() => Mathf.Clamp(1 + ((waveNumber - 1) / 10), 1, 3); // New: Level based on wave
 }

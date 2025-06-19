@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8426880401461869890}
-  - component: {fileID: 3176244199070936548}
+  - component: {fileID: 1147258102785693432}
   m_Layer: 0
   m_Name: BossSpawner
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7993146368342755420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3176244199070936548
+--- !u!114 &1147258102785693432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4416218288757456955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db155475ad0bc3244b241474e9f714c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b55684d85b10db4286710e21f46eaee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   waveChecker: {fileID: 2095709944300510238}
-  bossPrefab: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
-  spawnPoint: {fileID: 8426880401461869890}
+  bossPrefab: {fileID: 7525090141695806740}
+  spawnPoint: {fileID: 7993146368342755420}
 --- !u!1 &5062954152340419886
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 2095709944300510238}
   m_Layer: 0
   m_Name: WavemanagerFast
-  m_TagString: Untagged
+  m_TagString: WaveManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +86,7 @@ Transform:
   - {fileID: 1792911993694141943}
   - {fileID: 5577001267492323106}
   - {fileID: 8426880401461869890}
+  - {fileID: 653530772168292241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2095709944300510238
@@ -107,6 +108,37 @@ MonoBehaviour:
   enemiesToKillThisWave: 1
   enemiesSpawnedThisWave: 0
   Move: {fileID: 0}
+--- !u!1 &7525090141695806740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653530772168292241}
+  m_Layer: 0
+  m_Name: Bosd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653530772168292241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7525090141695806740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7993146368342755420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3676006485260625126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,10 +147,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993146368342755420}
     m_Modifications:
-    - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
-      propertyPath: BossSpawner
-      value: 
-      objectReference: {fileID: 3176244199070936548}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: maximumspawntime
       value: 10
@@ -207,16 +235,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4642876123654169811}
   m_SourcePrefab: {fileID: 100100000, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
 --- !u!4 &2211709383760265154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292797199683967780, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
   m_PrefabInstance: {fileID: 3676006485260625126}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7401369907444326189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+  m_PrefabInstance: {fileID: 3676006485260625126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4642876123654169811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401369907444326189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e4c45b8797c44a431832b735ca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lmeleeenemyprefab1: {fileID: 4147089164440363072, guid: a165526a7b63f414a8cc9b0528632743, type: 3}
+  Hmeleeenemyprefab1: {fileID: 315203296200687106, guid: f529040017cd3c04cabea43cc758ce73, type: 3}
+  Rangeenemyprefab1: {fileID: 5630671337484531682, guid: a0baf00336e22d748a69385b1e000d4e, type: 3}
+  Lmeleeenemyprefab2: {fileID: 6642912527357607440, guid: a4644839cf7cbd04191450da8023490f, type: 3}
+  Hmeleeenemyprefab2: {fileID: 4382399639816087814, guid: a51a40b8ed8a39f4c9bfd8677ae57bf1, type: 3}
+  Rangeenemyprefab2: {fileID: 3513195142478119904, guid: 18cf265042fec9544b3156b608ab0440, type: 3}
+  Lmeleeenemyprefab3: {fileID: 721145548488545034, guid: 3bf2bc6ee5a3344429c248ef51fd7289, type: 3}
+  Hmeleeenemyprefab3: {fileID: 8386213400859411757, guid: 046e29d97c053f040b1293ee8f620670, type: 3}
+  Rangeenemyprefab3: {fileID: 5734222120996699180, guid: 651fc6e11856ac64087a3b308e3a364d, type: 3}
+  minimumspawntime: 0
+  maximumspawntime: 0
+  canSpawm: 1
+  BossSpawner: {fileID: 1147258102785693432}
 --- !u!1001 &3842677067271202515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,10 +287,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993146368342755420}
     m_Modifications:
-    - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
-      propertyPath: BossSpawner
-      value: 
-      objectReference: {fileID: 3176244199070936548}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: maximumspawntime
       value: 10
@@ -317,16 +375,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4800410224554193647}
   m_SourcePrefab: {fileID: 100100000, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
 --- !u!4 &1792911993694141943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292797199683967780, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
   m_PrefabInstance: {fileID: 3842677067271202515}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6982497750721797400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+  m_PrefabInstance: {fileID: 3842677067271202515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4800410224554193647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982497750721797400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e4c45b8797c44a431832b735ca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lmeleeenemyprefab1: {fileID: 4147089164440363072, guid: a165526a7b63f414a8cc9b0528632743, type: 3}
+  Hmeleeenemyprefab1: {fileID: 315203296200687106, guid: f529040017cd3c04cabea43cc758ce73, type: 3}
+  Rangeenemyprefab1: {fileID: 5630671337484531682, guid: a0baf00336e22d748a69385b1e000d4e, type: 3}
+  Lmeleeenemyprefab2: {fileID: 6642912527357607440, guid: a4644839cf7cbd04191450da8023490f, type: 3}
+  Hmeleeenemyprefab2: {fileID: 4382399639816087814, guid: a51a40b8ed8a39f4c9bfd8677ae57bf1, type: 3}
+  Rangeenemyprefab2: {fileID: 3513195142478119904, guid: 18cf265042fec9544b3156b608ab0440, type: 3}
+  Lmeleeenemyprefab3: {fileID: 721145548488545034, guid: 3bf2bc6ee5a3344429c248ef51fd7289, type: 3}
+  Hmeleeenemyprefab3: {fileID: 8386213400859411757, guid: 046e29d97c053f040b1293ee8f620670, type: 3}
+  Rangeenemyprefab3: {fileID: 5734222120996699180, guid: 651fc6e11856ac64087a3b308e3a364d, type: 3}
+  minimumspawntime: 0
+  maximumspawntime: 0
+  canSpawm: 1
+  BossSpawner: {fileID: 1147258102785693432}
 --- !u!1001 &4070749576528854164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,10 +427,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993146368342755420}
     m_Modifications:
-    - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
-      propertyPath: BossSpawner
-      value: 
-      objectReference: {fileID: 3176244199070936548}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: maximumspawntime
       value: 10
@@ -427,16 +515,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2494327208782603229}
   m_SourcePrefab: {fileID: 100100000, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
 --- !u!4 &1570745506878105520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292797199683967780, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
   m_PrefabInstance: {fileID: 4070749576528854164}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7911430328023189343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+  m_PrefabInstance: {fileID: 4070749576528854164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2494327208782603229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7911430328023189343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e4c45b8797c44a431832b735ca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lmeleeenemyprefab1: {fileID: 4147089164440363072, guid: a165526a7b63f414a8cc9b0528632743, type: 3}
+  Hmeleeenemyprefab1: {fileID: 315203296200687106, guid: f529040017cd3c04cabea43cc758ce73, type: 3}
+  Rangeenemyprefab1: {fileID: 5630671337484531682, guid: a0baf00336e22d748a69385b1e000d4e, type: 3}
+  Lmeleeenemyprefab2: {fileID: 6642912527357607440, guid: a4644839cf7cbd04191450da8023490f, type: 3}
+  Hmeleeenemyprefab2: {fileID: 4382399639816087814, guid: a51a40b8ed8a39f4c9bfd8677ae57bf1, type: 3}
+  Rangeenemyprefab2: {fileID: 3513195142478119904, guid: 18cf265042fec9544b3156b608ab0440, type: 3}
+  Lmeleeenemyprefab3: {fileID: 721145548488545034, guid: 3bf2bc6ee5a3344429c248ef51fd7289, type: 3}
+  Hmeleeenemyprefab3: {fileID: 8386213400859411757, guid: 046e29d97c053f040b1293ee8f620670, type: 3}
+  Rangeenemyprefab3: {fileID: 5734222120996699180, guid: 651fc6e11856ac64087a3b308e3a364d, type: 3}
+  minimumspawntime: 0
+  maximumspawntime: 0
+  canSpawm: 1
+  BossSpawner: {fileID: 1147258102785693432}
 --- !u!1001 &6415822169272547984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -445,10 +567,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993146368342755420}
     m_Modifications:
-    - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
-      propertyPath: BossSpawner
-      value: 
-      objectReference: {fileID: 3176244199070936548}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: maximumspawntime
       value: 10
@@ -537,11 +655,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7497413371317170021}
   m_SourcePrefab: {fileID: 100100000, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+--- !u!1 &917796020934476123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+  m_PrefabInstance: {fileID: 6415822169272547984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7497413371317170021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917796020934476123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e4c45b8797c44a431832b735ca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lmeleeenemyprefab1: {fileID: 4147089164440363072, guid: a165526a7b63f414a8cc9b0528632743, type: 3}
+  Hmeleeenemyprefab1: {fileID: 315203296200687106, guid: f529040017cd3c04cabea43cc758ce73, type: 3}
+  Rangeenemyprefab1: {fileID: 5630671337484531682, guid: a0baf00336e22d748a69385b1e000d4e, type: 3}
+  Lmeleeenemyprefab2: {fileID: 6642912527357607440, guid: a4644839cf7cbd04191450da8023490f, type: 3}
+  Hmeleeenemyprefab2: {fileID: 4382399639816087814, guid: a51a40b8ed8a39f4c9bfd8677ae57bf1, type: 3}
+  Rangeenemyprefab2: {fileID: 3513195142478119904, guid: 18cf265042fec9544b3156b608ab0440, type: 3}
+  Lmeleeenemyprefab3: {fileID: 721145548488545034, guid: 3bf2bc6ee5a3344429c248ef51fd7289, type: 3}
+  Hmeleeenemyprefab3: {fileID: 8386213400859411757, guid: 046e29d97c053f040b1293ee8f620670, type: 3}
+  Rangeenemyprefab3: {fileID: 5734222120996699180, guid: 651fc6e11856ac64087a3b308e3a364d, type: 3}
+  minimumspawntime: 0
+  maximumspawntime: 0
+  canSpawm: 1
+  BossSpawner: {fileID: 1147258102785693432}
 --- !u!4 &8411538685723451828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292797199683967780, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
@@ -555,10 +707,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993146368342755420}
     m_Modifications:
-    - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
-      propertyPath: BossSpawner
-      value: 
-      objectReference: {fileID: 3176244199070936548}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: maximumspawntime
       value: 10
@@ -647,11 +795,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4606198585819851287}
   m_SourcePrefab: {fileID: 100100000, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+--- !u!1 &3846670407278649293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+  m_PrefabInstance: {fileID: 6978081888881091590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4606198585819851287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846670407278649293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e4c45b8797c44a431832b735ca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lmeleeenemyprefab1: {fileID: 4147089164440363072, guid: a165526a7b63f414a8cc9b0528632743, type: 3}
+  Hmeleeenemyprefab1: {fileID: 315203296200687106, guid: f529040017cd3c04cabea43cc758ce73, type: 3}
+  Rangeenemyprefab1: {fileID: 5630671337484531682, guid: a0baf00336e22d748a69385b1e000d4e, type: 3}
+  Lmeleeenemyprefab2: {fileID: 6642912527357607440, guid: a4644839cf7cbd04191450da8023490f, type: 3}
+  Hmeleeenemyprefab2: {fileID: 4382399639816087814, guid: a51a40b8ed8a39f4c9bfd8677ae57bf1, type: 3}
+  Rangeenemyprefab2: {fileID: 3513195142478119904, guid: 18cf265042fec9544b3156b608ab0440, type: 3}
+  Lmeleeenemyprefab3: {fileID: 721145548488545034, guid: 3bf2bc6ee5a3344429c248ef51fd7289, type: 3}
+  Hmeleeenemyprefab3: {fileID: 8386213400859411757, guid: 046e29d97c053f040b1293ee8f620670, type: 3}
+  Rangeenemyprefab3: {fileID: 5734222120996699180, guid: 651fc6e11856ac64087a3b308e3a364d, type: 3}
+  minimumspawntime: 0
+  maximumspawntime: 0
+  canSpawm: 1
+  BossSpawner: {fileID: 1147258102785693432}
 --- !u!4 &5577001267492323106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292797199683967780, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
@@ -665,10 +847,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993146368342755420}
     m_Modifications:
-    - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
-      propertyPath: BossSpawner
-      value: 
-      objectReference: {fileID: 3176244199070936548}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: maximumspawntime
       value: 10
@@ -757,11 +935,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9066883177070937546}
   m_SourcePrefab: {fileID: 100100000, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+--- !u!1 &3530986345582934516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+  m_PrefabInstance: {fileID: 7256894961805181503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9066883177070937546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3530986345582934516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e4c45b8797c44a431832b735ca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lmeleeenemyprefab1: {fileID: 4147089164440363072, guid: a165526a7b63f414a8cc9b0528632743, type: 3}
+  Hmeleeenemyprefab1: {fileID: 315203296200687106, guid: f529040017cd3c04cabea43cc758ce73, type: 3}
+  Rangeenemyprefab1: {fileID: 5630671337484531682, guid: a0baf00336e22d748a69385b1e000d4e, type: 3}
+  Lmeleeenemyprefab2: {fileID: 6642912527357607440, guid: a4644839cf7cbd04191450da8023490f, type: 3}
+  Hmeleeenemyprefab2: {fileID: 4382399639816087814, guid: a51a40b8ed8a39f4c9bfd8677ae57bf1, type: 3}
+  Rangeenemyprefab2: {fileID: 3513195142478119904, guid: 18cf265042fec9544b3156b608ab0440, type: 3}
+  Lmeleeenemyprefab3: {fileID: 721145548488545034, guid: 3bf2bc6ee5a3344429c248ef51fd7289, type: 3}
+  Hmeleeenemyprefab3: {fileID: 8386213400859411757, guid: 046e29d97c053f040b1293ee8f620670, type: 3}
+  Rangeenemyprefab3: {fileID: 5734222120996699180, guid: 651fc6e11856ac64087a3b308e3a364d, type: 3}
+  minimumspawntime: 0
+  maximumspawntime: 0
+  canSpawm: 1
+  BossSpawner: {fileID: 1147258102785693432}
 --- !u!4 &5262445304995125531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292797199683967780, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
@@ -775,10 +987,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993146368342755420}
     m_Modifications:
-    - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
-      propertyPath: BossSpawner
-      value: 
-      objectReference: {fileID: 3176244199070936548}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: maximumspawntime
       value: 10
@@ -867,11 +1075,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4486428214065258109}
   m_SourcePrefab: {fileID: 100100000, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+--- !u!1 &3730326868536865929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+  m_PrefabInstance: {fileID: 7381952150621769538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4486428214065258109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730326868536865929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e4c45b8797c44a431832b735ca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lmeleeenemyprefab1: {fileID: 4147089164440363072, guid: a165526a7b63f414a8cc9b0528632743, type: 3}
+  Hmeleeenemyprefab1: {fileID: 315203296200687106, guid: f529040017cd3c04cabea43cc758ce73, type: 3}
+  Rangeenemyprefab1: {fileID: 5630671337484531682, guid: a0baf00336e22d748a69385b1e000d4e, type: 3}
+  Lmeleeenemyprefab2: {fileID: 6642912527357607440, guid: a4644839cf7cbd04191450da8023490f, type: 3}
+  Hmeleeenemyprefab2: {fileID: 4382399639816087814, guid: a51a40b8ed8a39f4c9bfd8677ae57bf1, type: 3}
+  Rangeenemyprefab2: {fileID: 3513195142478119904, guid: 18cf265042fec9544b3156b608ab0440, type: 3}
+  Lmeleeenemyprefab3: {fileID: 721145548488545034, guid: 3bf2bc6ee5a3344429c248ef51fd7289, type: 3}
+  Hmeleeenemyprefab3: {fileID: 8386213400859411757, guid: 046e29d97c053f040b1293ee8f620670, type: 3}
+  Rangeenemyprefab3: {fileID: 5734222120996699180, guid: 651fc6e11856ac64087a3b308e3a364d, type: 3}
+  minimumspawntime: 0
+  maximumspawntime: 0
+  canSpawm: 1
+  BossSpawner: {fileID: 1147258102785693432}
 --- !u!4 &5459396039292064870 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292797199683967780, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
@@ -885,10 +1127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993146368342755420}
     m_Modifications:
-    - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
-      propertyPath: BossSpawner
-      value: 
-      objectReference: {fileID: 3176244199070936548}
     - target: {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
       propertyPath: maximumspawntime
       value: 10
@@ -977,11 +1215,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1166418610832154086, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8003571417133911013}
   m_SourcePrefab: {fileID: 100100000, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+--- !u!1 &2364620601940703080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6175911576231607243, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
+  m_PrefabInstance: {fileID: 8459430480876342435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8003571417133911013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364620601940703080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e65e4c45b8797c44a431832b735ca9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lmeleeenemyprefab1: {fileID: 4147089164440363072, guid: a165526a7b63f414a8cc9b0528632743, type: 3}
+  Hmeleeenemyprefab1: {fileID: 315203296200687106, guid: f529040017cd3c04cabea43cc758ce73, type: 3}
+  Rangeenemyprefab1: {fileID: 5630671337484531682, guid: a0baf00336e22d748a69385b1e000d4e, type: 3}
+  Lmeleeenemyprefab2: {fileID: 6642912527357607440, guid: a4644839cf7cbd04191450da8023490f, type: 3}
+  Hmeleeenemyprefab2: {fileID: 4382399639816087814, guid: a51a40b8ed8a39f4c9bfd8677ae57bf1, type: 3}
+  Rangeenemyprefab2: {fileID: 3513195142478119904, guid: 18cf265042fec9544b3156b608ab0440, type: 3}
+  Lmeleeenemyprefab3: {fileID: 721145548488545034, guid: 3bf2bc6ee5a3344429c248ef51fd7289, type: 3}
+  Hmeleeenemyprefab3: {fileID: 8386213400859411757, guid: 046e29d97c053f040b1293ee8f620670, type: 3}
+  Rangeenemyprefab3: {fileID: 5734222120996699180, guid: 651fc6e11856ac64087a3b308e3a364d, type: 3}
+  minimumspawntime: 0
+  maximumspawntime: 0
+  canSpawm: 1
+  BossSpawner: {fileID: 1147258102785693432}
 --- !u!4 &6401781832675710855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3292797199683967780, guid: a85d7b43ebf07e248a2790eda69951ed, type: 3}
