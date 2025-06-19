@@ -84,6 +84,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 7585909649694566686, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: m_Size.y
+      value: 0.46711192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585909649694566686, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.029001012
+      objectReference: {fileID: 0}
     - target: {fileID: 8196986089442789883, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_TagString
       value: Trident

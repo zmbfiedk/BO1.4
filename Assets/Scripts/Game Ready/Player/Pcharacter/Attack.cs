@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 using System.Collections;
 
@@ -60,7 +60,6 @@ public class Attack : MonoBehaviour
         RotatePlayerToMouse();
         HandleAttack();
         SetIdleAnimation();
-        TryAttackEvent();
     }
 
     public void SetCurrentWeapon(string weaponName)
@@ -109,6 +108,23 @@ public class Attack : MonoBehaviour
         IsAttacking = true;
         spriteRenderer.color = Color.red;
 
+        // ✅ Invoke the event here
+        switch (currentWeapon)
+        {
+            case "trident":
+                OnTridentAttack?.Invoke();
+                Debug.Log("Trident Attack");
+                break;
+            case "sword":
+                OnSwordAttack?.Invoke();
+                Debug.Log("Sword Attack");
+                break;
+            case "bow":
+                OnBowRelease?.Invoke();
+                Debug.Log("Bow Release");
+                break;
+        }
+
         StartCoroutine(AttackCooldownRoutine());
         StartCoroutine(ResetChargeAfter(chargeResetDelay));
         StartCoroutine(ResetReleaseAfter(chargeResetDelay));
@@ -152,27 +168,5 @@ public class Attack : MonoBehaviour
     private void SetAnimState(string action, bool value)
     {
         animator.SetBool($"{currentWeapon}_{action}", value);
-    }
-
-    private void TryAttackEvent()
-    {
-        if (!IsAttacking || playerMovement.Stamina >= attackStaminaCost)
-            return;
-
-        switch (currentWeapon)
-        {
-            case "trident":
-                OnTridentAttack?.Invoke();
-                Debug.Log("Trident Attack");
-                break;
-            case "sword":
-                OnSwordAttack?.Invoke();
-                Debug.Log("Sword Attack");
-                break;
-            case "bow":
-                OnBowRelease?.Invoke();
-                Debug.Log("Bow Release");
-                break;
-        }
     }
 }

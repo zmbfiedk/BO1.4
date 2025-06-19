@@ -36,20 +36,20 @@ public class WeaponHitboxController : MonoBehaviour
 
     private void ActivateTridentHitboxes()
     {
+        Debug.Log("Activating Trident Hitboxes");
         StartCoroutine(ActivateHitboxesRoutine(tridentHitboxes, tridentActiveDuration));
     }
 
     private void ActivateSwordHitboxes()
     {
+        Debug.Log("Activating Sword Hitboxes");
         StartCoroutine(ActivateHitboxesRoutine(swordHitboxes, swordActiveDuration));
     }
 
     private IEnumerator ActivateHitboxesRoutine(Collider2D[] colliders, float duration)
     {
         SetCollidersEnabled(colliders, true);
-
         yield return new WaitForSeconds(duration);
-
         SetCollidersEnabled(colliders, false);
     }
 
