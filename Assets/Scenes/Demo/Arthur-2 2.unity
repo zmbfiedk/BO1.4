@@ -568,7 +568,7 @@ PrefabInstance:
     - target: {fileID: 417173784716212838, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
       propertyPath: waveChecker
       value: 
-      objectReference: {fileID: 1354225283}
+      objectReference: {fileID: 0}
     - target: {fileID: 1727966228776383665, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
       propertyPath: attack
       value: 
@@ -665,11 +665,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 417173784716212838, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5413385177508058236, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4344398852358750510}
   m_SourcePrefab: {fileID: 100100000, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
+--- !u!1 &4344398852358750508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5413385177508058236, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
+  m_PrefabInstance: {fileID: 4344398852358750507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4344398852358750509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5938623336070272720, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
+  m_PrefabInstance: {fileID: 4344398852358750507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344398852358750508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4344398852358750510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344398852358750508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf17830854819946948459164e11368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveChecker: {fileID: 1354225283}
+  textMeshPro: {fileID: 4344398852358750509}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

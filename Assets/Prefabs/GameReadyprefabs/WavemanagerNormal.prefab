@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db155475ad0bc3244b241474e9f714c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveChecker: {fileID: 2095709944300510238}
+  waveChecker: {fileID: 0}
   bossPrefab: {fileID: 2283673277670007360, guid: c8e3b6672fdf23c4c9139d91df808759, type: 3}
   spawnPoint: {fileID: 8426880401461869890}
 --- !u!1 &5062954152340419886
@@ -56,9 +56,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7993146368342755420}
-  - component: {fileID: 2095709944300510238}
+  - component: {fileID: 1873283810353811437}
   m_Layer: 0
-  m_Name: Wavemanager
+  m_Name: WavemanagerNormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ Transform:
   - {fileID: 8426880401461869890}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2095709944300510238
+--- !u!114 &1873283810353811437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5062954152340419886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbebc5f6731579544b8e9f5b0f6a5993, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b39cded0e13c6349b500e600fba96cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAmmount: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   enemiesKilledThisWave: 0
   enemiesToKillThisWave: 1
   enemiesSpawnedThisWave: 0
+  Move: {fileID: 0}
 --- !u!1001 &3676006485260625126
 PrefabInstance:
   m_ObjectHideFlags: 0

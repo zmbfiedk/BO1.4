@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class WaveChecker : MonoBehaviour
+public class WaveCheckerF : MonoBehaviour
 {
     public static event Action OnMaxEnemySpawn;
     public static event Action OnWaveOver;
