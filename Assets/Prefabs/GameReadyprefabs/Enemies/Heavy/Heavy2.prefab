@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeX: 1
-  rangeY: 1
+  rangeY: 1.1
   player: {fileID: 0}
   WeaponHitboxes:
   - {fileID: 1360598510284143232}
