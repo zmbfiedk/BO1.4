@@ -16,6 +16,7 @@ TagManager:
   - Arrow
   - Weapon
   - WaveManager
+  - PlayerTrack
   layers:
   - Default
   - TransparentFX
