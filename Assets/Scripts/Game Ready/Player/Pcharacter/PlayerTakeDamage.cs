@@ -33,5 +33,9 @@ public class PlayerTakeDamage : MonoBehaviour
         {
             Move.hp -= 3;
         }
+        if (other.CompareTag("BossAttack"))
+        {
+            Move.hp -= 25;
+        }
     }
 }

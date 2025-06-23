@@ -6,6 +6,7 @@ public class Enemyfollow : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float followDistance = 0.1f;
     [SerializeField] private bool Isfollowing;
+    public float rotationSpeed = 5f;
 
     void Start()
     {
@@ -21,6 +22,11 @@ public class Enemyfollow : MonoBehaviour
     void Update()
     {
         Followplayer();
+        Vector3 direction = player.position - transform.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
     }
 
     public void Followplayer()
@@ -29,8 +35,18 @@ public class Enemyfollow : MonoBehaviour
         {
             Isfollowing = true;
 
-            float distance = Vector2.Distance(transform.position, player.position);
+            Vector3 scale = transform.localScale;
+            if (player.position.x < transform.position.x)
+            {
+                scale.x = -Mathf.Abs(scale.x); 
+            }
+            else
+            {
+                scale.x = Mathf.Abs(scale.x); 
+            }
+            transform.localScale = scale;
 
+            float distance = Vector2.Distance(transform.position, player.position);
             if (distance > followDistance)
             {
                 Vector2 direction = (player.position - transform.position).normalized;

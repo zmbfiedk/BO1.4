@@ -1,14 +1,29 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
-    void Update()
+    [SerializeField] Button ButtonFast;
+    [SerializeField] Button ButtonNormal;
+    [SerializeField] Button ButtonTutorials;
+    void Start()
     {
-        if (Input.anyKeyDown)
-        {
-            // Load the next scene in the build index
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        ButtonNormal.onClick.AddListener(OnNormalClick);
+        ButtonFast.onClick.AddListener(OnFastClick);
+        ButtonTutorials.onClick.AddListener(OnTutorialClick);
+    }
+
+    void OnNormalClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+    void OnFastClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+    }
+    void OnTutorialClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

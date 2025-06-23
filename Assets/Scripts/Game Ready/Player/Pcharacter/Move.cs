@@ -62,6 +62,7 @@ public class Move : MonoBehaviour
         RegenerateStamina();
         Dodge();
         playerkill();
+        setHP();
     }
 
     // Handle player movement input and stamina consumption
@@ -144,6 +145,14 @@ public class Move : MonoBehaviour
         if (health_points <= 0)
         {
             Object.Destroy(gameObject);
+        }
+    }
+
+    void setHP()
+    {
+        if(hp > 100)
+        {
+            hp = 100;
         }
     }
 }

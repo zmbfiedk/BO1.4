@@ -4,7 +4,7 @@ using TMPro;
 
 public class UiWave : MonoBehaviour
 {
-    [SerializeField] private WaveChecker waveChecker;          // Assign in Inspector!
+    [SerializeField] private WaveCheckerN waveChecker;          // Assign in Inspector!
     [SerializeField] private TextMeshProUGUI textMeshPro;      // Assign in Inspector!
 
     private int waveNumber;
@@ -34,11 +34,16 @@ public class UiWave : MonoBehaviour
             StartCoroutine(WaveCoroutine());
             waveNumber = waveChecker.WAVE;
         }
+
+        if(waveChecker.WAVE == 0)
+        {
+            textMeshPro.text = "kill an enemy to progress to the next wave";
+        }
     }
 
     IEnumerator WaveCoroutine()
     {
-        textMeshPro.text = "WAVE = " + waveChecker.WAVE.ToString("F0");
+        textMeshPro.text = "Wave " + waveChecker.WAVE + " started! (Level " + waveChecker.GetLevel() + ")";
         yield return new WaitForSeconds(2f);
         textMeshPro.text = "";
     }

@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1684388307292840729, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 8171718146958502171}
     - target: {fileID: 1986343073044525949, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_Name
       value: Player
@@ -79,6 +83,14 @@ PrefabInstance:
     - target: {fileID: 6432201769026550305, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585909649694566686, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: m_Size.y
+      value: 0.46711192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585909649694566686, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.029001012
       objectReference: {fileID: 0}
     - target: {fileID: 8196986089442789883, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_TagString
@@ -279,3 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Move: {fileID: 4484923486189074081}
+--- !u!4 &8171718146958502171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 817668679245966110, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+  m_PrefabInstance: {fileID: 8808819933866099205}
+  m_PrefabAsset: {fileID: 0}
