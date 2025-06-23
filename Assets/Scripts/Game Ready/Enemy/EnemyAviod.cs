@@ -41,8 +41,6 @@ public class EnemyAvoid : MonoBehaviour
                 Vector3 scale = transform.localScale;
                 scale.x = (player.position.x < transform.position.x) ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
                 transform.localScale = scale;
-
-                // Move away from player without offsetting the origin
                 Vector2 direction = (transform.position - player.position).normalized;
                 Vector2 targetPosition = (Vector2)transform.position + direction * avoidDistance;
 
