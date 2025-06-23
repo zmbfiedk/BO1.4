@@ -18,6 +18,7 @@ TagManager:
   - WaveManager
   - Boss
   - PlayerTrack
+  - BossAttack
   layers:
   - Default
   - TransparentFX

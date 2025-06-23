@@ -44,8 +44,7 @@ public class BossAttackSystem : MonoBehaviour
         {
             isOnTheMove = true;
         }
-
-        if (DistanceToPlayer <= 7.5f && isOnTheMove && !isAttacking)
+        if (DistanceToPlayer <= 3.5f && isOnTheMove && !isAttacking)
         {
             StartCoroutine(MeleeAttack());
         }
