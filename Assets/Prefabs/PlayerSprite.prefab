@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5010764193372920873}
   - component: {fileID: 7990078721470864534}
   - component: {fileID: 2005319889701935255}
+  - component: {fileID: 2628611751826064151}
+  - component: {fileID: 3260011846885431051}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Player
@@ -27,9 +29,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144665028283655497}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.04, y: -1.3379545, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1279408989386590981}
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: -1296910831, guid: c84b2a06a527c5245b8309e4b050231e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,9 +148,36 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.0008559525, y: -0.0036587864}
+  m_Size: {x: 0.15314406, y: 0.27468696}
   m_Direction: 0
+--- !u!114 &2628611751826064151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144665028283655497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c49d2f08ae7c047a6d3c9fa5e33143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 15
+--- !u!114 &3260011846885431051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144665028283655497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1450bab380fb92841ae595d3f7535572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sword: {fileID: 9139327936770636864, guid: 58ed0e857472ce445b3d3b83265f261f, type: 3}
+  Spell1: {fileID: 0}
 --- !u!1 &4532963964182354363
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 4532963964182354363}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06999993, y: 0.32795453, z: -0.016558979}
+  m_LocalPosition: {x: -0.003, y: 0.059, z: -0.016558979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

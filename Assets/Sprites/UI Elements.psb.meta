@@ -1,0 +1,1296 @@
+fileFormatVersion: 2
+guid: 9e2996fb6ca2b714896ca732ffe7e651
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Barrier Trident
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1201
+      y: 817
+      width: 337
+      height: 88
+    spriteID: 99c01606daf7b3c4fa9682c10c646d48
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1201, y: 817}
+    spritePosition: {x: 131, y: 1476}
+  - name: Trident Equipped
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1381
+      y: 948
+      width: 329
+      height: 101
+    spriteID: c319d8fbebdd6344499508b82753ca05
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1381, y: 948}
+    spritePosition: {x: 133, y: 1469}
+  - name: Trident Unequipped
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1053
+      y: 1237
+      width: 281
+      height: 66
+    spriteID: 8154b7b29beca394487cf6936dac4751
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1053, y: 1237}
+    spritePosition: {x: 163, y: 1487}
+  - name: Backdrop Trident
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 349
+      y: 1237
+      width: 336
+      height: 88
+    spriteID: b9ea260be14ba7c4ab688e25a1d97abf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 349, y: 1237}
+    spritePosition: {x: 131, y: 1476}
+  - name: Barrier Broadsword
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1546
+      y: 817
+      width: 337
+      height: 88
+    spriteID: ac2419a35abdcfb44ad655d66ee7ba95
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1546, y: 817}
+    spritePosition: {x: 513, y: 1476}
+  - name: Broadsword Equipped
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1671
+      y: 350
+      width: 345
+      height: 106
+    spriteID: f079c197498cacb4791dd3c333aae896
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1671, y: 350}
+    spritePosition: {x: 509, y: 1467}
+  - name: Broadsword Unequipped
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1718
+      y: 948
+      width: 291
+      height: 70
+    spriteID: 6bfc18fad4fe8f047ab472dbd2691ea6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1718, y: 948}
+    spritePosition: {x: 536, y: 1486}
+  - name: Broadsword Locked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 519
+      y: 817
+      width: 331
+      height: 91
+    spriteID: eb28c2424bee6e14b8adb775d64f5cd8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 519, y: 817}
+    spritePosition: {x: 514, y: 1474}
+  - name: Backdrop Broadsword
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1435
+      y: 1074
+      width: 337
+      height: 90
+    spriteID: 15fbf7e3f7c5c66438b3d47df40b1a1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1435, y: 1074}
+    spritePosition: {x: 512, y: 1475}
+  - name: Barrier Bow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1237
+      width: 337
+      height: 88
+    spriteID: cc6aba74507a3dd409bf8b44f836d88b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1237}
+    spritePosition: {x: 899, y: 1476}
+  - name: Bow Equiped
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 693
+      y: 1237
+      width: 352
+      height: 81
+    spriteID: 773e23d4f855bfa4eaaa77a7182a0637
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 693, y: 1237}
+    spritePosition: {x: 892, y: 1481}
+  - name: Bow Unequiped
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1435
+      y: 1172
+      width: 322
+      height: 48
+    spriteID: 00509a55d181df14c8fdf941f8be0007
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1435, y: 1172}
+    spritePosition: {x: 907, y: 1496}
+  - name: Bow Locked
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 858
+      y: 817
+      width: 335
+      height: 89
+    spriteID: cb973e1be54ffd84bb86ab4cee03e393
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 858, y: 817}
+    spritePosition: {x: 901, y: 1475}
+  - name: Backdrop Bow
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1089
+      y: 1074
+      width: 338
+      height: 90
+    spriteID: 0c91ce30a56fe314f8e48f25fb3dd0b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1089, y: 1074}
+    spritePosition: {x: 899, y: 1475}
+  - name: Line
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 548
+      y: 4
+      width: 369
+      height: 484
+    spriteID: dc4c481de67add54eadb0ced78dcd8e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 548, y: 4}
+    spritePosition: {x: 153, y: 1617}
+  - name: Full
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1299
+      y: 4
+      width: 364
+      height: 478
+    spriteID: 74723e388315ce94a87dc9a9033847e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1299, y: 4}
+    spritePosition: {x: 157, y: 1619}
+  - name: 3/4th
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1671
+      y: 4
+      width: 335
+      height: 338
+    spriteID: c0f5ca485375ff9409c2b378cc03b418
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1671, y: 4}
+    spritePosition: {x: 161, y: 1621}
+  - name: Half
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 668
+      y: 948
+      width: 211
+      height: 254
+    spriteID: 43f48e7f45241304bb35f5e54803e5dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 668, y: 948}
+    spritePosition: {x: 230, y: 1620}
+  - name: Kwarter
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1910
+      y: 1074
+      width: 92
+      height: 123
+    spriteID: 985b4307d08129b419a5c177c1bc9480
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1910, y: 1074}
+    spritePosition: {x: 299, y: 1619}
+  - name: Empty
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 925
+      y: 4
+      width: 366
+      height: 482
+    spriteID: 2fbabfe07f8d3034f83ff1137a1dc107
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 925, y: 4}
+    spritePosition: {x: 155, y: 1618}
+  - name: Line
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 948
+      width: 214
+      height: 281
+    spriteID: 1a0542434da7913418f538bfe7307f42
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 948}
+    spritePosition: {x: 498, y: 1644}
+  - name: Full
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 447
+      y: 948
+      width: 213
+      height: 278
+    spriteID: f470fc0e362b7844c8860099b8e7fffe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 447, y: 948}
+    spritePosition: {x: 499, y: 1645}
+  - name: 3/4th
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 887
+      y: 948
+      width: 194
+      height: 195
+    spriteID: 9acf08f28e5bdba408b1fcd9613d39d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 887, y: 948}
+    spritePosition: {x: 502, y: 1647}
+  - name: Half
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1780
+      y: 1074
+      width: 122
+      height: 148
+    spriteID: 92a6838661932f143b837eddfbefc839
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1780, y: 1074}
+    spritePosition: {x: 542, y: 1645}
+  - name: Kwarter
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1891
+      y: 817
+      width: 54
+      height: 73
+    spriteID: 091a52c7e4ff48f4cb2161509598d4b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1891, y: 817}
+    spritePosition: {x: 581, y: 1645}
+  - name: Empty
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 226
+      y: 948
+      width: 213
+      height: 279
+    spriteID: ce492c59f942280498ede6140fbc808b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 226, y: 948}
+    spritePosition: {x: 498, y: 1645}
+  - name: Pentagram
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 536
+      height: 512
+    spriteID: c03cf146e49629747ba808c80cbdfc3e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 68, y: 1644}
+  - name: Stamina Line
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1006
+      y: 524
+      width: 1022
+      height: 137
+    spriteID: ce14dc19133395b47a8ee7c1f7e7d58f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1006, y: 524}
+    spritePosition: {x: 358, y: 1574}
+  - name: Stamina Full
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 524
+      width: 994
+      height: 141
+    spriteID: 2de123b0bca44ad43a17ed485ccf1673
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 524}
+    spritePosition: {x: 381, y: 1574}
+  - name: Stamina 3/4th
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1040
+      y: 673
+      width: 720
+      height: 135
+    spriteID: d2289310529244040aa4950002eedf37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1040, y: 673}
+    spritePosition: {x: 383, y: 1577}
+  - name: Stamina half
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 817
+      width: 507
+      height: 123
+    spriteID: 63a2ab4398af53947a1b6e28c36e01de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 817}
+    spritePosition: {x: 384, y: 1587}
+  - name: Stamina Kwarter
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1089
+      y: 948
+      width: 284
+      height: 118
+    spriteID: a38b055dbb357694fb8400435abd5eca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1089, y: 948}
+    spritePosition: {x: 383, y: 1600}
+  - name: Empty
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 673
+      width: 1028
+      height: 136
+    spriteID: d03ef1e9ae7d1c440898aee2c0207117
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 673}
+    spritePosition: {x: 365, y: 1575}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Ui Element
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 7805f2842260e5c449e1f86682d6e40a
+    layerID: 87
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Weapons
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 86d255d54c8a8bb4e80e71798a219938
+    layerID: 44
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Tident
+    spriteName: 
+    isGroup: 1
+    parentIndex: 1
+    spriteID: 320288c69eccc24498c6ff4cfab376cc
+    layerID: 52
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Barrier Trident
+    spriteName: Barrier Trident
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 99c01606daf7b3c4fa9682c10c646d48
+    layerID: 48
+    mosaicPosition: {x: 1201, y: 817}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Trident Equipped
+    spriteName: Trident Equipped
+    isGroup: 0
+    parentIndex: 2
+    spriteID: c319d8fbebdd6344499508b82753ca05
+    layerID: 70
+    mosaicPosition: {x: 1381, y: 948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Trident Unequipped
+    spriteName: Trident Unequipped
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 8154b7b29beca394487cf6936dac4751
+    layerID: 73
+    mosaicPosition: {x: 1053, y: 1237}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Backdrop Trident
+    spriteName: Backdrop Trident
+    isGroup: 0
+    parentIndex: 2
+    spriteID: b9ea260be14ba7c4ab688e25a1d97abf
+    layerID: 69
+    mosaicPosition: {x: 349, y: 1237}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Broadsword
+    spriteName: 
+    isGroup: 1
+    parentIndex: 1
+    spriteID: 9a0ae99b8e8d51b449a475f75040d409
+    layerID: 54
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Barrier Broadsword
+    spriteName: Barrier Broadsword
+    isGroup: 0
+    parentIndex: 7
+    spriteID: ac2419a35abdcfb44ad655d66ee7ba95
+    layerID: 50
+    mosaicPosition: {x: 1546, y: 817}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Broadsword Equipped
+    spriteName: Broadsword Equipped
+    isGroup: 0
+    parentIndex: 7
+    spriteID: f079c197498cacb4791dd3c333aae896
+    layerID: 74
+    mosaicPosition: {x: 1671, y: 350}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Broadsword Unequipped
+    spriteName: Broadsword Unequipped
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 6bfc18fad4fe8f047ab472dbd2691ea6
+    layerID: 78
+    mosaicPosition: {x: 1718, y: 948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Broadsword Locked
+    spriteName: Broadsword Locked
+    isGroup: 0
+    parentIndex: 7
+    spriteID: eb28c2424bee6e14b8adb775d64f5cd8
+    layerID: 82
+    mosaicPosition: {x: 519, y: 817}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Backdrop Broadsword
+    spriteName: Backdrop Broadsword
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 15fbf7e3f7c5c66438b3d47df40b1a1d
+    layerID: 68
+    mosaicPosition: {x: 1435, y: 1074}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bow
+    spriteName: 
+    isGroup: 1
+    parentIndex: 1
+    spriteID: 7f17b52c5c2ce8f4e86e0ceb5d5d305f
+    layerID: 56
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Barrier Bow
+    spriteName: Barrier Bow
+    isGroup: 0
+    parentIndex: 13
+    spriteID: cc6aba74507a3dd409bf8b44f836d88b
+    layerID: 51
+    mosaicPosition: {x: 4, y: 1237}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bow Equiped
+    spriteName: Bow Equiped
+    isGroup: 0
+    parentIndex: 13
+    spriteID: 773e23d4f855bfa4eaaa77a7182a0637
+    layerID: 61
+    mosaicPosition: {x: 693, y: 1237}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bow Unequiped
+    spriteName: Bow Unequiped
+    isGroup: 0
+    parentIndex: 13
+    spriteID: 00509a55d181df14c8fdf941f8be0007
+    layerID: 64
+    mosaicPosition: {x: 1435, y: 1172}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bow Locked
+    spriteName: Bow Locked
+    isGroup: 0
+    parentIndex: 13
+    spriteID: cb973e1be54ffd84bb86ab4cee03e393
+    layerID: 66
+    mosaicPosition: {x: 858, y: 817}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Backdrop Bow
+    spriteName: Backdrop Bow
+    isGroup: 0
+    parentIndex: 13
+    spriteID: 0c91ce30a56fe314f8e48f25fb3dd0b3
+    layerID: 67
+    mosaicPosition: {x: 1089, y: 1074}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Health
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 9a2e93a3691956c42a13339af085c725
+    layerID: 6
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Big Heart
+    spriteName: 
+    isGroup: 1
+    parentIndex: 19
+    spriteID: aa83a26b85dc62144b7dd8f45822fcf9
+    layerID: 28
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Line
+    spriteName: Line
+    isGroup: 0
+    parentIndex: 20
+    spriteID: dc4c481de67add54eadb0ced78dcd8e1
+    layerID: 8
+    mosaicPosition: {x: 548, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Full
+    spriteName: Full
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 74723e388315ce94a87dc9a9033847e6
+    layerID: 19
+    mosaicPosition: {x: 1299, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 3/4th
+    spriteName: 3/4th
+    isGroup: 0
+    parentIndex: 20
+    spriteID: c0f5ca485375ff9409c2b378cc03b418
+    layerID: 22
+    mosaicPosition: {x: 1671, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Half
+    spriteName: Half
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 43f48e7f45241304bb35f5e54803e5dc
+    layerID: 21
+    mosaicPosition: {x: 668, y: 948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Kwarter
+    spriteName: Kwarter
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 985b4307d08129b419a5c177c1bc9480
+    layerID: 20
+    mosaicPosition: {x: 1910, y: 1074}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Empty
+    spriteName: Empty
+    isGroup: 0
+    parentIndex: 20
+    spriteID: 2fbabfe07f8d3034f83ff1137a1dc107
+    layerID: 16
+    mosaicPosition: {x: 925, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Small Hearts
+    spriteName: 
+    isGroup: 1
+    parentIndex: 19
+    spriteID: 0dc9f7b754ef2af4f9e3ebacbe8a9217
+    layerID: 37
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Line
+    spriteName: Line
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 1a0542434da7913418f538bfe7307f42
+    layerID: 36
+    mosaicPosition: {x: 4, y: 948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Full
+    spriteName: Full
+    isGroup: 0
+    parentIndex: 27
+    spriteID: f470fc0e362b7844c8860099b8e7fffe
+    layerID: 35
+    mosaicPosition: {x: 447, y: 948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 3/4th
+    spriteName: 3/4th
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 9acf08f28e5bdba408b1fcd9613d39d9
+    layerID: 34
+    mosaicPosition: {x: 887, y: 948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Half
+    spriteName: Half
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 92a6838661932f143b837eddfbefc839
+    layerID: 33
+    mosaicPosition: {x: 1780, y: 1074}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Kwarter
+    spriteName: Kwarter
+    isGroup: 0
+    parentIndex: 27
+    spriteID: 091a52c7e4ff48f4cb2161509598d4b7
+    layerID: 32
+    mosaicPosition: {x: 1891, y: 817}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Empty
+    spriteName: Empty
+    isGroup: 0
+    parentIndex: 27
+    spriteID: ce492c59f942280498ede6140fbc808b
+    layerID: 31
+    mosaicPosition: {x: 226, y: 948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pentagram
+    spriteName: Pentagram
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c03cf146e49629747ba808c80cbdfc3e
+    layerID: 23
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Stamina
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: f62027383d4fa5d4a9ed6dd8150c883b
+    layerID: 42
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Stamina Line
+    spriteName: Stamina Line
+    isGroup: 0
+    parentIndex: 35
+    spriteID: ce14dc19133395b47a8ee7c1f7e7d58f
+    layerID: 90
+    mosaicPosition: {x: 1006, y: 524}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Stamina Full
+    spriteName: Stamina Full
+    isGroup: 0
+    parentIndex: 35
+    spriteID: 2de123b0bca44ad43a17ed485ccf1673
+    layerID: 91
+    mosaicPosition: {x: 4, y: 524}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Stamina 3/4th
+    spriteName: Stamina 3/4th
+    isGroup: 0
+    parentIndex: 35
+    spriteID: d2289310529244040aa4950002eedf37
+    layerID: 92
+    mosaicPosition: {x: 1040, y: 673}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Stamina half
+    spriteName: Stamina half
+    isGroup: 0
+    parentIndex: 35
+    spriteID: 63a2ab4398af53947a1b6e28c36e01de
+    layerID: 93
+    mosaicPosition: {x: 4, y: 817}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Stamina Kwarter
+    spriteName: Stamina Kwarter
+    isGroup: 0
+    parentIndex: 35
+    spriteID: a38b055dbb357694fb8400435abd5eca
+    layerID: 94
+    mosaicPosition: {x: 1089, y: 948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Empty
+    spriteName: Empty
+    isGroup: 0
+    parentIndex: 35
+    spriteID: d03ef1e9ae7d1c440898aee2c0207117
+    layerID: 89
+    mosaicPosition: {x: 4, y: 673}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: fuckass layers
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 2ef5f39b439a8fe4f85ec188c7e83f7c
+    layerID: 95
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Laag 4
+    spriteName: 
+    isGroup: 0
+    parentIndex: 42
+    spriteID: 493c4e3e4bd3c2442bdde07455383dce
+    layerID: 5
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Laag 1
+    spriteName: 
+    isGroup: 0
+    parentIndex: 42
+    spriteID: dd6df9a356e2eda49b750594c70d569b
+    layerID: 2
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  - name: Achtergrond
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9f1aad8b09e67644ba30012680899441
+    layerID: 1
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
