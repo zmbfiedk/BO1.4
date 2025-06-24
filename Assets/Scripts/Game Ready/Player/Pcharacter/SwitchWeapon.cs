@@ -19,13 +19,13 @@ public class SwitchWeapon : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            SwitchToWeapon("trident", 0.05f, 45f);
+            SwitchToWeapon("trident", 0.05f, 50f);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwitchToWeapon("bow", .05f, 10f);
+            SwitchToWeapon("bow", 2f, 12.5f);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SwitchToWeapon("sword", 0.05f, 20f);
+            SwitchToWeapon("sword", 0.05f, 25f);
     }
 
     private void SwitchToWeapon(string weaponName, float cooldown, float staminaDrain)

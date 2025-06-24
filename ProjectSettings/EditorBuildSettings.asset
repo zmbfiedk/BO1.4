@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Demo/GO.unity
     guid: 190d78214e7d0844b92e71b02365a9f6
   - enabled: 1
-    path: Assets/Scenes/BossFightTest.unity
+    path: Assets/Scenes/Demo/BossFightTest.unity
     guid: 3e082cc83e2f2604f96e0189f46a0bf1
+  - enabled: 1
+    path: Assets/Scenes/Demo/GO 1.unity
+    guid: ba0b19f0d5e98ef47a6fda06bfe46e44
   m_configObjects: {}

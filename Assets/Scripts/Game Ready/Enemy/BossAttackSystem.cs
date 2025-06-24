@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BossAttackSystem : MonoBehaviour
 {
-    public static event Action ThrowProjectile;
+    public event Action ThrowProjectile;
 
     [SerializeField] private bool isOnTheMove;
     [SerializeField] private float movespeed = 3f;
@@ -44,7 +44,7 @@ public class BossAttackSystem : MonoBehaviour
         {
             isOnTheMove = true;
         }
-        if (DistanceToPlayer <= 3.5f && isOnTheMove && !isAttacking)
+        if (DistanceToPlayer <= 7.5f && isOnTheMove && !isAttacking)
         {
             StartCoroutine(MeleeAttack());
         }
@@ -72,7 +72,7 @@ public class BossAttackSystem : MonoBehaviour
         ResetAllAnimStates();
         isOnTheMove = false;
 
-        int attackType = UnityEngine.Random.Range(1, 3);
+        int attackType = UnityEngine.Random.Range(1, 2);
 
         if (attackType == 1)
         {
@@ -80,7 +80,7 @@ public class BossAttackSystem : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isAttacking2", true);
+            anim.SetBool("isAttacking1", true);
         }
 
         foreach (var col in meleeColliders)
