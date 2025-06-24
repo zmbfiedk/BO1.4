@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossShootProjectile : MonoBehaviour
+public class BossShoot : MonoBehaviour
 {
     [SerializeField] private BossAttackSystem bossAttackSystem;
     [SerializeField] private GameObject ArrowPrefab;

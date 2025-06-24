@@ -145,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 1136830270423541103}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c4075871dcf0c734f9a49690d65ba796, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3c2c0c0d96acbac47b8f75db9d05ca92, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 7604130089987019215}
   - component: {fileID: 7082078754453461624}
   - component: {fileID: 7173754524684970214}
-  - component: {fileID: 993285711396208550}
+  - component: {fileID: 1773083007710125186}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -864,7 +864,7 @@ MonoBehaviour:
   anim: {fileID: 603485269919775184}
   DistanceToPlayer: 0
   RangedCooldown: 2
-  followDistance: 2.5
+  followDistance: 1
   isAttacking: 0
 --- !u!114 &7082078754453461624
 MonoBehaviour:
@@ -924,7 +924,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.15, y: 4.15}
   m_EdgeRadius: 0
---- !u!114 &993285711396208550
+--- !u!114 &1773083007710125186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossAttackSystem: {fileID: 7604130089987019215}
   ArrowPrefab: {fileID: 41729045300652849, guid: dcb820140500ef64a8b2aacd9c5726c4, type: 3}
-  ShootPosition: {fileID: 8791372975042189962}
+  ShootPosition: {fileID: 2143171176672277058}
 --- !u!1 &8501287706194046476
 GameObject:
   m_ObjectHideFlags: 0
