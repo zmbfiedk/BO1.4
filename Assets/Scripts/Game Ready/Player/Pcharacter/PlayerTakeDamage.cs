@@ -37,5 +37,9 @@ public class PlayerTakeDamage : MonoBehaviour
         {
             Move.hp -= 25;
         }
+        if (other.CompareTag("BossRanged"))
+        {
+            Move.hp -= 15;
+        }
     }
 }

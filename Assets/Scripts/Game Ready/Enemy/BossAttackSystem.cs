@@ -14,7 +14,10 @@ public class BossAttackSystem : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private float DistanceToPlayer;
     [SerializeField] private float RangedCooldown = 2f;
-    [SerializeField] private float followDistance = 2.5f;
+    [SerializeField] private float followDistance = 8f;
+
+    [SerializeField] private float outOfRangeTimeThreshold = 3f;
+    private float outOfRangeTimer;
 
     private float rangedTimer;
     [SerializeField] private bool isAttacking;
@@ -25,6 +28,7 @@ public class BossAttackSystem : MonoBehaviour
         BossPostion = GameObject.FindWithTag("Boss").transform;
         isOnTheMove = true;
         rangedTimer = RangedCooldown;
+        outOfRangeTimer = 0f;
     }
 
     private void Update()
@@ -39,28 +43,49 @@ public class BossAttackSystem : MonoBehaviour
 
         DistanceToPlayer = Vector3.Distance(PlayerPosition.position, BossPostion.position);
 
-        if (DistanceToPlayer >= 20f)
+        // Track time player stays out of range
+        if (DistanceToPlayer > 15f)
         {
-            isOnTheMove = true;
-        }
-
-        if (DistanceToPlayer <= 3.5f && isOnTheMove && !isAttacking)
-        {
-            StartCoroutine(MeleeAttack());
-        }
-        else if (DistanceToPlayer <= 15f && !isOnTheMove)
-        {
-            BossRanged();
+            outOfRangeTimer += Time.deltaTime;
         }
         else
         {
+            outOfRangeTimer = 0f;
+        }
+
+        // Force melee if player runs away for too long
+        if (outOfRangeTimer >= outOfRangeTimeThreshold && !isAttacking)
+        {
+            Debug.Log("Player ran too far — forcing melee attack!");
+            StartCoroutine(MeleeAttack());
+            outOfRangeTimer = 0f;
+            return;
+        }
+
+        // Normal attack logic
+        if (DistanceToPlayer <= 7.5f && !isAttacking)
+        {
+            StartCoroutine(MeleeAttack());
+        }
+        else if (DistanceToPlayer > 7.5f && DistanceToPlayer <= 15f && !isAttacking)
+        {
+            isOnTheMove = false;
+            BossRanged();
+        }
+        else if (DistanceToPlayer > followDistance)
+        {
             WalkToPlayer();
+        }
+        else
+        {
+            SetAttackType(0); // Idle
+            isOnTheMove = false;
         }
     }
 
     private void SetAttackType(int type)
     {
-        anim.SetInteger("AttackType", type);
+        anim.SetInteger("SetAttackType", type);
     }
 
     private IEnumerator MeleeAttack()
@@ -73,10 +98,12 @@ public class BossAttackSystem : MonoBehaviour
 
         SetAttackType(attackType);
 
+        yield return new WaitForSeconds(1.7f); // adjust this to match your animation wind-up
+
         foreach (var col in meleeColliders)
             col.enabled = true;
 
-        yield return new WaitForSeconds(1.5f); // match animation length
+        yield return new WaitForSeconds(.7f); // active hitbox duration, adjust as needed
 
         foreach (var col in meleeColliders)
             col.enabled = false;
@@ -134,6 +161,7 @@ public class BossAttackSystem : MonoBehaviour
         else
         {
             SetAttackType(0); // Idle
+            isOnTheMove = false;
         }
     }
 }

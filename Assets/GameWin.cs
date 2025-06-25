@@ -7,6 +7,7 @@ public class GameWin : MonoBehaviour
 {
      WaveCheckerF waveCheckerF;
      WaveCheckerN waveCheckerN;
+    [SerializeField] Transform playerTF;
     void Start()
     {
         if (CompareTag("WaveManager"))

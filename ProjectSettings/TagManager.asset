@@ -19,6 +19,7 @@ TagManager:
   - Boss
   - PlayerTrack
   - BossAttack
+  - BossRanged
   layers:
   - Default
   - TransparentFX
