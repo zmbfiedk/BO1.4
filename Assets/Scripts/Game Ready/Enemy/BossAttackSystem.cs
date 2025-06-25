@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossAttackSystem : MonoBehaviour
 {
-    public static event Action ThrowProjectile;
+    public event Action ThrowProjectile;
 
     [SerializeField] private bool isOnTheMove;
     [SerializeField] private float movespeed = 3f;
@@ -18,9 +17,9 @@ public class BossAttackSystem : MonoBehaviour
     [SerializeField] private float followDistance = 2.5f;
 
     private float rangedTimer;
-    [SerializeField]private bool isAttacking; // Prevent attack spamming
+    [SerializeField] private bool isAttacking;
 
-    void Start()
+    private void Start()
     {
         PlayerPosition = GameObject.FindWithTag("Player").transform;
         BossPostion = GameObject.FindWithTag("Boss").transform;
@@ -28,7 +27,7 @@ public class BossAttackSystem : MonoBehaviour
         rangedTimer = RangedCooldown;
     }
 
-    void Update()
+    private void Update()
     {
         if (PlayerPosition == null || BossPostion == null) return;
 
@@ -40,15 +39,16 @@ public class BossAttackSystem : MonoBehaviour
 
         DistanceToPlayer = Vector3.Distance(PlayerPosition.position, BossPostion.position);
 
-        if (DistanceToPlayer >= 25f)
+        if (DistanceToPlayer >= 20f)
         {
             isOnTheMove = true;
         }
+
         if (DistanceToPlayer <= 3.5f && isOnTheMove && !isAttacking)
         {
             StartCoroutine(MeleeAttack());
         }
-        else if (DistanceToPlayer <= 20f && !isOnTheMove)
+        else if (DistanceToPlayer <= 15f && !isOnTheMove)
         {
             BossRanged();
         }
@@ -58,79 +58,63 @@ public class BossAttackSystem : MonoBehaviour
         }
     }
 
-    private void ResetAllAnimStates()
+    private void SetAttackType(int type)
     {
-        anim.SetBool("isWalking", false);
-        anim.SetBool("isAttacking", false);
-        anim.SetBool("isAttacking2", false);
-        anim.SetBool("isThrowing", false);
+        anim.SetInteger("AttackType", type);
     }
 
     private IEnumerator MeleeAttack()
     {
         isAttacking = true;
-        ResetAllAnimStates();
         isOnTheMove = false;
 
-        int attackType = UnityEngine.Random.Range(1, 3);
+        int attackType = UnityEngine.Random.Range(1, 3); // 1 or 2
+        Debug.Log($"Melee Attack Triggered. AttackType: {attackType}");
 
-        if (attackType == 1)
-        {
-            anim.SetBool("isAttacking", true);
-        }
-        else
-        {
-            anim.SetBool("isAttacking2", true);
-        }
+        SetAttackType(attackType);
 
         foreach (var col in meleeColliders)
             col.enabled = true;
 
-        yield return new WaitForSeconds(1.5f); 
+        yield return new WaitForSeconds(1.5f); // match animation length
 
         foreach (var col in meleeColliders)
             col.enabled = false;
 
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(1f); // cooldown buffer
 
+        SetAttackType(0); // reset to idle
         isAttacking = false;
     }
 
     private void BossRanged()
     {
-        ResetAllAnimStates();
-
         if (DistanceToPlayer >= 10f && DistanceToPlayer < 15f)
         {
-            if (PlayerPosition != null)
-            {
-                Vector3 scale = transform.localScale;
-                scale.x = (PlayerPosition.position.x < transform.position.x) ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
-                transform.localScale = scale;
+            Vector3 scale = transform.localScale;
+            scale.x = (PlayerPosition.position.x < transform.position.x) ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+            transform.localScale = scale;
 
-                Vector2 direction = (transform.position - PlayerPosition.position).normalized;
-                Vector2 targetPosition = (Vector2)transform.position + direction;
+            Vector2 direction = (transform.position - PlayerPosition.position).normalized;
+            Vector2 targetPosition = (Vector2)transform.position + direction;
 
-                transform.position = Vector2.MoveTowards(
-                    transform.position,
-                    targetPosition,
-                    movespeed * Time.deltaTime
-                );
-            }
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                targetPosition,
+                movespeed * Time.deltaTime
+            );
         }
 
         if (rangedTimer >= RangedCooldown)
         {
             ThrowProjectile?.Invoke();
-            anim.SetBool("isThrowing", true);
+            SetAttackType(3); // Throw animation
             rangedTimer = 0f;
         }
     }
 
     private void WalkToPlayer()
     {
-        ResetAllAnimStates();
-
         if (PlayerPosition != null && DistanceToPlayer > followDistance)
         {
             Vector3 scale = transform.localScale;
@@ -144,8 +128,12 @@ public class BossAttackSystem : MonoBehaviour
                 movespeed * Time.deltaTime
             );
 
-            anim.SetBool("isWalking", true);
+            SetAttackType(4); // Walking animation
             isOnTheMove = true;
+        }
+        else
+        {
+            SetAttackType(0); // Idle
         }
     }
 }

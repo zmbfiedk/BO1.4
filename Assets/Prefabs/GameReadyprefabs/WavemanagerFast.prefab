@@ -107,7 +107,7 @@ MonoBehaviour:
   enemiesKilledThisWave: 0
   enemiesToKillThisWave: 1
   enemiesSpawnedThisWave: 0
-  Move: {fileID: 0}
+  Move: {fileID: 4484923486189074081, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
 --- !u!1 &7525090141695806740
 GameObject:
   m_ObjectHideFlags: 0
