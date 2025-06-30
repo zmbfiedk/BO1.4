@@ -263,6 +263,7 @@ MonoBehaviour:
   - {fileID: 1360598510284143232}
   AttackActiveDuration: 1
   attackCooldown: 3
+  meleeStartBuffer: 1
 --- !u!58 &8899825593156317079
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -354,7 +355,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &1524461312086459331
 SpriteRenderer:
   m_ObjectHideFlags: 0

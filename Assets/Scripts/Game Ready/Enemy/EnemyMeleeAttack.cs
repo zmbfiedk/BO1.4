@@ -11,6 +11,7 @@ public class EnemyMeleeAttack : MonoBehaviour
     [SerializeField] private Collider2D[] WeaponHitboxes;
     [SerializeField] private float AttackActiveDuration = 1f;
     [SerializeField] private float attackCooldown = 1f;
+    [SerializeField] private float meleeStartBuffer;
 
     private Animator anim;
     private bool isOnCooldown = false;
@@ -40,9 +41,10 @@ public class EnemyMeleeAttack : MonoBehaviour
     private IEnumerator AttackRoutine()
     {
         isOnCooldown = true;
-
-        ActivateEnemyHitboxes();
         anim.SetBool("Attack", true);
+        yield return new WaitForSeconds(AttackActiveDuration);
+        ActivateEnemyHitboxes();
+       
 
         yield return new WaitForSeconds(AttackActiveDuration);
 

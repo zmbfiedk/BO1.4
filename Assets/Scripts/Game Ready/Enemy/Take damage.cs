@@ -54,17 +54,13 @@ public class Takedamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Get levels if available
         float? levelF = waveCheckerF != null ? waveCheckerF.GetLevel() : (float?)null;
         float? levelN = waveCheckerN != null ? waveCheckerN.GetLevel() : (float?)null;
 
-        // Exit if both are null
         if (levelF == null && levelN == null) return;
 
-        // Use whichever exists (or average them, or pick the higher/lower — here we choose max)
         float level = Mathf.Max(levelF ?? float.MinValue, levelN ?? float.MinValue);
 
-        // Apply damage based on range
         if (level < 1f)
         {
             if (other.CompareTag("Arrow")) TakeHit(4f);
@@ -85,9 +81,9 @@ public class Takedamage : MonoBehaviour
         }
         else // level >= 3f
         {
-            if (other.CompareTag("Arrow")) TakeHit(8f);
-            if (other.CompareTag("Trident")) TakeHit(20f);
-            if (other.CompareTag("Sword")) TakeHit(11f);
+            if (other.CompareTag("Arrow")) TakeHit(10f);
+            if (other.CompareTag("Trident")) TakeHit(25f);
+            if (other.CompareTag("Sword")) TakeHit(15f);
         }
     }
 

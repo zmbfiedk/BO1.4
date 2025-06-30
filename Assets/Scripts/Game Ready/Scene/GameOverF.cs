@@ -18,7 +18,7 @@ public class GameOverN : MonoBehaviour
     {
         if (Player == null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(4);
         }
     }
 }
