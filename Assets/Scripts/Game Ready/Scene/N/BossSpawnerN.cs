@@ -12,6 +12,8 @@ public class BossSpawner : MonoBehaviour
 
     private bool BossSpawned = false;
 
+    public bool Spawned { get { return BossSpawned; } }
+
     void Update()
     {
         SpawnBoss();

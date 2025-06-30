@@ -96,10 +96,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Trident
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5875876555829704091, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
-    - {fileID: 8317580986708445570, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
-    - {fileID: 4117772004125839560, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

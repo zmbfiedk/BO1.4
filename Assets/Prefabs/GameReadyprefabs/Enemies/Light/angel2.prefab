@@ -699,6 +699,7 @@ MonoBehaviour:
   - {fileID: 4687161350882190609}
   AttackActiveDuration: 0.15
   attackCooldown: 1
+  meleeStartBuffer: 0.3
 --- !u!114 &3130136268762742498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,4 +847,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
