@@ -182,6 +182,7 @@ MonoBehaviour:
   - {fileID: 5208630299811606383}
   AttackActiveDuration: 0.15
   attackCooldown: 1
+  meleeStartBuffer: 0.3
 --- !u!114 &3258559258267478392
 MonoBehaviour:
   m_ObjectHideFlags: 0
