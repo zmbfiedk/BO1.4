@@ -6,6 +6,7 @@ public class Move : MonoBehaviour
     // Components
     private Rigidbody2D rb;
     private BoxCollider2D BC2D;
+    private AudioSource audioSource;
 
     // Movement variables
     private float currentSpeed;
@@ -28,6 +29,10 @@ public class Move : MonoBehaviour
     [Header("HP")]
     [SerializeField] private float health_points = 100;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip dashSound;
+    [SerializeField] private AudioClip deathSound;
+
     // Public property for health points
     public float hp
     {
@@ -35,7 +40,6 @@ public class Move : MonoBehaviour
         set { health_points = value; }
     }
 
-    // Public property for stamina, with lower bound check
     public float Stamina
     {
         get { return stamina; }
@@ -50,9 +54,9 @@ public class Move : MonoBehaviour
 
     void Start()
     {
-        // Cache component references
         rb = GetComponent<Rigidbody2D>();
         BC2D = GetComponent<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
         currentSpeed = moveSpeed;
     }
 
@@ -65,15 +69,12 @@ public class Move : MonoBehaviour
         setHP();
     }
 
-    // Handle player movement input and stamina consumption
     void HandleMovement()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-
         moveDirection = new Vector2(horizontal, vertical).normalized;
 
-        // Sprinting consumes stamina if not dodging
         if (!isDodging)
         {
             if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
@@ -90,7 +91,6 @@ public class Move : MonoBehaviour
         rb.velocity = moveDirection * currentSpeed;
     }
 
-    // Regenerate stamina when not sprinting or dodging
     void RegenerateStamina()
     {
         bool sprinting = Input.GetKey(KeyCode.LeftShift);
@@ -102,18 +102,21 @@ public class Move : MonoBehaviour
         }
     }
 
-    // Handle dodge input and stamina cost
     void Dodge()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) && !isDodging && stamina >= dodgeStaminaCost)
         {
             stamina -= dodgeStaminaCost;
             stamina = Mathf.Clamp(stamina, 0f, 100f);
+
+            // Play dash sound
+            if (dashSound != null && audioSource != null)
+                audioSource.PlayOneShot(dashSound);
+
             StartCoroutine(DodgeRoutine());
         }
     }
 
-    // Coroutine that disables collider and boosts speed briefly for dodge effect
     IEnumerator DodgeRoutine()
     {
         isDodging = true;
@@ -127,7 +130,6 @@ public class Move : MonoBehaviour
         isDodging = false;
     }
 
-    // Public method to consume stamina for external use (returns success/fail)
     public bool ConsumeStamina(float amount)
     {
         if (stamina >= amount)
@@ -139,18 +141,21 @@ public class Move : MonoBehaviour
         return false;
     }
 
-    // Destroy the player GameObject if health reaches zero
     void playerkill()
     {
         if (health_points <= 0)
         {
+            // Play death sound
+            if (deathSound != null && audioSource != null)
+                audioSource.PlayOneShot(deathSound);
+
             Object.Destroy(gameObject);
         }
     }
 
     void setHP()
     {
-        if(hp > 100)
+        if (hp > 100)
         {
             hp = 100;
         }

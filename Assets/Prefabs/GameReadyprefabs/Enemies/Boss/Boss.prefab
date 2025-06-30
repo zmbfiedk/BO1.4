@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2902750489851715134}
   - component: {fileID: 3824001056855814653}
   m_Layer: 0
-  m_Name: BOSS
+  m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,6 +62,9 @@ MonoBehaviour:
   followDistance: 2.5
   outOfRangeTimeThreshold: 3
   isAttacking: 0
+  walkingSound: {fileID: 8300000, guid: 73a60af89ba6d0e4286bf576e8a5e28d, type: 3}
+  pokeSound: {fileID: 8300000, guid: 44e8e0d5841fc4443ba0066b210a42d3, type: 3}
+  slashSound: {fileID: 8300000, guid: afabe7d3fbfd20648bb32d7396f0b5c5, type: 3}
 --- !u!114 &615055922565404496
 MonoBehaviour:
   m_ObjectHideFlags: 0

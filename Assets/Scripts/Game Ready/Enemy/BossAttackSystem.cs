@@ -22,6 +22,13 @@ public class BossAttackSystem : MonoBehaviour
     private float rangedTimer;
     [SerializeField] private bool isAttacking;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip walkingSound;
+    [SerializeField] private AudioClip pokeSound;  // attack type 1
+    [SerializeField] private AudioClip slashSound; // attack type 2
+
+    private AudioSource audioSource;
+
     private void Start()
     {
         PlayerPosition = GameObject.FindWithTag("Player").transform;
@@ -29,6 +36,8 @@ public class BossAttackSystem : MonoBehaviour
         isOnTheMove = true;
         rangedTimer = RangedCooldown;
         outOfRangeTimer = 0f;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -43,7 +52,6 @@ public class BossAttackSystem : MonoBehaviour
 
         DistanceToPlayer = Vector3.Distance(PlayerPosition.position, BossPostion.position);
 
-        // Track time player stays out of range
         if (DistanceToPlayer > 15f)
         {
             outOfRangeTimer += Time.deltaTime;
@@ -53,7 +61,6 @@ public class BossAttackSystem : MonoBehaviour
             outOfRangeTimer = 0f;
         }
 
-        // Force melee if player runs away for too long
         if (outOfRangeTimer >= outOfRangeTimeThreshold && !isAttacking)
         {
             Debug.Log("Player ran too far — forcing melee attack!");
@@ -62,7 +69,6 @@ public class BossAttackSystem : MonoBehaviour
             return;
         }
 
-        // Normal attack logic
         if (DistanceToPlayer <= 7.5f && !isAttacking)
         {
             StartCoroutine(MeleeAttack());
@@ -98,19 +104,29 @@ public class BossAttackSystem : MonoBehaviour
 
         SetAttackType(attackType);
 
-        yield return new WaitForSeconds(1.7f); // adjust this to match your animation wind-up
+        // Play correct attack sound
+        if (attackType == 1 && pokeSound != null)
+        {
+            audioSource.PlayOneShot(pokeSound);
+        }
+        else if (attackType == 2 && slashSound != null)
+        {
+            audioSource.PlayOneShot(slashSound);
+        }
+
+        yield return new WaitForSeconds(1.7f);
 
         foreach (var col in meleeColliders)
             col.enabled = true;
 
-        yield return new WaitForSeconds(.7f); // active hitbox duration, adjust as needed
+        yield return new WaitForSeconds(.7f);
 
         foreach (var col in meleeColliders)
             col.enabled = false;
 
-        yield return new WaitForSeconds(1f); // cooldown buffer
+        yield return new WaitForSeconds(1f);
 
-        SetAttackType(0); // reset to idle
+        SetAttackType(0);
         isAttacking = false;
     }
 
@@ -135,7 +151,7 @@ public class BossAttackSystem : MonoBehaviour
         if (rangedTimer >= RangedCooldown)
         {
             ThrowProjectile?.Invoke();
-            SetAttackType(3); // Throw animation
+            SetAttackType(3);
             rangedTimer = 0f;
         }
     }
@@ -155,12 +171,17 @@ public class BossAttackSystem : MonoBehaviour
                 movespeed * Time.deltaTime
             );
 
-            SetAttackType(4); // Walking animation
+            SetAttackType(4);
             isOnTheMove = true;
+
+            if (walkingSound != null && !audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(walkingSound);
+            }
         }
         else
         {
-            SetAttackType(0); // Idle
+            SetAttackType(0);
             isOnTheMove = false;
         }
     }

@@ -11,14 +11,20 @@ public class Attack : MonoBehaviour
     [Header("Attack Stats")]
     [SerializeField] private float attackStaminaCost = 50f;
     [SerializeField] private float attackCooldown = 0.2f;
-    [SerializeField] private float chargeResetDelay = .7f;
+    [SerializeField] private float chargeResetDelay = 0.7f;
 
     [Header("Dependencies")]
     [SerializeField] private SwitchWeapon switchWeapon;
     [SerializeField] private Move playerMovement;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip tridentSound;
+    [SerializeField] private AudioClip slashSound;
+    [SerializeField] private AudioClip arrowShotSound;
+
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private AudioSource audioSource;
 
     private bool canAttack = true;
     private string currentWeapon = "trident";
@@ -53,6 +59,7 @@ public class Attack : MonoBehaviour
         playerMovement = GetComponent<Move>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -108,18 +115,23 @@ public class Attack : MonoBehaviour
         IsAttacking = true;
         spriteRenderer.color = Color.red;
 
-        // ✅ Invoke the event here
         switch (currentWeapon)
         {
             case "trident":
+                if (tridentSound != null && audioSource != null)
+                    audioSource.PlayOneShot(tridentSound);
                 OnTridentAttack?.Invoke();
                 Debug.Log("Trident Attack");
                 break;
             case "sword":
+                if (slashSound != null && audioSource != null)
+                    audioSource.PlayOneShot(slashSound);
                 OnSwordAttack?.Invoke();
                 Debug.Log("Sword Attack");
                 break;
             case "bow":
+                if (arrowShotSound != null && audioSource != null)
+                    audioSource.PlayOneShot(arrowShotSound);
                 OnBowRelease?.Invoke();
                 Debug.Log("Bow Release");
                 break;
