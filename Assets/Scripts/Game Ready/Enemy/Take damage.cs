@@ -12,18 +12,26 @@ public class Takedamage : MonoBehaviour
     private SpriteRenderer sp;
     private Enemyfollow EF;
     private bool isDead = false;
-    WaveCheckerN waveCheckerN;
-    WaveCheckerF waveCheckerF;
+    private WaveCheckerN waveCheckerN;
+    private WaveCheckerF waveCheckerF;
+
+    [Header("Animation")]
+    [SerializeField] private Animator anim;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip deathSound;
+
+    private AudioSource audioSource;
 
     void Start()
     {
         currentHealth = maxHealth;
         sp = GetComponent<SpriteRenderer>();
         EF = GetComponent<Enemyfollow>();
-        if (CompareTag("WaveManager"))
-       
-        waveCheckerN = FindObjectOfType<WaveCheckerN>();
 
+        audioSource = GetComponent<AudioSource>();
+
+        // Find WaveCheckerN
         GameObject waveManagerObject = GameObject.FindGameObjectWithTag("WaveManager");
         if (waveManagerObject != null)
         {
@@ -33,13 +41,12 @@ public class Takedamage : MonoBehaviour
         {
             Debug.LogWarning("WaveManager not found in the scene!");
         }
-        
-        waveCheckerF = FindObjectOfType<WaveCheckerF>();
 
+        // Find WaveCheckerF
         GameObject waveManagerObjectF = GameObject.FindGameObjectWithTag("WaveManager");
-        if (waveManagerObject != null)
+        if (waveManagerObjectF != null)
         {
-            waveCheckerF = waveManagerObject.GetComponent<WaveCheckerF>();
+            waveCheckerF = waveManagerObjectF.GetComponent<WaveCheckerF>();
         }
         else
         {
@@ -87,10 +94,9 @@ public class Takedamage : MonoBehaviour
         }
     }
 
-
     public void TakeHit(float damage)
     {
-        if (isDead) return;  
+        if (isDead) return;
 
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health now: {currentHealth}");
@@ -103,13 +109,27 @@ public class Takedamage : MonoBehaviour
 
     private void Die()
     {
-        if (isDead) return; 
+        if (isDead) return;
 
         isDead = true;
         Debug.Log($"{gameObject.name} died.");
+
+        // Play death sound
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+
+        // Set isDeath animator integer parameter to 1
+        if (anim != null)
+        {
+            anim.SetInteger("isdead", 1);
+        }
+
         onDeath?.Invoke();
 
-        Destroy(gameObject);
+        // Optional: destroy object after delay to allow animation & sound to finish
+        Destroy(gameObject,.5f);
     }
 
     private void EnemySee()
