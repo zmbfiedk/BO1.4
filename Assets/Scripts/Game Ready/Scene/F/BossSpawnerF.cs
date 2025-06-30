@@ -11,7 +11,7 @@ public class BossSpawnerF : MonoBehaviour
     public static event Action bossSpawned;
 
     private bool BossSpawned = false;
-
+    public bool Spawned { get { return BossSpawned; } }
     void Update()
     {
         SpawnBoss();

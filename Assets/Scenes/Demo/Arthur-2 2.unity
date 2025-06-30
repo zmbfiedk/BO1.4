@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d207d22b3e0954aa2cbcfa135a7285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTF: {fileID: 0}
 --- !u!1001 &104625374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,6 +254,10 @@ PrefabInstance:
       propertyPath: Move
       value: 
       objectReference: {fileID: 769284060}
+    - target: {fileID: 2095709944300510238, guid: f601da1bafe46b24e84a62c718d4082f, type: 3}
+      propertyPath: waveNumber
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5062954152340419886, guid: f601da1bafe46b24e84a62c718d4082f, type: 3}
       propertyPath: m_Name
       value: WavemanagerFast
@@ -321,6 +326,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7039090548926869880, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -365,7 +386,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2180093789126509871, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+    - {fileID: 7889654226869580815, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+    - {fileID: 2903072023598113284, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+    - {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
