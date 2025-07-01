@@ -1,45 +1,70 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTakeDamage : MonoBehaviour
 {
+    [SerializeField] private Move Move;
 
-    [SerializeField]private Move Move;
+    private bool isInvulnerable = false;
+    [SerializeField] private float invulnerableDuration = 1.5f; 
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
-    void Start()
+    private void Start()
     {
-        
-    }
-
-
-
-    void Update()
-    {
-        
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("lightEnemy"))
+        if (isInvulnerable) return;  
+
+        if (other.CompareTag("lightEnemy"))
         {
-            Move.hp -= 5;
+            TakeDamage(5);
         }
-        if (other.CompareTag("heavyEnemy"))
+        else if (other.CompareTag("heavyEnemy"))
         {
-            Move.hp -= 15;
+            TakeDamage(15);
         }
-        if (other.CompareTag("projEnemy"))
+        else if (other.CompareTag("projEnemy"))
         {
-            Move.hp -= 3;
+            TakeDamage(3);
         }
-        if (other.CompareTag("BossAttack"))
+        else if (other.CompareTag("BossAttack"))
         {
-            Move.hp -= 25;
+            TakeDamage(15);
         }
-        if (other.CompareTag("BossRanged"))
+        else if (other.CompareTag("BossRanged"))
         {
-            Move.hp -= 15;
+            TakeDamage(5);
         }
+    }
+
+    private void TakeDamage(int damage)
+    {
+        Move.hp -= damage;
+        StartCoroutine(InvulnerabilityCoroutine());
+    }
+
+    private IEnumerator InvulnerabilityCoroutine()
+    {
+        isInvulnerable = true;
+
+        float elapsed = 0f;
+        float flashInterval = 0.1f;
+
+        while (elapsed < invulnerableDuration)
+        {
+            // Toggle visibility
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+
+            yield return new WaitForSeconds(flashInterval);
+            elapsed += flashInterval;
+        }
+
+        spriteRenderer.enabled = true;
+
+        isInvulnerable = false;
     }
 }

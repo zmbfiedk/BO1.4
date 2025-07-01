@@ -10,7 +10,11 @@ public class BossAttackSystem : MonoBehaviour
     [SerializeField] private float movespeed = 3f;
     [SerializeField] private Transform PlayerPosition;
     [SerializeField] private Transform BossPostion;
-    [SerializeField] private Collider2D[] meleeColliders;
+
+    // Separate colliders for each attack type, not arrays anymore
+    [SerializeField] private Collider2D meleeColliderAttack1;
+    [SerializeField] private Collider2D meleeColliderAttack2;
+
     [SerializeField] private Animator anim;
     [SerializeField] private float DistanceToPlayer;
     [SerializeField] private float RangedCooldown = 2f;
@@ -36,8 +40,14 @@ public class BossAttackSystem : MonoBehaviour
         isOnTheMove = true;
         rangedTimer = RangedCooldown;
         outOfRangeTimer = 0f;
-
+        isAttacking = false;
         audioSource = GetComponent<AudioSource>();
+
+        // Disable both colliders at start
+        if (meleeColliderAttack1 != null)
+            meleeColliderAttack1.enabled = false;
+        if (meleeColliderAttack2 != null)
+            meleeColliderAttack2.enabled = false;
     }
 
     private void Update()
@@ -104,7 +114,6 @@ public class BossAttackSystem : MonoBehaviour
 
         SetAttackType(attackType);
 
-        // Play correct attack sound
         if (attackType == 1 && pokeSound != null)
         {
             audioSource.PlayOneShot(pokeSound);
@@ -114,15 +123,19 @@ public class BossAttackSystem : MonoBehaviour
             audioSource.PlayOneShot(slashSound);
         }
 
-        yield return new WaitForSeconds(1f);
+        // Enable only the collider corresponding to the attack type
+        if (attackType == 1 && meleeColliderAttack1 != null)
+            meleeColliderAttack1.enabled = true;
+        else if (attackType == 2 && meleeColliderAttack2 != null)
+            meleeColliderAttack2.enabled = true;
 
-        foreach (var col in meleeColliders)
-            col.enabled = true;
+        yield return new WaitForSeconds(0.75f);
 
-        yield return new WaitForSeconds(.4f);
-
-        foreach (var col in meleeColliders)
-            col.enabled = false;
+        // Disable both colliders after attack window
+        if (meleeColliderAttack1 != null)
+            meleeColliderAttack1.enabled = false;
+        if (meleeColliderAttack2 != null)
+            meleeColliderAttack2.enabled = false;
 
         yield return new WaitForSeconds(1f);
 

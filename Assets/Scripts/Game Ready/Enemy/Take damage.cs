@@ -22,6 +22,11 @@ public class Takedamage : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
 
     private AudioSource audioSource;
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+        set { currentHealth = value; }
+    }
 
     void Start()
     {

@@ -54,9 +54,8 @@ MonoBehaviour:
   movespeed: 3
   PlayerPosition: {fileID: 0}
   BossPostion: {fileID: 0}
-  meleeColliders:
-  - {fileID: 5397790460229860969}
-  - {fileID: 934929239592353742}
+  meleeColliderAttack1: {fileID: 5397790460229860969}
+  meleeColliderAttack2: {fileID: 934929239592353742}
   anim: {fileID: 1832002559552493381}
   DistanceToPlayer: 0
   RangedCooldown: 3
