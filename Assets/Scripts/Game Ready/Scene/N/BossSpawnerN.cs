@@ -10,7 +10,7 @@ public class BossSpawner : MonoBehaviour
     [SerializeField] private Transform spawnPoint; // Optional: where to spawn the boss
     public static event Action bossSpawned;
 
-    private bool BossSpawned = false;
+    [SerializeField]private bool BossSpawned = false;
 
     public bool Spawned { get { return BossSpawned; } }
 
@@ -21,7 +21,7 @@ public class BossSpawner : MonoBehaviour
 
     private void SpawnBoss()
     {
-        if (waveChecker.WAVE >= 40 && !BossSpawned)
+        if (waveChecker.WAVE == 40 && !BossSpawned)
         {
             Instantiate(bossPrefab, spawnPoint != null ? spawnPoint.position : transform.position, Quaternion.identity);
             BossSpawned = true;

@@ -114,12 +114,12 @@ public class BossAttackSystem : MonoBehaviour
             audioSource.PlayOneShot(slashSound);
         }
 
-        yield return new WaitForSeconds(1.7f);
+        yield return new WaitForSeconds(1f);
 
         foreach (var col in meleeColliders)
             col.enabled = true;
 
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(.4f);
 
         foreach (var col in meleeColliders)
             col.enabled = false;

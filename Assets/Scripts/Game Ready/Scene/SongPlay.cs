@@ -12,9 +12,18 @@ public class SongPlay : MonoBehaviour
 
     void Start()
     {
+        foreach (var audio in soundtrack)
+        {
+            audio.loop = true;
+        }
+
         // Zoek spawnerN
-        spawnerN = FindObjectOfType<BossSpawner>();
-        if (spawnerN == null)
+        GameObject waveManagerObjectN = GameObject.FindGameObjectWithTag("BossSpawner");
+        if (waveManagerObjectN != null)
+        {
+            spawnerN = waveManagerObjectN.GetComponent<BossSpawner>();
+        }
+        else
         {
             Debug.LogWarning("BossSpawner not found in the scene!");
         }
@@ -30,6 +39,7 @@ public class SongPlay : MonoBehaviour
             Debug.LogWarning("BossSpawnerF not found in the scene!");
         }
     }
+
 
     void Update()
     {

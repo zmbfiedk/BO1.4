@@ -19,7 +19,7 @@ public class BossSpawnerF : MonoBehaviour
 
     private void SpawnBoss()
     {
-        if (waveChecker.WAVE >= 40 && !BossSpawned)
+        if (waveChecker.WAVE == 40 && !BossSpawned)
         {
             Instantiate(bossPrefab, spawnPoint != null ? spawnPoint.position : transform.position, Quaternion.identity);
             BossSpawned = true;

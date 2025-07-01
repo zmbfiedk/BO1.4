@@ -1,0 +1,509 @@
+fileFormatVersion: 2
+guid: 258ea1e748c71e44e99bacb036d75a05
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Arch Angel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1412
+      y: 63
+      width: 257
+      height: 34
+    spriteID: 7e4f5f83e58022a46b20262e7bae2250
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1412, y: 63}
+    spritePosition: {x: 637, y: 322}
+  - name: MICHAEL
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1412
+      y: 4
+      width: 516
+      height: 51
+    spriteID: f2a7d2072309aa5418736923d678b11c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1412, y: 4}
+    spritePosition: {x: 507, y: 251}
+  - name: Layer 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1400
+      height: 277
+    spriteID: f5a2d4239f1255c4f93a2b7f72172fcb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 66, y: 63}
+  - name: healthchunk6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1412
+      y: 140
+      width: 154
+      height: 27
+    spriteID: b790fd2ff79942846bbd011890fff0f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1412, y: 140}
+    spritePosition: {x: 212, y: 164}
+  - name: healthchunk5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1622
+      y: 105
+      width: 171
+      height: 27
+    spriteID: 5d6c0563cfdb4b645b8a45b4ed56a226
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1622, y: 105}
+    spritePosition: {x: 366, y: 164}
+  - name: healthchunk4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1412
+      y: 105
+      width: 202
+      height: 27
+    spriteID: 84fc8a9316d696148bbea69bf3f5de9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1412, y: 105}
+    spritePosition: {x: 537, y: 163}
+  - name: healthchunk3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1801
+      y: 105
+      width: 171
+      height: 27
+    spriteID: 2616e312ff683214bb0085d4ead1b8de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1801, y: 105}
+    spritePosition: {x: 739, y: 164}
+  - name: healthchunk2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1677
+      y: 63
+      width: 207
+      height: 27
+    spriteID: af372ff9bd3b87249ba81dc4134204fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1677, y: 63}
+    spritePosition: {x: 910, y: 164}
+  - name: healthchunk1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 289
+      width: 1130
+      height: 27
+    spriteID: f4c249eb389c85046ab5501bc951fef0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 289}
+    spritePosition: {x: 212, y: 164}
+  - name: emptybar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 324
+      width: 1127
+      height: 27
+    spriteID: e127a824d971db44d94fbf20fe933f3e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 324}
+    spritePosition: {x: 212, y: 163}
+  - name: Layer 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1980
+      y: 105
+      width: 0
+      height: 0
+    spriteID: e9b5e27eade013c4b80ba67ac0cdb700
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1980, y: 105}
+    spritePosition: {x: 0, y: 461}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: stuff
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: e3ba0add2ad468944b2e824fccfc4e81
+    layerID: 15
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Arch Angel
+    spriteName: Arch Angel
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7e4f5f83e58022a46b20262e7bae2250
+    layerID: 14
+    mosaicPosition: {x: 1412, y: 63}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: MICHAEL
+    spriteName: MICHAEL
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f2a7d2072309aa5418736923d678b11c
+    layerID: 13
+    mosaicPosition: {x: 1412, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 5
+    spriteName: Layer 5
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f5a2d4239f1255c4f93a2b7f72172fcb
+    layerID: 10
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: health
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 5d8ba8f299c3a5b4f86c3557c0887a74
+    layerID: 26
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: healthchunk6
+    spriteName: healthchunk6
+    isGroup: 0
+    parentIndex: 4
+    spriteID: b790fd2ff79942846bbd011890fff0f7
+    layerID: 25
+    mosaicPosition: {x: 1412, y: 140}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: healthchunk5
+    spriteName: healthchunk5
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 5d6c0563cfdb4b645b8a45b4ed56a226
+    layerID: 24
+    mosaicPosition: {x: 1622, y: 105}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: healthchunk4
+    spriteName: healthchunk4
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 84fc8a9316d696148bbea69bf3f5de9c
+    layerID: 23
+    mosaicPosition: {x: 1412, y: 105}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: healthchunk3
+    spriteName: healthchunk3
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 2616e312ff683214bb0085d4ead1b8de
+    layerID: 22
+    mosaicPosition: {x: 1801, y: 105}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: healthchunk2
+    spriteName: healthchunk2
+    isGroup: 0
+    parentIndex: 4
+    spriteID: af372ff9bd3b87249ba81dc4134204fe
+    layerID: 20
+    mosaicPosition: {x: 1677, y: 63}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: healthchunk1
+    spriteName: healthchunk1
+    isGroup: 0
+    parentIndex: 4
+    spriteID: f4c249eb389c85046ab5501bc951fef0
+    layerID: 11
+    mosaicPosition: {x: 4, y: 289}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: emptybar
+    spriteName: emptybar
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e127a824d971db44d94fbf20fe933f3e
+    layerID: 31
+    mosaicPosition: {x: 4, y: 324}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 6
+    spriteName: Layer 6
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e9b5e27eade013c4b80ba67ac0cdb700
+    layerID: 19
+    mosaicPosition: {x: 1980, y: 105}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

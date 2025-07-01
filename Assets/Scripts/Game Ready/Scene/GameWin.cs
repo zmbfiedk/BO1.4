@@ -7,7 +7,7 @@ public class GameWin : MonoBehaviour
 {
      WaveCheckerF waveCheckerF;
      WaveCheckerN waveCheckerN;
-    [SerializeField] Transform playerTF;
+     private Transform playerTF;
     void Start()
     {
         if (CompareTag("WaveManager"))
@@ -35,6 +35,8 @@ public class GameWin : MonoBehaviour
         {
             Debug.LogWarning("WaveManager not found in the scene!");
         }
+
+        playerTF = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()

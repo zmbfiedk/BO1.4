@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 817668679245966110, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.67
+      value: 35.2
       objectReference: {fileID: 0}
     - target: {fileID: 817668679245966110, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.38
+      value: 17.6
       objectReference: {fileID: 0}
     - target: {fileID: 817668679245966110, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_LocalPosition.z
@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: deathSound
       value: 
       objectReference: {fileID: 8300000, guid: e4a0c5340a3554f499025003bdcd221b, type: 3}
+    - target: {fileID: 5509670779199108729, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: m_TagString
+      value: PlayerTrack
+      objectReference: {fileID: 0}
     - target: {fileID: 5554308515304095672, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: slashSound
       value: 
@@ -294,10 +298,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tridentHitboxes:
   - {fileID: 3387483428446209110}
-  tridentActiveDuration: 1
+  tridentActiveDuration: 0.5
   swordHitboxes:
   - {fileID: 1403337122390780699}
-  swordActiveDuration: 1
+  swordActiveDuration: 0.5
 --- !u!114 &5740220976202484092
 MonoBehaviour:
   m_ObjectHideFlags: 0
