@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 25
+  sp: {fileID: 0}
   anim: {fileID: 3359384120860047711}
   deathSound: {fileID: 8300000, guid: 7015ea372207d3f4394fe0c77214bd92, type: 3}
 --- !u!50 &2209074273349383580
@@ -411,7 +412,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.47, y: 3.81}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

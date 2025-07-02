@@ -9,7 +9,9 @@ public class Takedamage : MonoBehaviour
     [SerializeField] private int maxHealth = 1;
     private float currentHealth;
 
-    private SpriteRenderer sp;
+    [SerializeField] private SpriteRenderer sp;
+    private Color originalColor;
+
     private Enemyfollow EF;
     private bool isDead = false;
     private WaveCheckerN waveCheckerN;
@@ -32,6 +34,15 @@ public class Takedamage : MonoBehaviour
     {
         currentHealth = maxHealth;
         sp = GetComponent<SpriteRenderer>();
+        if (sp == null)
+        {
+            Debug.LogWarning($"SpriteRenderer not found on {gameObject.name}");
+        }
+        else
+        {
+            originalColor = sp.color; // store original color for flashing
+        }
+
         EF = GetComponent<Enemyfollow>();
 
         audioSource = GetComponent<AudioSource>();
@@ -106,10 +117,21 @@ public class Takedamage : MonoBehaviour
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health now: {currentHealth}");
 
+        // Start flash coroutine
+        if (sp != null)
+            StartCoroutine(FlashRed());
+
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    private System.Collections.IEnumerator FlashRed()
+    {
+        sp.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sp.color = originalColor;
     }
 
     private void Die()
@@ -134,7 +156,7 @@ public class Takedamage : MonoBehaviour
         onDeath?.Invoke();
 
         // Optional: destroy object after delay to allow animation & sound to finish
-        Destroy(gameObject,.5f);
+        Destroy(gameObject, 0.5f);
     }
 
     private void EnemySee()

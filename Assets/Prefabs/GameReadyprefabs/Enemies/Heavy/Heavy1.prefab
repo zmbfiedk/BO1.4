@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 15
+  sp: {fileID: 775970077585703559}
   anim: {fileID: 6638337621074134115}
   deathSound: {fileID: 8300000, guid: 7015ea372207d3f4394fe0c77214bd92, type: 3}
 --- !u!50 &1737688129788550288
@@ -354,7 +355,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.47, y: 3.81}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -456,6 +457,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!212 &775970077585703559 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 683650805199822136, guid: ac5df9f934426b44fa5690d6cfba5a5d, type: 3}
+  m_PrefabInstance: {fileID: 267995400572264383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3180731069883342128 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3430659260759769743, guid: ac5df9f934426b44fa5690d6cfba5a5d, type: 3}
