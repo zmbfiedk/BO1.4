@@ -21,10 +21,10 @@ public class SwitchWeapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SwitchToWeapon("trident", 0.05f, 50f);
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwitchToWeapon("bow", .5f, 12.5f);
-
         if (Input.GetKeyDown(KeyCode.Alpha3))
+            SwitchToWeapon("bow", 3f, 12.5f);
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
             SwitchToWeapon("sword", 0.05f, 25f);
     }
 

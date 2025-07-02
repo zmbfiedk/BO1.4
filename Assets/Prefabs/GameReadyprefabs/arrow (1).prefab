@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3338980229686144934}
   - component: {fileID: 8447279643002891076}
   - component: {fileID: -4948178445347042388}
-  - component: {fileID: 5261732467392579615}
   m_Layer: 0
   m_Name: arrow (1)
   m_TagString: Arrow
@@ -194,15 +193,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
---- !u!114 &5261732467392579615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6451574902122803546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b86af12756e55514f992457e0f89746e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

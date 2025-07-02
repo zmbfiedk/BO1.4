@@ -58,29 +58,40 @@ public class Move : MonoBehaviour
         BC2D = GetComponent<BoxCollider2D>();
         audioSource = GetComponent<AudioSource>();
         currentSpeed = moveSpeed;
+
+        // Enable interpolation for smoother physics movement
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
     }
 
     void Update()
     {
-        HandleMovement();
+        HandleInput();
         RegenerateStamina();
         Dodge();
         playerkill();
         setHP();
     }
 
-    void HandleMovement()
+    void FixedUpdate()
+    {
+        HandleMovement();
+    }
+
+    void HandleInput()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         moveDirection = new Vector2(horizontal, vertical).normalized;
+    }
 
+    void HandleMovement()
+    {
         if (!isDodging)
         {
             if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
             {
                 currentSpeed = sprintSpeed;
-                stamina -= staminaDrain * Time.deltaTime;
+                stamina -= staminaDrain * Time.fixedDeltaTime;
             }
             else
             {
@@ -88,7 +99,12 @@ public class Move : MonoBehaviour
             }
         }
         stamina = Mathf.Clamp(stamina, 0f, 100f);
-        rb.velocity = moveDirection * currentSpeed;
+
+        if (moveDirection != Vector2.zero)
+        {
+            Vector2 newPosition = rb.position + moveDirection * currentSpeed * Time.fixedDeltaTime;
+            rb.MovePosition(newPosition);
+        }
     }
 
     void RegenerateStamina()
@@ -109,7 +125,6 @@ public class Move : MonoBehaviour
             stamina -= dodgeStaminaCost;
             stamina = Mathf.Clamp(stamina, 0f, 100f);
 
-            // Play dash sound
             if (dashSound != null && audioSource != null)
                 audioSource.PlayOneShot(dashSound);
 
@@ -145,11 +160,10 @@ public class Move : MonoBehaviour
     {
         if (health_points <= 0)
         {
-            // Play death sound
             if (deathSound != null && audioSource != null)
                 audioSource.PlayOneShot(deathSound);
 
-            Object.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

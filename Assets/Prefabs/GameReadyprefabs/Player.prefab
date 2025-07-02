@@ -48,13 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 885193514428202632, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1684388307292840729, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 8171718146958502171}
     - target: {fileID: 1684388307292840729, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: arrowSpeed
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1986343073044525949, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_Name
@@ -84,6 +88,10 @@ PrefabInstance:
       propertyPath: dashSound
       value: 
       objectReference: {fileID: 8300000, guid: 876914ae942c7f644a95e70766b0adcb, type: 3}
+    - target: {fileID: 4900638950070367396, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: moveSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4900638950070367396, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: deathSound
       value: 

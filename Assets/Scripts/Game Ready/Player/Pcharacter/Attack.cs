@@ -8,6 +8,9 @@ public class Attack : MonoBehaviour
     public static event Action OnSwordAttack;
     public static event Action OnBowRelease;
 
+    // New event to notify stamina used amount
+    public static event Action<float> OnStaminaUsed;
+
     [Header("Attack Stats")]
     [SerializeField] private float attackStaminaCost = 50f;
     [SerializeField] private float attackCooldown = 0.2f;
@@ -91,6 +94,7 @@ public class Attack : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && canAttack && playerMovement.ConsumeStamina(attackStaminaCost))
             {
+                OnStaminaUsed?.Invoke(attackStaminaCost);  // <-- Invoke event here
                 ReleaseAttack();
             }
         }

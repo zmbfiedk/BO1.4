@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using UnityEngine.UI;  // <-- Added for UI Image
+using System.Collections;
 public class UIStateManager : MonoBehaviour
 {
     [Header("References")]
@@ -31,6 +32,18 @@ public class UIStateManager : MonoBehaviour
     [SerializeField] private GameObject[] staminaHalf;
     [SerializeField] private GameObject[] staminaKwart;
     [SerializeField] private GameObject[] staminaEmpty;
+
+    private Coroutine flashRoutine;
+
+    private void Start()
+    {
+        Attack.OnStaminaUsed += FlashStaminaUI;
+    }
+
+    private void OnDestroy()
+    {
+        Attack.OnStaminaUsed -= FlashStaminaUI;
+    }
 
     void Update()
     {
@@ -81,6 +94,57 @@ public class UIStateManager : MonoBehaviour
         foreach (var go in group)
         {
             if (go != null) go.SetActive(isActive);
+        }
+    }
+
+    // FLASHING LOGIC:
+
+    private void FlashStaminaUI(float amountUsed)
+    {
+        if (flashRoutine != null)
+            StopCoroutine(flashRoutine);
+
+        // Intensity based on how much stamina was used, capped 0..1
+        float intensity = Mathf.Clamp01(amountUsed / 100f);
+        flashRoutine = StartCoroutine(FlashStaminaRoutine(intensity));
+    }
+
+    private IEnumerator FlashStaminaRoutine(float intensity)
+    {
+        float flashDuration = 0.1f;
+        int flashes = Mathf.CeilToInt(3 + 3 * intensity);
+
+        for (int i = 0; i < flashes; i++)
+        {
+            SetStaminaGroupColor(Color.yellow);
+            yield return new WaitForSeconds(flashDuration);
+
+            SetStaminaGroupColor(Color.white);
+            yield return new WaitForSeconds(flashDuration);
+        }
+    }
+
+    private void SetStaminaGroupColor(Color color)
+    {
+        SetColorForGroup(staminaFull, color);
+        SetColorForGroup(stamina_3_4, color);
+        SetColorForGroup(staminaHalf, color);
+        SetColorForGroup(staminaKwart, color);
+        SetColorForGroup(staminaEmpty, color);
+    }
+
+    private void SetColorForGroup(GameObject[] group, Color color)
+    {
+        foreach (var go in group)
+        {
+            if (go != null)
+            {
+                var image = go.GetComponent<Image>();
+                if (image != null)
+                {
+                    image.color = color;
+                }
+            }
         }
     }
 }
