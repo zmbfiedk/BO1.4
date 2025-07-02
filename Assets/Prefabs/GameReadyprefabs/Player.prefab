@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 817668679245966110, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 817668679245966110, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 8171718146958502171}
+    - target: {fileID: 1684388307292840729, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+      propertyPath: arrowSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1986343073044525949, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
       propertyPath: m_Name
       value: Player
@@ -301,7 +305,7 @@ MonoBehaviour:
   tridentActiveDuration: 1
   swordHitboxes:
   - {fileID: 1403337122390780699}
-  swordActiveDuration: 1
+  swordActiveDuration: 0.75
 --- !u!114 &5740220976202484092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Move: {fileID: 4484923486189074081}
   invulnerableDuration: 1.5
-  spriteRenderer: {fileID: 7949196087272972342}
+  spriteRenderer: {fileID: 7766900194827286373}
 --- !u!82 &5278862632397679730
 AudioSource:
   m_ObjectHideFlags: 0
@@ -413,9 +417,9 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!212 &7949196087272972342 stripped
+--- !u!212 &7766900194827286373 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1472114912291234355, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1294404034612933984, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}
   m_PrefabInstance: {fileID: 8808819933866099205}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8171718146958502171 stripped

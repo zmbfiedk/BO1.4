@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heavy3
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: ce9791eaf738b7e4ea3e3b83a72132b8, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -8078847899713035290, guid: ce9791eaf738b7e4ea3e3b83a72132b8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0

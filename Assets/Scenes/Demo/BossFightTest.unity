@@ -258,6 +258,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fb515da7194564381986a3cbd222a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &262547750 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8171718146958502171, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+  m_PrefabInstance: {fileID: 262547745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &652252062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,6 +513,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 425817386541773009, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 262547750}
     - target: {fileID: 1727966228776383665, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
       propertyPath: attack
       value: 
