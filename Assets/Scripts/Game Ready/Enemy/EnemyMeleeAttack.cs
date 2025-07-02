@@ -42,7 +42,6 @@ public class EnemyMeleeAttack : MonoBehaviour
     {
         isOnCooldown = true;
         anim.SetBool("Attack", true);
-        yield return new WaitForSeconds(AttackActiveDuration);
         ActivateEnemyHitboxes();
        
 

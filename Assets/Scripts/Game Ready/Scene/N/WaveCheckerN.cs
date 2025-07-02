@@ -84,6 +84,14 @@ public class WaveCheckerN : MonoBehaviour
         enemiesToKillThisWave += 2;
         waveActive = true;
         Debug.Log("Wave " + waveNumber + " started! (Level " + GetLevel() + ")");
+        if (WAVE >= 40)
+        {
+            waveNumber += 0;
+            enemiesKilledThisWave = 0;
+            enemiesSpawnedThisWave = 0;
+            enemyAmmount = 0;
+            enemiesToKillThisWave = 0;
+        }
     }
 
     public int GetWaveNumber() => waveNumber;

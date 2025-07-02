@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BossManager : MonoBehaviour
@@ -13,6 +14,8 @@ public class BossManager : MonoBehaviour
     private BossSpawnerF SpawnerF;
 
     private float pieceHealth;
+
+    public static event Action OnDeath;
 
     void Start()
     {
@@ -76,6 +79,7 @@ public class BossManager : MonoBehaviour
             bossHealthUI.SetActive(false);
             bossTakeDamage = null;
         }
+
     }
 
     private void UpdateHealthUI()
@@ -88,6 +92,11 @@ public class BossManager : MonoBehaviour
         for (int i = 0; i < healthPieces.Length; i++)
         {
             healthPieces[i].SetActive(i < piecesToShow);
+        }
+
+        if(currentHealth <= 0)
+        {
+            OnDeath?.Invoke();
         }
     }
 }
