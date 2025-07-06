@@ -9,11 +9,12 @@ public class Takedamage : MonoBehaviour
     [SerializeField] private int maxHealth = 1;
     private float currentHealth;
 
-    [SerializeField] private SpriteRenderer sp;
-    private Color originalColor;
+    private SpriteRenderer[] spriteRenderers;
+    private Color[] originalColors;
 
-    private Enemyfollow EF;
     private bool isDead = false;
+    private bool isFlashing = false;
+
     private WaveCheckerN waveCheckerN;
     private WaveCheckerF waveCheckerF;
 
@@ -24,6 +25,7 @@ public class Takedamage : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
 
     private AudioSource audioSource;
+
     public float CurrentHealth
     {
         get { return currentHealth; }
@@ -33,17 +35,21 @@ public class Takedamage : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        sp = GetComponent<SpriteRenderer>();
-        if (sp == null)
+
+        // Get all SpriteRenderers in this object and its children
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+
+        if (spriteRenderers.Length == 0)
         {
-            Debug.LogWarning($"SpriteRenderer not found on {gameObject.name}");
-        }
-        else
-        {
-            originalColor = sp.color; // store original color for flashing
+            Debug.LogWarning($"No SpriteRenderers found on {gameObject.name} or its children!");
         }
 
-        EF = GetComponent<Enemyfollow>();
+        // Store original colors
+        originalColors = new Color[spriteRenderers.Length];
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            originalColors[i] = spriteRenderers[i].color;
+        }
 
         audioSource = GetComponent<AudioSource>();
 
@@ -68,11 +74,6 @@ public class Takedamage : MonoBehaviour
         {
             Debug.LogWarning("WaveManager not found in the scene!");
         }
-    }
-
-    void Update()
-    {
-        EnemySee();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -102,11 +103,17 @@ public class Takedamage : MonoBehaviour
             if (other.CompareTag("Trident")) TakeHit(15f);
             if (other.CompareTag("Sword")) TakeHit(10f);
         }
-        else // level >= 3f
+        else if (level < 4f)
         {
             if (other.CompareTag("Arrow")) TakeHit(10f);
             if (other.CompareTag("Trident")) TakeHit(25f);
             if (other.CompareTag("Sword")) TakeHit(15f);
+        }
+        else // level >= 4f
+        {
+            if (other.CompareTag("Arrow")) TakeHit(15f);
+            if (other.CompareTag("Trident")) TakeHit(35f);
+            if (other.CompareTag("Sword")) TakeHit(20f);
         }
     }
 
@@ -117,9 +124,12 @@ public class Takedamage : MonoBehaviour
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health now: {currentHealth}");
 
-        // Start flash coroutine
-        if (sp != null)
-            StartCoroutine(FlashRed());
+        // Only flash if still alive after taking damage
+        if (currentHealth > 0)
+        {
+            if (spriteRenderers != null && spriteRenderers.Length > 0)
+                StartCoroutine(FlashRed());
+        }
 
         if (currentHealth <= 0)
         {
@@ -129,9 +139,21 @@ public class Takedamage : MonoBehaviour
 
     private System.Collections.IEnumerator FlashRed()
     {
-        sp.color = Color.red;
+        isFlashing = true;
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].color = Color.red;
+        }
+
         yield return new WaitForSeconds(0.1f);
-        sp.color = originalColor;
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].color = originalColors[i];
+        }
+
+        isFlashing = false;
     }
 
     private void Die()
@@ -147,7 +169,7 @@ public class Takedamage : MonoBehaviour
             audioSource.PlayOneShot(deathSound);
         }
 
-        // Set isDeath animator integer parameter to 1
+        // Set isdead animator parameter
         if (anim != null)
         {
             anim.SetInteger("isdead", 1);
@@ -157,11 +179,5 @@ public class Takedamage : MonoBehaviour
 
         // Optional: destroy object after delay to allow animation & sound to finish
         Destroy(gameObject, 0.5f);
-    }
-
-    private void EnemySee()
-    {
-        if (EF == null) return;
-        sp.color = EF.follow ? Color.red : Color.green;
     }
 }

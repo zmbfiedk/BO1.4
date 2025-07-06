@@ -328,22 +328,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
-      propertyPath: m_Parameters.colorGradient.m_ColorSpace
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7039090548926869880, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -388,11 +372,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2180093789126509871, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
-    - {fileID: 7889654226869580815, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
-    - {fileID: 2903072023598113284, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
-    - {fileID: 2730271210316320652, guid: 28b5c510a8a8b484a8c920301ef9843a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -577,6 +557,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 95192055}
+    - target: {fileID: 3898862939806974079, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -684.00006
+      objectReference: {fileID: 0}
     - target: {fileID: 5785336712113347117, guid: 731d1ce6e5a9b9441951df10a9c33ab4, type: 3}
       propertyPath: m_Pivot.x
       value: 0

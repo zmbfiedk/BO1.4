@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 300
-  sp: {fileID: 3799076731093761360}
   anim: {fileID: 1832002559552493381}
   deathSound: {fileID: 8300000, guid: 7015ea372207d3f4394fe0c77214bd92, type: 3}
 --- !u!61 &2902750489851715134
@@ -305,7 +304,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 88
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -368,6 +367,18 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: 9e0df5a6386a2c445a5fec683209ec95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1282606828523246091, guid: 9e0df5a6386a2c445a5fec683209ec95, type: 3}
+      propertyPath: m_SortingOrder
+      value: 144
+      objectReference: {fileID: 0}
+    - target: {fileID: 683650805199822136, guid: 9e0df5a6386a2c445a5fec683209ec95, type: 3}
+      propertyPath: m_SortingOrder
+      value: 265
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871936877066445817, guid: 9e0df5a6386a2c445a5fec683209ec95, type: 3}
+      propertyPath: m_SortingOrder
+      value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 3910563502323284169, guid: 9e0df5a6386a2c445a5fec683209ec95, type: 3}
       propertyPath: m_TagString
@@ -441,11 +452,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.62, y: 0.91}
   m_EdgeRadius: 0
---- !u!212 &3799076731093761360 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: -1282606828523246091, guid: 9e0df5a6386a2c445a5fec683209ec95, type: 3}
-  m_PrefabInstance: {fileID: 6524110341560471717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5595051564436810107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 9e0df5a6386a2c445a5fec683209ec95, type: 3}
