@@ -25,11 +25,18 @@ public class EscapePauseAndExit : MonoBehaviour
 
             if (escapePressCount == 1)
             {
-                // If Escape pressed again within time, load scene 0
+                // Escape pressed again within time, exit to main menu
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Time.timeScale = 1f; // Make sure time is normal before loading
+                    Time.timeScale = 1f; // Reset time
                     SceneManager.LoadScene(0);
+                }
+                // Press "R" to reload current scene
+                else if (Input.GetKeyDown(KeyCode.R))
+                {
+                    Time.timeScale = 1f; // Reset time
+                    Scene currentScene = SceneManager.GetActiveScene();
+                    SceneManager.LoadScene(currentScene.name);
                 }
                 else if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
                 {

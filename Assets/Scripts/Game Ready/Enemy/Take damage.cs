@@ -119,7 +119,6 @@ public class Takedamage : MonoBehaviour
 
     public void TakeHit(float damage)
     {
-        if (isDead) return;
 
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health now: {currentHealth}");
@@ -158,9 +157,6 @@ public class Takedamage : MonoBehaviour
 
     private void Die()
     {
-        if (isDead) return;
-
-        isDead = true;
         Debug.Log($"{gameObject.name} died.");
 
         // Play death sound
