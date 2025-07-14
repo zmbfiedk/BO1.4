@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e62ab2cdd7378541873b056aeb3a953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseOverlay: {fileID: 3703311031128694503, guid: 4b4e644771c4aeb4f89456ebadb990f6, type: 3}
 --- !u!212 &7766900194827286373 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1294404034612933984, guid: 1fc5b32f5b943b946a2fc13f1094f814, type: 3}

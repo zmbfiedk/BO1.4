@@ -9,21 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Demo/Main-Menu.unity
     guid: ba7c030007196824e878772026976093
   - enabled: 1
-    path: Assets/Scenes/Demo/Arthur-2.unity
-    guid: 041080e140239684abcd70da1b4decb6
-  - enabled: 1
-    path: Assets/Scenes/Demo/Arthur-2 1.unity
+    path: Assets/Scenes/Demo/Normal.unity
     guid: c04762c6ab7681548b686d16723e265b
   - enabled: 1
-    path: Assets/Scenes/Demo/Arthur-2 2.unity
+    path: Assets/Scenes/Demo/Fast.unity
     guid: 801a609faf4a5694db8b8778aaadfb5d
   - enabled: 1
-    path: Assets/Scenes/Demo/GO.unity
+    path: Assets/Scenes/Demo/Death.unity
     guid: 190d78214e7d0844b92e71b02365a9f6
   - enabled: 1
     path: Assets/Scenes/Demo/BossFightTest.unity
     guid: 3e082cc83e2f2604f96e0189f46a0bf1
   - enabled: 1
-    path: Assets/Scenes/Demo/GO 1.unity
+    path: Assets/Scenes/Demo/Win.unity
     guid: ba0b19f0d5e98ef47a6fda06bfe46e44
   m_configObjects: {}
